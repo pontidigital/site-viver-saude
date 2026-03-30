@@ -1,0 +1,177 @@
+"use client";
+
+import { useCallback } from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import useEmblaCarousel from "embla-carousel-react";
+import { ScrollAnimationWrapper } from "@/components/shared/ScrollAnimationWrapper";
+import { Button } from "@/components/ui/Button";
+
+const plans = [
+  {
+    name: "Topázio",
+    slug: "topazio",
+    tagline: "Acompanhamento contínuo e foco em prevenção e cuidado integral.",
+    image: "/images/plans/topázio.png",
+    color: "from-amber-400 to-amber-600",
+  },
+  {
+    name: "Rubi",
+    slug: "rubi",
+    tagline: "Cobertura completa para todas as fases da vida.",
+    image: "/images/plans/rubi.png",
+    color: "from-red-400 to-red-600",
+  },
+  {
+    name: "Esmeralda",
+    slug: "esmeralda",
+    tagline: "Estabilidade e cuidado contínuo para quem prioriza confiança.",
+    image: "/images/plans/esmeralda.png",
+    color: "from-emerald-400 to-emerald-600",
+  },
+  {
+    name: "Safira",
+    slug: "safira",
+    tagline: "Alta qualidade para quem busca agilidade e desempenho.",
+    image: "/images/plans/safira.png",
+    color: "from-blue-400 to-blue-600",
+  },
+  {
+    name: "Turmalina",
+    slug: "turmalina",
+    tagline: "Cobertura essencial para internações e atendimentos hospitalares.",
+    image: "/images/plans/turmalina.png",
+    color: "from-pink-400 to-pink-600",
+  },
+  {
+    name: "Quartzo",
+    slug: "quartzo",
+    tagline: "Proteção acessível com cobertura para necessidades essenciais.",
+    image: "/images/plans/quarzo.png",
+    color: "from-gray-400 to-gray-600",
+  },
+];
+
+export function PlansCarousel() {
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: false,
+    align: "start",
+    slidesToScroll: 1,
+    breakpoints: {
+      "(min-width: 768px)": { slidesToScroll: 2 },
+      "(min-width: 1024px)": { slidesToScroll: 3 },
+    },
+  });
+
+  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+
+  return (
+    <section className="py-20 lg:py-28 bg-card">
+      <div className="max-w-7xl mx-auto px-4 lg:px-6">
+        <ScrollAnimationWrapper>
+          <div className="flex items-end justify-between mb-12">
+            <div>
+              <span className="text-primary font-medium text-sm uppercase tracking-wider">
+                Nossos Planos
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-3">
+                Encontre a proteção ideal
+              </h2>
+              <p className="text-muted mt-3 max-w-lg">
+                Compare opções com clareza. Nossa equipe ajuda você a escolher a melhor alternativa.
+              </p>
+            </div>
+            <div className="hidden md:flex gap-2">
+              <button
+                onClick={scrollPrev}
+                className="w-10 h-10 rounded-full border border-border hover:bg-primary hover:text-white hover:border-primary flex items-center justify-center transition-all"
+                aria-label="Plano anterior"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <button
+                onClick={scrollNext}
+                className="w-10 h-10 rounded-full border border-border hover:bg-primary hover:text-white hover:border-primary flex items-center justify-center transition-all"
+                aria-label="Próximo plano"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </ScrollAnimationWrapper>
+
+        <div className="overflow-hidden" ref={emblaRef}>
+          <div className="flex gap-6">
+            {plans.map((plan, index) => (
+              <div
+                key={plan.slug}
+                className="flex-none w-[85%] md:w-[45%] lg:w-[30%]"
+              >
+                <ScrollAnimationWrapper delay={index * 0.1}>
+                  <motion.div
+                    className="group bg-white rounded-2xl shadow-sm border border-border overflow-hidden"
+                    whileHover={{
+                      scale: 1.03,
+                      boxShadow: "0 20px 40px rgba(0,0,0,0.12)",
+                      y: -4,
+                    }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  >
+                    <div className={`h-48 bg-gradient-to-br ${plan.color} relative flex items-center justify-center p-6`}>
+                      <Image
+                        src={plan.image}
+                        alt={`Plano ${plan.name}`}
+                        width={160}
+                        height={160}
+                        className="object-contain drop-shadow-lg group-hover:scale-110 transition-transform duration-500"
+                      />
+                    </div>
+                    <div className="p-6">
+                      <h3 className="text-xl font-bold text-foreground mb-2">
+                        Plano {plan.name}
+                      </h3>
+                      <p className="text-muted text-sm leading-relaxed mb-6">
+                        {plan.tagline}
+                      </p>
+                      <div className="flex gap-3">
+                        <Button
+                          href={`/planos/${plan.slug}`}
+                          variant="outline"
+                          size="sm"
+                          className="flex-1"
+                        >
+                          Ver detalhes
+                        </Button>
+                        <Button
+                          href="/quero-ser-cliente"
+                          size="sm"
+                          className="flex-1"
+                        >
+                          Simule
+                        </Button>
+                      </div>
+                    </div>
+                  </motion.div>
+                </ScrollAnimationWrapper>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="text-center mt-10">
+          <Button href="/planos" variant="ghost" size="md">
+            Ver todos os planos
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+}

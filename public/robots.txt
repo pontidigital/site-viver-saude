@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /ponti-admin/
+Disallow: /api/
+
+Sitemap: https://planoviversaude.com.br/sitemap.xml
