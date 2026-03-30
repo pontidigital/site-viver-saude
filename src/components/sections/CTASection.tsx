@@ -21,23 +21,20 @@ export function CTASection() {
             Fale conosco e encontre o plano ideal para você, sua família ou sua empresa.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
+            <a
               href="/quero-ser-cliente"
-              variant="secondary"
-              size="lg"
-              className="bg-white text-primary hover:bg-gray-100"
+              className="inline-flex items-center justify-center font-semibold rounded-lg px-8 py-4 text-lg bg-white text-[#2563eb] hover:bg-gray-100 shadow-md hover:shadow-lg transition-all duration-300"
             >
               Simule seu plano
-            </Button>
-            <Button
+            </a>
+            <a
               href={WHATSAPP_URL}
-              variant="outline"
-              size="lg"
-              className="border-white text-white hover:bg-white hover:text-primary"
               target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center font-semibold rounded-lg px-8 py-4 text-lg border-2 border-white text-white hover:bg-white hover:text-[#2563eb] transition-all duration-300"
             >
               Fale com a Viver
-            </Button>
+            </a>
           </div>
         </ScrollAnimationWrapper>
       </div>
