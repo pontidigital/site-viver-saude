@@ -44,14 +44,14 @@ export function Footer() {
         >
           {/* Column 1: Brand */}
           <motion.div variants={columnVariants}>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">V</span>
-              </div>
-              <div>
-                <span className="text-white font-bold text-xl">Viver</span>
-                <span className="text-accent font-bold text-xl"> Saúde</span>
-              </div>
+            <div className="mb-4">
+              <Image
+                src="/images/logo/logo-viversaude-white.png"
+                alt="Logo - Viver Saúde"
+                width={150}
+                height={45}
+                className="h-10 w-auto"
+              />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               Um plano de saúde para cuidar de você de um jeito mais próximo, acolhedor e descomplicado.

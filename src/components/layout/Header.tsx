@@ -61,15 +61,14 @@ export function Header() {
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
             <Link href="/" className="flex-shrink-0">
-              <div className="flex items-center gap-2">
-                <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">V</span>
-                </div>
-                <div className="hidden sm:block">
-                  <span className="text-primary font-bold text-xl">Viver</span>
-                  <span className="text-accent font-bold text-xl"> Saúde</span>
-                </div>
-              </div>
+              <Image
+                src="/images/logo/logo-viversaude-color.avif"
+                alt="Logo - Viver Saúde"
+                width={150}
+                height={45}
+                className="h-10 w-auto"
+                priority
+              />
             </Link>
 
             {/* Desktop nav */}

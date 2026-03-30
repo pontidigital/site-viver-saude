@@ -1,0 +1,781 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KG5XMTH7');</script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" media="print"
+    onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap">
+  </noscript>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://planoviversaude.com.br/wp-content/themes/viversaude-wp-theme/dist/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://planoviversaude.com.br/wp-content/themes/viversaude-wp-theme/dist/css/owl.theme.default.min.css">
+  <link href="https://planoviversaude.com.br/wp-content/themes/viversaude-wp-theme/dist/css/style.css" rel="stylesheet" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://planoviversaude.com.br/wp-content/themes/viversaude-wp-theme/dist/img/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/png" href="https://planoviversaude.com.br/wp-content/themes/viversaude-wp-theme/dist/img/favicon/favicon-512x512.png" sizes="512x512" />
+  <link rel="icon" type="image/svg+xml" href="https://planoviversaude.com.br/wp-content/themes/viversaude-wp-theme/dist/img/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="https://planoviversaude.com.br/wp-content/themes/viversaude-wp-theme/dist/img/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://planoviversaude.com.br/wp-content/themes/viversaude-wp-theme/dist/img/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Viver Saúde" />
+  <link rel="manifest" href="https://planoviversaude.com.br/wp-content/themes/viversaude-wp-theme/dist/img/favicon/site.webmanifest" />
+  
+  <!-- Social -->
+  <meta property="og:title" content="Viver Saúde">
+  <meta property="og:description" content="De todas as escolhas que você pode fazer, a melhor é Viver. Bem-vindo ao seu novo plano de saúde que chega para cuidar de você de um jeito muito mais próximo, acolhedor, preventivo e o melhor: descomplicado.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://planoviversaude.com.br">
+  <meta property="og:image" content="https://planoviversaude.com.br/wp-content/themes/viversaude-wp-theme/dist/img/social.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  
+  <meta name="twitter:card" content="summary_large_image">  
+  <meta name="twitter:title" content="Viver Saúde">
+  <meta name="twitter:description" content="De todas as escolhas que você pode fazer, a melhor é Viver. Bem-vindo ao seu novo plano de saúde que chega para cuidar de você de um jeito muito mais próximo, acolhedor, preventivo e o melhor: descomplicado.">
+  <meta name="twitter:image" content="https://planoviversaude.com.br/wp-content/themes/viversaude-wp-theme/dist/img/social.png">
+
+  <meta name='robots' content='noindex, follow' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v27.2 - https://yoast.com/product/yoast-seo-wordpress/ -->
+	<title>Página não encontrada - Viver Saúde</title>
+	<meta property="og:locale" content="pt_BR" />
+	<meta property="og:title" content="Página não encontrada - Viver Saúde" />
+	<meta property="og:site_name" content="Viver Saúde" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://planoviversaude.com.br/#website","url":"https://planoviversaude.com.br/","name":"Viver Saúde","description":"De todas as escolhas que você pode fazer, a melhor é Viver. Bem-vindo ao seu novo plano de saúde que chega para cuidar de você de um jeito muito mais próximo, acolhedor, preventivo e o melhor: descomplicado.","publisher":{"@id":"https://planoviversaude.com.br/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://planoviversaude.com.br/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"pt-BR"},{"@type":"Organization","@id":"https://planoviversaude.com.br/#organization","name":"Viver Saúde","url":"https://planoviversaude.com.br/","logo":{"@type":"ImageObject","inLanguage":"pt-BR","@id":"https://planoviversaude.com.br/#/schema/logo/image/","url":"https://planoviversaude.com.br/wp-content/uploads/2025/12/logo-viversaude.avif","contentUrl":"https://planoviversaude.com.br/wp-content/uploads/2025/12/logo-viversaude.avif","width":624,"height":187,"caption":"Viver Saúde"},"image":{"@id":"https://planoviversaude.com.br/#/schema/logo/image/"},"sameAs":["https://www.instagram.com/viversaudeplano/"]}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//cdn.elementor.com' />
+<style id='wp-img-auto-sizes-contain-inline-css' type='text/css'>
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id='wp-emoji-styles-inline-css' type='text/css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href='https://planoviversaude.com.br/wp-includes/css/dist/block-library/style.min.css?ver=6.9.4' type='text/css' media='all' />
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-term-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-term-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+<link rel='stylesheet' id='contact-form-7-css' href='https://planoviversaude.com.br/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=6.1.5' type='text/css' media='all' />
+<link rel='stylesheet' id='ea11y-widget-fonts-css' href='https://planoviversaude.com.br/wp-content/plugins/pojo-accessibility/assets/build/fonts.css?ver=4.1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='ea11y-skip-link-css' href='https://planoviversaude.com.br/wp-content/plugins/pojo-accessibility/assets/build/skip-link.css?ver=4.1.0' type='text/css' media='all' />
+<link rel="https://api.w.org/" href="https://planoviversaude.com.br/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://planoviversaude.com.br/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.9.4" />
+<meta name="generator" content="Elementor 3.35.7; features: e_font_icon_svg, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-swap">
+			<style>
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload) * {
+					background-image: none !important;
+				}
+				@media screen and (max-height: 1024px) {
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+				@media screen and (max-height: 640px) {
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+			</style>
+			</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KG5XMTH7"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <div class="h-5 w-full bg-brand-turquoise"></div>
+
+  <header id="site-header" class="w-full sticky -top-8 bg-white z-50">
+    <div class="container pt-10 md:pt-16 pb-5 flex justify-between items-center lg:flex-col">
+      <a href="/" title="Início" class="lg:mb-4">
+        <img src="https://planoviversaude.com.br/wp-content/uploads/2025/12/logo-viversaude.avif" class="w-full max-w-[220px]" alt="Logo - Viver Saúde" />
+      </a>
+
+      <nav>
+        <ul class="hidden lg:flex gap-2 items-center font-medium">
+           
+              <li class="group nav-item ">
+                <a href="/#inicio" target="">
+                  Início                </a>
+              </li>
+          
+              <li class="group nav-item ">
+                <a href="/#sobre" target="">
+                  Viver saúde                </a>
+              </li>
+          
+              <li class="group nav-item ">
+                <a href="/#planos" target="">
+                  Planos                </a>
+              </li>
+          
+              <li class="group nav-item ">
+                <a href="/#nossa-casa" target="">
+                  Nossa casa                </a>
+              </li>
+          
+              <li class="group nav-item ">
+                <a href="https://planoviversaude.com.br/quero-ser-cliente/" target="">
+                  Quero ser cliente                </a>
+              </li>
+          
+              <li class="group nav-item ">
+                <a href="/#contato" target="">
+                  Contato                </a>
+              </li>
+          
+              <li class="group nav-item ">
+                <a href="https://solus.planoviversaude.com.br/portal_beneficiario/auth/login" target="_blank">
+                  Cliente                </a>
+              </li>
+          
+              <li class="group nav-item ">
+                <a href="https://solus.planoviversaude.com.br/prestador/index.php" target="_blank">
+                  Prestador                </a>
+              </li>
+                  </ul>
+      </nav>
+
+      <button id="navbarToggle" class="lg:hidden flex justify-center gap-4 focus:outline-none">
+        <span class="text-brand-green text-base font-workSans opacity-0 sm:opacity-100">
+          Menu
+        </span>
+        <svg width="26" height="20" viewBox="0 0 26 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_26_16)">
+            <path d="M1.70605 1.69238H24.2943M1.70605 10.0001H24.2943M1.70605 18.3078H24.2943" stroke="#006264" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" />
+          </g>
+          <defs>
+            <clipPath id="clip0_26_16">
+              <rect width="26" height="20" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobileNavbar"
+      class="hidden lg:hidden absolute w-full bg-white text-white p-4 pb-8 transition-all duration-300 transform origin-top border-b-2 border-b-brand-aquamarine">
+      <ul class="flex flex-col gap-5 justify-center items-center font-medium">
+        
+          <li class="group nav-item ">
+            <a href="/#inicio" target="">
+              Início            </a>
+          </li>
+        
+          <li class="group nav-item ">
+            <a href="/#sobre" target="">
+              Viver saúde            </a>
+          </li>
+        
+          <li class="group nav-item ">
+            <a href="/#planos" target="">
+              Planos            </a>
+          </li>
+        
+          <li class="group nav-item ">
+            <a href="/#nossa-casa" target="">
+              Nossa casa            </a>
+          </li>
+        
+          <li class="group nav-item ">
+            <a href="https://planoviversaude.com.br/quero-ser-cliente/" target="">
+              Quero ser cliente            </a>
+          </li>
+        
+          <li class="group nav-item ">
+            <a href="/#contato" target="">
+              Contato            </a>
+          </li>
+        
+          <li class="group nav-item ">
+            <a href="https://solus.planoviversaude.com.br/portal_beneficiario/auth/login" target="_blank">
+              Cliente            </a>
+          </li>
+        
+          <li class="group nav-item ">
+            <a href="https://solus.planoviversaude.com.br/prestador/index.php" target="_blank">
+              Prestador            </a>
+          </li>
+              </ul>
+      </nav>
+  </header>
+
+<section id="inicio" class="bg-brand-green">
+    <div class="w-full">
+
+        
+        <picture>
+            <source srcset="https://planoviversaude.com.br/wp-content/uploads/2025/12/hero-xl-scaled.avif" media="(min-width: 1920px)" type="image/avif">
+            <source srcset="https://planoviversaude.com.br/wp-content/uploads/2025/12/hero-lg.avif" media="(min-width: 800px)" type="image/avif">
+            <source srcset="https://planoviversaude.com.br/wp-content/uploads/2025/12/hero-md.avif" media="(min-width: 400px)" type="image/avif">
+            <img src="https://planoviversaude.com.br/wp-content/uploads/2025/12/hero-sm.avif" alt="Uma mulher de camisa branca sorri alegremente ao pôr do sol à beira-mar. Seus cabelos esvoaçam ao vento, e o céu brilha com tons dourados e quentes, evocando uma atmosfera serena.">
+        </picture>
+    </div>
+</section>
+
+<section id="sobre" class="bg-brand-green-dark py-12">
+    <div class="container flex flex-col items-center space-y-6">
+
+        <h1 class="text-brand-green-light text-4xl sm:text-5xl 2xl:text-7xl font-workSans font-medium text-center tracking-tighter">
+            A vida é feita de escolhas. <br> <span class="text-brand-turquoise">A melhor é viver.</span>        </h1>
+
+        <div class="max-w-[700px]">
+            <p class="font-workSans text-white text-center text-base">
+                De todas as escolhas que você pode fazer, a melhor é Viver. Bem-vindo ao seu novo plano de saúde que chega para cuidar de você de um jeito muito mais próximo, acolhedor, preventivo e o melhor: 
+<span class="text-brand-green-light-2 font-medium">descomplicado.</span>            </p>
+        </div>
+    </div>
+</section>
+
+<section id="sobre" class="bg-brand-green-light-2 py-12">
+    <div class="container flex justify-center">
+        <div class="max-w-[800px] grid grid-cols-1 md:grid-cols-12 gap-4 gap-y-8">
+            <div class="col-span-1 md:col-span-6">
+                <div class="space-y-4">
+                    <h2 class="text-brand-green-dark text-4xl 2xl:text-6xl tracking-tighter">
+                        Proteção <br> de excelência <strong class="font-semibold">muito mais próxima de você.</strong>                    </h2>
+
+                    <p class="text-brand-green-dark text-base">
+                        Viver é contar com uma rede ampla e qualificada com tudo que você precisa para se sentir protegido sempre.                    </p>
+                </div>
+            </div>
+            <div class="col-span-1 md:col-span-5">
+                <ul class="flex flex-col space-y-4 tracking-tighter font-medium text-sm 2xl:text-base">
+                    
+                                            <li class="bg-white rounded-full px-6 py-3 text-center text-brand-green-dark">
+                            Rede hospitalar Hospital Rio Grande                        </li>
+                                            <li class="bg-white rounded-full px-6 py-3 text-center text-brand-green-dark">
+                            Maternidade Delfin Gonzalez                        </li>
+                                            <li class="bg-white rounded-full px-6 py-3 text-center text-brand-green-dark">
+                            Hospital Psiquiátrico Villa Vic                        </li>
+                                            <li class="bg-white rounded-full px-6 py-3 text-center text-brand-green-dark">
+                            Unidades de pronto atendimento e pronto socorro                        </li>
+                                            <li class="bg-white rounded-full px-6 py-3 text-center text-brand-green-dark">
+                            Unidades próprias Viver Saúde                        </li>
+                                    </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="planos" class="bg-white pt-12">
+    <div class="sm:mx-auto sm:px-10 lg:px-6 sm:max-w-[890px] relative">
+        <div class="flex flex-col items-center gap-y-4">
+            <div class="max-w-[700px] 2xl:max-w-[800px]">
+                <h2 class="text-brand-green-dark text-3xl lg:text-4xl 2xl:text-5xl text-center font-medium tracking-tighter">
+                    Diversos perfis de planos para cuidar do que mais precioso: <strong class="font-semibold text-brand-green-light-2">sua saúde.</strong>                </h2>
+            </div>
+            <div class="max-w-[750px]">
+                <p class="text-brand-green-dark text-center text-base">
+                    Conte com planos descomplicados, exclusivos para diferentes perfis e que cabem no seu bolso em todos os momentos da sua vida.                </p>
+            </div>
+        </div>
+
+        <div class="px-2 md:container md:px-7">
+            <div class="owl-nav z-20 w-[96%] absolute bottom-1/4 left-[2%] flex justify-between">
+                <button type="button" title="Próximo plano" class="owl-carousel-planos-prev-custom owl-nav-item">
+                    <img src="https://planoviversaude.com.br/wp-content/themes/viversaude-wp-theme/dist/img/arrow.png" class="h-[25px] pe-1" alt="Seta em tom azul apontando para a esquerda">
+                </button>
+                <button type="button" title="Plano anterior" class="owl-carousel-planos-next-custom owl-nav-item">
+                    <img src="https://planoviversaude.com.br/wp-content/themes/viversaude-wp-theme/dist/img/arrow.png" class="h-[25px] pe-1 scale-x-[-1]" alt="Seta em tom azul apontando para a direita">
+                </button>
+            </div>
+
+            <div class="owl-carousel owl-carousel-planos owl-theme absolute -bottom-20 sm:-bottom-9">
+                                    
+                    <div class="item p-0.5" title="Topázio">
+                        <div class="relative mt-10 w-full p-4 pt-0 bg-white border-2 border-brand-green-light-2 rounded-3xl">
+                            <div class="aspect-53/90 w-[70%] absolute top-[-8%] lg:top-[-10%] left-[15%] rounded-3xl overflow-hidden">
+                                <img src="https://planoviversaude.com.br/wp-content/uploads/2025/12/topazio.avif" class="h-full" alt="Imagem do plano">
+                            </div>
+                            <div class="opacity-0 aspect-53/90 w-[70%]">
+                                <img src="https://planoviversaude.com.br/wp-content/uploads/2025/12/topazio.avif" alt="Imagem do plano">
+                            </div>
+
+                            <div class="h-[160px] pt-4">
+                                <p class="text-brand-green-dark text-center text-sm">
+                                    <strong class="font-bold">Plano de estabilidade e equilíbrio com cuidado contínuo,</strong> pensado para quem prioriza confiança e acompanhamento regular da saúde.                                </p>
+                            </div>
+                        </div>
+                    </div>
+                                    
+                    <div class="item p-0.5" title="Rubi">
+                        <div class="relative mt-10 w-full p-4 pt-0 bg-white border-2 border-brand-green-light-2 rounded-3xl">
+                            <div class="aspect-53/90 w-[70%] absolute top-[-8%] lg:top-[-10%] left-[15%] rounded-3xl overflow-hidden">
+                                <img src="https://planoviversaude.com.br/wp-content/uploads/2025/12/rubi.avif" class="h-full" alt="Imagem do plano">
+                            </div>
+                            <div class="opacity-0 aspect-53/90 w-[70%]">
+                                <img src="https://planoviversaude.com.br/wp-content/uploads/2025/12/rubi.avif" alt="Imagem do plano">
+                            </div>
+
+                            <div class="h-[160px] pt-4">
+                                <p class="text-brand-green-dark text-center text-sm">
+                                    <strong class="font-bold">Plano de alta qualidade e excelência no atendimento,</strong> indicado para quem valoriza agilidade, desempenho e serviço completo.                                </p>
+                            </div>
+                        </div>
+                    </div>
+                                    
+                    <div class="item p-0.5" title="Esmeralda">
+                        <div class="relative mt-10 w-full p-4 pt-0 bg-white border-2 border-brand-green-light-2 rounded-3xl">
+                            <div class="aspect-53/90 w-[70%] absolute top-[-8%] lg:top-[-10%] left-[15%] rounded-3xl overflow-hidden">
+                                <img src="https://planoviversaude.com.br/wp-content/uploads/2025/12/esmeralda.avif" class="h-full" alt="Imagem do plano">
+                            </div>
+                            <div class="opacity-0 aspect-53/90 w-[70%]">
+                                <img src="https://planoviversaude.com.br/wp-content/uploads/2025/12/esmeralda.avif" alt="Imagem do plano">
+                            </div>
+
+                            <div class="h-[160px] pt-4">
+                                <p class="text-brand-green-dark text-center text-sm">
+                                    <strong class="font-bold">Plano hospitalar pensado para quem busca cobertura essencial e eficiente</strong> em internações e atendimentos hospitalares.                                </p>
+                            </div>
+                        </div>
+                    </div>
+                                    
+                    <div class="item p-0.5" title="Safira">
+                        <div class="relative mt-10 w-full p-4 pt-0 bg-white border-2 border-brand-green-light-2 rounded-3xl">
+                            <div class="aspect-53/90 w-[70%] absolute top-[-8%] lg:top-[-10%] left-[15%] rounded-3xl overflow-hidden">
+                                <img src="https://planoviversaude.com.br/wp-content/uploads/2025/12/safira.avif" class="h-full" alt="Imagem do plano">
+                            </div>
+                            <div class="opacity-0 aspect-53/90 w-[70%]">
+                                <img src="https://planoviversaude.com.br/wp-content/uploads/2025/12/safira.avif" alt="Imagem do plano">
+                            </div>
+
+                            <div class="h-[160px] pt-4">
+                                <p class="text-brand-green-dark text-center text-sm">
+                                    <strong class="font-bold">Plano sênior com foco em longevidade,</strong> prevenção e qualidade de vida, oferecendo acompanhamento às necessidades do idoso.                                </p>
+                            </div>
+                        </div>
+                    </div>
+                                    
+                    <div class="item p-0.5" title="Turmalina">
+                        <div class="relative mt-10 w-full p-4 pt-0 bg-white border-2 border-brand-green-light-2 rounded-3xl">
+                            <div class="aspect-53/90 w-[70%] absolute top-[-8%] lg:top-[-10%] left-[15%] rounded-3xl overflow-hidden">
+                                <img src="https://planoviversaude.com.br/wp-content/uploads/2025/12/turmalina.avif" class="h-full" alt="Imagem do plano">
+                            </div>
+                            <div class="opacity-0 aspect-53/90 w-[70%]">
+                                <img src="https://planoviversaude.com.br/wp-content/uploads/2025/12/turmalina.avif" alt="Imagem do plano">
+                            </div>
+
+                            <div class="h-[160px] pt-4">
+                                <p class="text-brand-green-dark text-center text-sm">
+                                    <strong class="font-bold">Plano de atenção à saúde com cuidado integral,</strong> focado no acompanhamento contínuo da saúde, prevenção e gestão médica regular                                </p>
+                            </div>
+                        </div>
+                    </div>
+                                    
+                    <div class="item p-0.5" title="Quartzo">
+                        <div class="relative mt-10 w-full p-4 pt-0 bg-white border-2 border-brand-green-light-2 rounded-3xl">
+                            <div class="aspect-53/90 w-[70%] absolute top-[-8%] lg:top-[-10%] left-[15%] rounded-3xl overflow-hidden">
+                                <img src="https://planoviversaude.com.br/wp-content/uploads/2025/12/quartzo.avif" class="h-full" alt="Imagem do plano">
+                            </div>
+                            <div class="opacity-0 aspect-53/90 w-[70%]">
+                                <img src="https://planoviversaude.com.br/wp-content/uploads/2025/12/quartzo.avif" alt="Imagem do plano">
+                            </div>
+
+                            <div class="h-[160px] pt-4">
+                                <p class="text-brand-green-dark text-center text-sm">
+                                    <strong class="font-bold">Plano completo voltado ao cuidado integral em todas as fases da vida, </strong> com atendimento ambulatorial e hospitalar                                </p>
+                            </div>
+                        </div>
+                    </div>
+                            </div>
+        </div>
+    </div>
+</section>
+
+<section id="nossa-casa" class="bg-brand-turquoise pt-24 pb-12 relative overflow-hidden">
+    <div class="hidden lg:block absolute right-0 bottom-0 pointer-events-none z-0">
+        <img src="https://planoviversaude.com.br/wp-content/themes/viversaude-wp-theme/dist/img/yellow-shape-lg.png" alt="Forma amarela arredondada decorativa">
+    </div>
+    <div class="container max-w-[890px] px-10 lg:px-6 flex justify-center relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-4 gap-y-8">
+            <div class="col-span-1 md:col-span-5">
+                <div class="space-y-2">
+                    <h3 class="text-white text-3xl md:text-[40px] font-semibold tracking-tighter">
+                        Mais que uma sede, uma casa viva e <strong class="text-brand-green-dark font-semibold">acolhedora para atender você</strong>                    </h3>
+
+                    <ul class="list-disc ms-5 text-brand-green-dark font-medium text-base">
+                        
+                                                    <li>
+                                Espaço Nutrição                            </li>
+                                                    <li>
+                                Café                            </li>
+                                                    <li>
+                                Lounge                            </li>
+                                                    <li>
+                                Salas para Oficinas                            </li>
+                                                    <li>
+                                Aulas de Movimento                            </li>
+                                                    <li>
+                                Sala de Artes                            </li>
+                                                    <li>
+                                Hidroginástica                            </li>
+                                                    <li>
+                                Sala de Ballet e dança                            </li>
+                                            </ul>
+                </div>
+            </div>
+            <div class="col-span-1 md:col-span-7">
+                <div class="bg-brand-green-light w-full rounded-4xl">
+                    <div class="overflow-hidden rounded-4xl">
+                        <img src="https://planoviversaude.com.br/wp-content/uploads/2025/12/casa.avif" class="w-full" alt="A imagem mostra uma casa de dois andares com um telhado vermelho, cercada por um muro branco. O sol está se pondo atrás da casa, criando um brilho laranja e rosa no céu. Há uma faixa de pedestres na rua em frente à casa.">
+                    </div>
+
+                    <div class="px-6 md:px-8 lg:px-10 py-10">
+                        <p class="text-brand-green-dark text-base text-center tracking-tighter">
+                            Muito além de atendimento, pensamos em bons momentos. Para você viver os melhores, contamos com uma casa elegante e integrada a diversas experiências de bem-estar, lazer e cultura. <br>
+<span class="font-bold">Seja muito bem-vindo. A casa é sua.</span>                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contato" class="bg-white py-24">
+    <div class="container max-w-[850px] flex justify-center relative z-10">
+        <div class="flex flex-col items-center gap-y-4 w-full">
+            <h4 class="text-brand-green-dark text-3xl lg:text-4xl 2xl:text-5xl tracking-tighter text-center">
+                <strong class="font-bold text-brand-green-light">Vem viver</strong> melhor com a gente            </h4>
+            <p class="text-brand-green-dark text-center text-base">
+                Escolha a melhor proteção para você, sua familia ou a sua empresa            </p>
+
+            <a href="https://planoviversaude.com.br/quero-ser-cliente" class="main-button">
+                Contrate agora            </a>
+        </div>
+    </div>
+</section>
+
+  <style>
+    .footer-files-toggle {
+      position: relative;
+    }
+
+    .footer-files-trigger {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #54d8bc;
+      border-radius: 9999px;
+      color: #ffffff;
+      padding: 0.5rem 1rem;
+      font-weight: 500;
+      text-decoration: none;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .footer-files-content {
+      display: none;
+      margin-top: 1rem;
+      max-height: 320px;
+      overflow-y: auto;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(84, 216, 188, 0.35);
+      border-radius: 0.75rem;
+      padding: 0.9rem;
+    }
+
+    .footer-files-toggle .footer-files-trigger:active + .footer-files-content,
+    .footer-files-toggle .footer-files-trigger:focus + .footer-files-content,
+    .footer-files-toggle:focus-within .footer-files-content {
+      display: block;
+    }
+
+    .footer-files-content .wp-block-file {
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-files-content .wp-block-file:last-child {
+      margin-bottom: 0;
+    }
+
+    .footer-files-content .wp-block-file > a {
+      color: #ffffff;
+    }
+  </style>
+  
+  <footer class="bg-brand-green-dark py-12 md:py-24">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="col-span-1 flex flex-col items-center space-y-4">
+          <h5 class="text-brand-aquamarine-dark text-center text-lg">
+            Baixe o APP
+          </h5>
+
+          <a href="https://apps.apple.com/br/app/viver-saúde/id6755687857" target="_blank" class="text-white font-semibold border border-brand-aquamarine-dark rounded-full px-4 py-2 flex gap-2 items-center">
+            <img src="https://planoviversaude.com.br/wp-content/themes/viversaude-wp-theme/dist/img/apple-store.png" class="h-5" alt="Ícone da apple na cor branca">
+            Apple Store
+          </a>
+
+          <a href="https://play.google.com/store/apps/details?id=br.com.mobilesaude.viversaude" target="_blank" class="text-white font-regular border border-brand-aquamarine-dark rounded-full px-4 py-2 flex gap-2 items-center">
+            <img src="https://planoviversaude.com.br/wp-content/themes/viversaude-wp-theme/dist/img/playstore.png" class="h-5" alt="Ícone da playstore na cor branca">
+            Google Play
+          </a>
+
+          
+                      <h5 class="text-brand-aquamarine-dark text-center text-lg">
+              Siga nossas redes
+            </h5>
+
+            <div class="flex gap-6 md:gap-5 lg:gap-4">
+                              <a href="https://www.instagram.com/viversaudeplano/" target="_blank">
+                  <img src="https://planoviversaude.com.br/wp-content/themes/viversaude-wp-theme/dist/img/instagram.png" class="h-8 sm:h-7 md:h-6 lg:h-5" alt="Ícone do instagram na cor branca">
+                </a>
+              
+              
+              
+                              <a href="https://www.facebook.com/profile.php?id=61581269102961" target="_blank">
+                  <img src="https://planoviversaude.com.br/wp-content/themes/viversaude-wp-theme/dist/img/facebook.png" class="h-8 sm:h-7 md:h-6 lg:h-5" alt="Ícone do youtube na cor branca">
+                </a>
+              
+                              <a href="https://www.linkedin.com/company/plano-viver-saude/" target="_blank">
+                  <img src="https://planoviversaude.com.br/wp-content/themes/viversaude-wp-theme/dist/img/linkedIn.png" class="h-8 sm:h-7 md:h-6 lg:h-5" alt="Ícone do youtube na cor branca">
+                </a>
+                          </div>
+                  </div>
+        <!-- <div class="col-span-1 space-y-4 text-center lg:text-start">
+          <h5 class="text-brand-green-light-2">
+            Precisa de ajuda? <br> Conte com a gente.
+          </h5>
+
+          <ul class="space-y-4">
+            <li class="text-white font-medium">
+              <a href="">Perguntas frequentes</a>
+            </li>
+            <li class="text-white font-medium">
+              <a href="">Central de ajuda</a>
+            </li>
+            <li class="text-white font-medium">
+              <a href="">Ouvidoria</a>
+            </li>
+            <li class="text-white font-medium">
+              <a href="">2º via boleto</a>
+            </li>
+          </ul>
+        </div> -->
+
+        <div class="col-span-1 space-y-4 text-center lg:text-start">
+          <h5 class="text-brand-green-light-2">
+            Nossos contatos
+          </h5>
+        
+          <ul class="space-y-4">
+                    
+                          <li class="text-white">
+                <span class="block font-medium">Central de atendimento:</span>
+                <span class="block">(84) 3114-1100</span>
+              </li>
+                    
+                          <li class="text-white">
+                <span class="block font-medium">Email:</span>
+                <span class="block">contato@planoviversaude.com.br</span>
+              </li>
+                      </ul>
+
+          <div class="footer-files-toggle">
+            <a href="#footer-condicoes-gerais" class="footer-files-trigger">Condições Gerais</a>
+            <div id="footer-condicoes-gerais" class="footer-files-content" tabindex="-1">
+              <div class="wp-block-file"><a id="wp-block-file--media-7bbe882b-cd86-4f6a-8d22-6a2440f0a5f9" href="https://planoviversaude.com.br/wp-content/uploads/2026/03/AMETISTA-CE-QC_Condicoes-Gerais-2.pdf">AMETISTA CE QC_Condições Gerais</a><a href="https://planoviversaude.com.br/wp-content/uploads/2026/03/AMETISTA-CE-QC_Condicoes-Gerais-2.pdf" class="wp-block-file__button wp-element-button" download="" aria-describedby="wp-block-file--media-7bbe882b-cd86-4f6a-8d22-6a2440f0a5f9">Baixar</a></div>
+              <div class="wp-block-file"><a id="wp-block-file--media-cc93d69c-ddd8-414a-a9cf-115ec4829f2c" href="https://planoviversaude.com.br/wp-content/uploads/2026/03/DIAMANTE-CE-QC_Condicoes-Gerais-1.pdf">DIAMANTE CE QC_Condições Gerais</a><a href="https://planoviversaude.com.br/wp-content/uploads/2026/03/DIAMANTE-CE-QC_Condicoes-Gerais-1.pdf" class="wp-block-file__button wp-element-button" download="" aria-describedby="wp-block-file--media-cc93d69c-ddd8-414a-a9cf-115ec4829f2c">Baixar</a></div>
+              <div class="wp-block-file"><a id="wp-block-file--media-d4943900-e42f-48be-b224-42ea9a84ddc0" href="https://planoviversaude.com.br/wp-content/uploads/2026/03/DIAMANTE-CE-QP_Condicoes-Gerais-1.pdf">DIAMANTE CE QP_Condições Gerais</a><a href="https://planoviversaude.com.br/wp-content/uploads/2026/03/DIAMANTE-CE-QP_Condicoes-Gerais-1.pdf" class="wp-block-file__button wp-element-button" download="" aria-describedby="wp-block-file--media-d4943900-e42f-48be-b224-42ea9a84ddc0">Baixar</a></div>
+              <div class="wp-block-file"><a id="wp-block-file--media-f0b61cb5-b5de-486d-9827-7c3adcd37ca7" href="https://planoviversaude.com.br/wp-content/uploads/2026/03/QUARTZO-CA-QC_Condicoes-Gerais-1.pdf">QUARTZO CA QC_Condições Gerais</a><a href="https://planoviversaude.com.br/wp-content/uploads/2026/03/QUARTZO-CA-QC_Condicoes-Gerais-1.pdf" class="wp-block-file__button wp-element-button" download="" aria-describedby="wp-block-file--media-f0b61cb5-b5de-486d-9827-7c3adcd37ca7">Baixar</a></div>
+              <div class="wp-block-file"><a id="wp-block-file--media-e9d5ff7b-2e08-4fb9-9d51-32e03e95cde6" href="https://planoviversaude.com.br/wp-content/uploads/2026/03/QUARTZO-CE-QC_Condicoes-Gerais-1.pdf">QUARTZO CE QC_Condições Gerais</a><a href="https://planoviversaude.com.br/wp-content/uploads/2026/03/QUARTZO-CE-QC_Condicoes-Gerais-1.pdf" class="wp-block-file__button wp-element-button" download="" aria-describedby="wp-block-file--media-e9d5ff7b-2e08-4fb9-9d51-32e03e95cde6">Baixar</a></div>
+              <div class="wp-block-file"><a id="wp-block-file--media-76245a66-a75d-4c6d-8575-b3d704fdd7f6" href="https://planoviversaude.com.br/wp-content/uploads/2026/03/RUBI-CA-QC_Condicoes-Gerais-1.pdf">RUBI CA QC_Condições Gerais</a><a href="https://planoviversaude.com.br/wp-content/uploads/2026/03/RUBI-CA-QC_Condicoes-Gerais-1.pdf" class="wp-block-file__button wp-element-button" download="" aria-describedby="wp-block-file--media-76245a66-a75d-4c6d-8575-b3d704fdd7f6">Baixar</a></div>
+              <div class="wp-block-file"><a id="wp-block-file--media-fb4a6326-c5d4-4d66-b065-a19308cc21cc" href="https://planoviversaude.com.br/wp-content/uploads/2026/03/RUBI-CE-QC_Condicoes-Gerais-1.pdf">RUBI CE QC_Condições Gerais</a><a href="https://planoviversaude.com.br/wp-content/uploads/2026/03/RUBI-CE-QC_Condicoes-Gerais-1.pdf" class="wp-block-file__button wp-element-button" download="" aria-describedby="wp-block-file--media-fb4a6326-c5d4-4d66-b065-a19308cc21cc">Baixar</a></div>
+              <div class="wp-block-file"><a id="wp-block-file--media-a85ad6da-a143-4c38-8790-93d73df91932" href="https://planoviversaude.com.br/wp-content/uploads/2026/03/SAFIRA-CA-QC_Condicoes-Gerais-1.pdf">SAFIRA CA QC_Condições Gerais</a><a href="https://planoviversaude.com.br/wp-content/uploads/2026/03/SAFIRA-CA-QC_Condicoes-Gerais-1.pdf" class="wp-block-file__button wp-element-button" download="" aria-describedby="wp-block-file--media-a85ad6da-a143-4c38-8790-93d73df91932">Baixar</a></div>
+              <div class="wp-block-file"><a id="wp-block-file--media-1e564192-6d11-4139-b407-d6d3198b88a2" href="https://planoviversaude.com.br/wp-content/uploads/2026/03/SAFIRA-PF-QC_Condicoes-Gerais-1.pdf">SAFIRA PF QC_Condições Gerais</a><a href="https://planoviversaude.com.br/wp-content/uploads/2026/03/SAFIRA-PF-QC_Condicoes-Gerais-1.pdf" class="wp-block-file__button wp-element-button" download="" aria-describedby="wp-block-file--media-1e564192-6d11-4139-b407-d6d3198b88a2">Baixar</a></div>
+              <div class="wp-block-file"><a id="wp-block-file--media-38136f0d-70ed-430d-9989-c4cbf821b1e1" href="https://planoviversaude.com.br/wp-content/uploads/2026/03/TOPAZIO-CE-ambulatorial_Condicoes-Gerais-1.pdf">TOPAZIO CE (ambulatorial)_Condições Gerais</a><a href="https://planoviversaude.com.br/wp-content/uploads/2026/03/TOPAZIO-CE-ambulatorial_Condicoes-Gerais-1.pdf" class="wp-block-file__button wp-element-button" download="" aria-describedby="wp-block-file--media-38136f0d-70ed-430d-9989-c4cbf821b1e1">Baixar</a></div>
+              <div class="wp-block-file"><a id="wp-block-file--media-e41069b7-1f0e-4a98-a705-c60bbccb3008" href="https://planoviversaude.com.br/wp-content/uploads/2026/03/TURMALINA-CA-QC_Condicoes-Gerais-1.pdf">TURMALINA CA QC_Condições Gerais</a><a href="https://planoviversaude.com.br/wp-content/uploads/2026/03/TURMALINA-CA-QC_Condicoes-Gerais-1.pdf" class="wp-block-file__button wp-element-button" download="" aria-describedby="wp-block-file--media-e41069b7-1f0e-4a98-a705-c60bbccb3008">Baixar</a></div>
+              <div class="wp-block-file"><a id="wp-block-file--media-1b48a53e-2c7b-4bf1-83c5-7943f3be7653" href="https://planoviversaude.com.br/wp-content/uploads/2026/03/TURMALINA-CE-QC_Condicoes-Gerais-1.pdf">TURMALINA CE QC_Condições Gerais</a><a href="https://planoviversaude.com.br/wp-content/uploads/2026/03/TURMALINA-CE-QC_Condicoes-Gerais-1.pdf" class="wp-block-file__button wp-element-button" download="" aria-describedby="wp-block-file--media-1b48a53e-2c7b-4bf1-83c5-7943f3be7653">Baixar</a></div>
+              <div class="wp-block-file"><a id="wp-block-file--media-4f004c2c-ffb7-4321-a399-5194f17c28d0" href="https://planoviversaude.com.br/wp-content/uploads/2026/03/TURQUESA-CE-QC_Condicoes-Gerais-1.pdf">TURQUESA CE QC_Condições Gerais</a><a href="https://planoviversaude.com.br/wp-content/uploads/2026/03/TURQUESA-CE-QC_Condicoes-Gerais-1.pdf" class="wp-block-file__button wp-element-button" download="" aria-describedby="wp-block-file--media-4f004c2c-ffb7-4321-a399-5194f17c28d0">Baixar</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container flex justify-center pt-24">
+      <a href="/" title="Início" class="">
+        <img src="https://planoviversaude.com.br/wp-content/uploads/2025/12/logo-viversaude-white.png" class="w-full max-w-[260px]" alt="">
+      </a>
+    </div>
+  </footer>
+
+  <script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/viversaude-wp-theme/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+			<script>
+				const registerAllyAction = () => {
+					if ( ! window?.ElementorProFrontendConfig || ! window?.elementorFrontend?.utils?.urlActions ) {
+						return;
+					}
+
+					elementorFrontend.utils.urlActions.addAction( 'allyWidget:open', () => {
+						if (window?.ea11yWidget?.widget?.open) {
+							return window.ea11yWidget.widget.isOpen()
+								? window.ea11yWidget.widget.close()
+								: window.ea11yWidget.widget.open();
+						}
+					} );
+				};
+
+				const waitingLimit = 30;
+				let retryCounter = 0;
+
+				const waitForElementorPro = () => {
+					return new Promise( ( resolve ) => {
+						const intervalId = setInterval( () => {
+							if ( retryCounter === waitingLimit ) {
+								resolve( null );
+							}
+
+							retryCounter++;
+
+							if ( window.elementorFrontend && window?.elementorFrontend?.utils?.urlActions ) {
+								clearInterval( intervalId );
+								resolve( window.elementorFrontend );
+							}
+								}, 100 ); // Check every 100 milliseconds for availability of elementorFrontend
+					});
+				};
+
+				waitForElementorPro().then( () => { registerAllyAction(); });
+			</script>
+						<script>
+				const lazyloadRunObserver = () => {
+					const lazyloadBackgrounds = document.querySelectorAll( `.e-con.e-parent:not(.e-lazyloaded)` );
+					const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
+						entries.forEach( ( entry ) => {
+							if ( entry.isIntersecting ) {
+								let lazyloadBackground = entry.target;
+								if( lazyloadBackground ) {
+									lazyloadBackground.classList.add( 'e-lazyloaded' );
+								}
+								lazyloadBackgroundObserver.unobserve( entry.target );
+							}
+						});
+					}, { rootMargin: '200px 0px 200px 0px' } );
+					lazyloadBackgrounds.forEach( ( lazyloadBackground ) => {
+						lazyloadBackgroundObserver.observe( lazyloadBackground );
+					} );
+				};
+				const events = [
+					'DOMContentLoaded',
+					'elementor/lazyload/observe',
+				];
+				events.forEach( ( event ) => {
+					document.addEventListener( event, lazyloadRunObserver );
+				} );
+			</script>
+			<script type="text/javascript" src="https://planoviversaude.com.br/wp-includes/js/dist/hooks.min.js?ver=dd5603f07f9220ed27f1" id="wp-hooks-js"></script>
+<script type="text/javascript" src="https://planoviversaude.com.br/wp-includes/js/dist/i18n.min.js?ver=c26c3dc7bed366793375" id="wp-i18n-js"></script>
+<script type="text/javascript" id="wp-i18n-js-after">
+/* <![CDATA[ */
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+//# sourceURL=wp-i18n-js-after
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://planoviversaude.com.br/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=6.1.5" id="swv-js"></script>
+<script type="text/javascript" id="contact-form-7-js-translations">
+/* <![CDATA[ */
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "contact-form-7", {"translation-revision-date":"2025-05-19 13:41:20+0000","generator":"GlotPress\/4.0.3","domain":"messages","locale_data":{"messages":{"":{"domain":"messages","plural-forms":"nplurals=2; plural=n > 1;","lang":"pt_BR"},"Error:":["Erro:"]}},"comment":{"reference":"includes\/js\/index.js"}} );
+//# sourceURL=contact-form-7-js-translations
+/* ]]> */
+</script>
+<script type="text/javascript" id="contact-form-7-js-before">
+/* <![CDATA[ */
+var wpcf7 = {
+    "api": {
+        "root": "https:\/\/planoviversaude.com.br\/wp-json\/",
+        "namespace": "contact-form-7\/v1"
+    },
+    "cached": 1
+};
+//# sourceURL=contact-form-7-js-before
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://planoviversaude.com.br/wp-content/plugins/contact-form-7/includes/js/index.js?ver=6.1.5" id="contact-form-7-js"></script>
+<script type="text/javascript" id="angie-canvas-template-js-before">
+/* <![CDATA[ */
+angieCanvasTemplateData = {"templateSlug":"angie-canvas"};
+//# sourceURL=angie-canvas-template-js-before
+/* ]]> */
+</script>
+<script type="text/javascript" id="ea11y-widget-js-extra">
+/* <![CDATA[ */
+var ea11yWidget = {"iconSettings":{"style":{"icon":"person","size":"medium","color":"#2563eb"},"position":{"desktop":{"hidden":false,"enableExactPosition":false,"exactPosition":{"horizontal":{"direction":"right","value":10,"unit":"px"},"vertical":{"direction":"bottom","value":10,"unit":"px"}},"position":"bottom-right"},"mobile":{"hidden":false,"enableExactPosition":false,"exactPosition":{"horizontal":{"direction":"right","value":10,"unit":"px"},"vertical":{"direction":"bottom","value":10,"unit":"px"}},"position":"bottom-right"}}},"toolsSettings":{"bigger-text":{"enabled":true},"bigger-line-height":{"enabled":true},"text-align":{"enabled":true},"readable-font":{"enabled":true},"grayscale":{"enabled":true},"contrast":{"enabled":true},"page-structure":{"enabled":true},"sitemap":{"enabled":false,"url":"https://planoviversaude.com.br/wp-sitemap.xml"},"reading-mask":{"enabled":true},"hide-images":{"enabled":true},"pause-animations":{"enabled":true},"highlight-links":{"enabled":true},"focus-outline":{"enabled":true}},"accessibilityStatementURL":"","analytics":{"enabled":false,"url":null}};
+//# sourceURL=ea11y-widget-js-extra
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://cdn.elementor.com/a11y/widget.js?api_key=ea11y-1099691b-2fd3-4790-9a55-13c40d4742ce&amp;ver=4.1.0" id="ea11y-widget-js"referrerPolicy="origin"></script>
+<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://planoviversaude.com.br/wp-includes/js/wp-emoji-release.min.js?ver=6.9.4"}}
+</script>
+<script type="module">
+/* <![CDATA[ */
+/*! This file is auto-generated */
+const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(window._wpemojiSettings=a,"wpEmojiSettingsSupports"),s=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const a=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===a[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,a){let r;const o=(r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),s=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(e=>{s[e]=t(o,e,n,a)}),s}function r(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}a.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),c.toString(),p.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"});const r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=e=>{i(n=e.data),r.terminate(),t(n)})}catch(e){}i(n=f(s,u,c,p))}t(n)}).then(e=>{for(const n in e)a.supports[n]=e[n],a.supports.everything=a.supports.everything&&a.supports[n],"flag"!==n&&(a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&a.supports[n]);var t;a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&!a.supports.flag,a.supports.everything||((t=a.source||{}).concatemoji?r(t.concatemoji):t.wpemoji&&t.twemoji&&(r(t.twemoji),r(t.wpemoji)))});
+//# sourceURL=https://planoviversaude.com.br/wp-includes/js/wp-emoji-loader.min.js
+/* ]]> */
+</script>
+
+  <!-- JS -->
+  <script src="https://planoviversaude.com.br/wp-content/themes/viversaude-wp-theme/dist/js/plugins/jquery.min.js"></script>
+  <script src="https://planoviversaude.com.br/wp-content/themes/viversaude-wp-theme/dist/js/plugins/owl.carousel.min.js"></script>
+  <script src="https://planoviversaude.com.br/wp-content/themes/viversaude-wp-theme/dist/js/index.js" defer></script>
+</body>
+
+</html>

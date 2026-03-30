@@ -19,10 +19,10 @@ const amenities = [
 ];
 
 const galleryImages = [
-  { src: "/images/general/img-quem-somos.jpg", alt: "Fachada da Viver Saúde" },
-  { src: "/images/general/img-quem-somos.jpg", alt: "Recepção da Viver Saúde" },
-  { src: "/images/general/img-quem-somos.jpg", alt: "Sala de atendimento" },
-  { src: "/images/general/img-quem-somos.jpg", alt: "Espaço interno" },
+  { src: "/images/nossa-casa/fachada.jpg", alt: "Fachada moderna da sede Viver Saúde em Natal" },
+  { src: "/images/nossa-casa/recepcao.jpg", alt: "Recepção acolhedora da Viver Saúde" },
+  { src: "/images/nossa-casa/sala-atendimento.jpg", alt: "Sala de atendimento confortável" },
+  { src: "/images/nossa-casa/espaco-interno.jpg", alt: "Espaço interno climatizado" },
 ];
 
 export default function NossaCasaPage() {

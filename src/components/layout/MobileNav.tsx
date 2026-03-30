@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { NAV_ITEMS, SITE, PORTALS, WHATSAPP_URL } from "@/lib/constants/site";
 import { Button } from "@/components/ui/Button";
@@ -49,14 +50,13 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
             <div className="p-6">
               {/* Close button */}
               <div className="flex justify-between items-center mb-8">
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                    <span className="text-white font-bold text-sm">V</span>
-                  </div>
-                  <span className="text-primary font-bold text-lg">
-                    Viver <span className="text-accent">Saúde</span>
-                  </span>
-                </div>
+                <Image
+                  src="/images/logo/logo-viversaude-color.avif"
+                  alt="Logo - Viver Saúde"
+                  width={120}
+                  height={36}
+                  className="h-8 w-auto"
+                />
                 <button
                   onClick={onClose}
                   className="p-2 text-muted hover:text-foreground transition-colors"
