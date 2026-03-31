@@ -38,7 +38,7 @@ export function WhyViverSection() {
       <div className="max-w-7xl mx-auto px-4 lg:px-6">
         <ScrollAnimationWrapper>
           <div className="text-center mb-14">
-            <span className="text-primary font-medium text-sm uppercase tracking-wider">
+            <span className="text-accent-dark font-medium text-sm uppercase tracking-wider">
               Por que Viver Saúde?
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-3 mb-4">
@@ -50,8 +50,8 @@ export function WhyViverSection() {
         <div className="grid md:grid-cols-3 gap-8">
           {benefits.map((benefit, index) => (
             <ScrollAnimationWrapper key={index} delay={index * 0.15}>
-              <div className="group text-center p-8 rounded-2xl hover:bg-primary/5 transition-all duration-300">
-                <div className="w-16 h-16 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+              <div className="group text-center p-8 rounded-2xl hover:bg-accent/5 transition-all duration-300">
+                <div className="w-16 h-16 bg-accent/10 text-accent-dark rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-accent group-hover:text-white transition-all duration-300">
                   {benefit.icon}
                 </div>
                 <h3 className="text-lg font-semibold text-foreground mb-3">

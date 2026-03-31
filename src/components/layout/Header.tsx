@@ -21,7 +21,7 @@ export function Header() {
   return (
     <>
       {/* Top utility bar */}
-      <div className="bg-primary text-white text-sm hidden lg:block">
+      <div className="bg-[#1e3a5f] text-white text-sm hidden lg:block">
         <div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
           <div className="flex items-center gap-6">
             <a href={`tel:${SITE.phone}`} className="flex items-center gap-2 hover:text-accent transition-colors">
@@ -84,10 +84,10 @@ export function Header() {
                 >
                   <Link
                     href={item.href}
-                    className="relative px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors rounded-md hover:bg-primary/5 group"
+                    className="relative px-3 py-2 text-sm font-medium text-foreground hover:text-accent-dark transition-colors rounded-md hover:bg-accent/5 group"
                   >
                     {item.label}
-                    <span className="absolute bottom-0 left-3 right-3 h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                    <span className="absolute bottom-0 left-3 right-3 h-0.5 bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
                     {"children" in item && (
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -108,7 +108,7 @@ export function Header() {
                         <Link
                           key={child.href}
                           href={child.href}
-                          className="block px-4 py-2.5 text-sm text-foreground hover:text-primary hover:bg-primary/5 transition-colors"
+                          className="block px-4 py-2.5 text-sm text-foreground hover:text-accent-dark hover:bg-accent/5 transition-colors"
                         >
                           {child.label}
                         </Link>
@@ -127,7 +127,7 @@ export function Header() {
 
               <button
                 onClick={() => setIsMobileOpen(true)}
-                className="lg:hidden p-2 text-foreground hover:text-primary transition-colors"
+                className="lg:hidden p-2 text-foreground hover:text-accent-dark transition-colors"
                 aria-label="Abrir menu"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

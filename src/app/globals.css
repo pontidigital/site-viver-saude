@@ -2,11 +2,13 @@
 
 :root {
   --color-primary: #2563eb;
-  --color-primary-dark: #1d4ed8;
-  --color-primary-light: #3b82f6;
+  --color-primary-dark: #1e3a5f;
+  --color-primary-light: #eff6ff;
   --color-accent: #54d8bc;
   --color-accent-dark: #3bbfa3;
   --color-accent-light: #7ee4d0;
+  --color-navy: #1e3a5f;
+  --color-navy-deep: #0f2a45;
   --background: #ffffff;
   --foreground: #1a1a2e;
   --muted: #6b7280;
@@ -18,11 +20,13 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: #2563eb;
-  --color-primary-dark: #1d4ed8;
-  --color-primary-light: #3b82f6;
+  --color-primary-dark: #1e3a5f;
+  --color-primary-light: #eff6ff;
   --color-accent: #54d8bc;
   --color-accent-dark: #3bbfa3;
   --color-accent-light: #7ee4d0;
+  --color-navy: #1e3a5f;
+  --color-navy-deep: #0f2a45;
   --color-muted: #6b7280;
   --color-border: #e5e7eb;
   --color-card: #f9fafb;
@@ -41,7 +45,7 @@ body {
 
 /* Animated gradient text */
 .hero-gradient-text {
-  background: linear-gradient(90deg, #2563eb, #54d8bc, #2563eb);
+  background: linear-gradient(90deg, #1e3a5f, #54d8bc, #3bbfa3);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -61,8 +65,8 @@ body {
 
 /* Pulse glow */
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.3); }
-  50% { box-shadow: 0 0 20px 4px rgba(37, 99, 235, 0.15); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(30, 58, 95, 0.3); }
+  50% { box-shadow: 0 0 20px 4px rgba(30, 58, 95, 0.15); }
 }
 
 .animate-pulse-glow {

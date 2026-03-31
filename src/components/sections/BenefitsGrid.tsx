@@ -59,7 +59,7 @@ export function BenefitsGrid() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {benefits.map((benefit, index) => (
             <ScrollAnimationWrapper key={index} delay={index * 0.1}>
-              <div className="bg-card border border-border rounded-2xl p-6 hover:border-primary/30 hover:shadow-lg transition-all duration-300 h-full">
+              <div className="bg-card border border-border rounded-2xl p-6 hover:border-accent/30 hover:shadow-lg transition-all duration-300 h-full">
                 <div className="w-14 h-14 bg-accent/10 text-accent-dark rounded-xl flex items-center justify-center mb-5">
                   {benefit.icon}
                 </div>

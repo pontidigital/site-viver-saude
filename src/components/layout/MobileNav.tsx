@@ -80,7 +80,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
                               expandedItem === item.href ? null : item.href
                             )
                           }
-                          className="w-full flex items-center justify-between px-4 py-3 text-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-colors"
+                          className="w-full flex items-center justify-between px-4 py-3 text-foreground hover:text-accent-dark hover:bg-accent/5 rounded-lg transition-colors"
                         >
                           <span className="font-medium">{item.label}</span>
                           <svg
@@ -109,7 +109,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
                                 <Link
                                   href={item.href}
                                   onClick={onClose}
-                                  className="block px-4 py-2 text-sm text-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-colors"
+                                  className="block px-4 py-2 text-sm text-foreground hover:text-accent-dark hover:bg-accent/5 rounded-lg transition-colors"
                                 >
                                   Ver todos
                                 </Link>
@@ -118,7 +118,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
                                     key={child.href}
                                     href={child.href}
                                     onClick={onClose}
-                                    className="block px-4 py-2 text-sm text-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-colors"
+                                    className="block px-4 py-2 text-sm text-foreground hover:text-accent-dark hover:bg-accent/5 rounded-lg transition-colors"
                                   >
                                     {child.label}
                                   </Link>
@@ -132,7 +132,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
                       <Link
                         href={item.href}
                         onClick={onClose}
-                        className="block px-4 py-3 font-medium text-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-colors"
+                        className="block px-4 py-3 font-medium text-foreground hover:text-accent-dark hover:bg-accent/5 rounded-lg transition-colors"
                       >
                         {item.label}
                       </Link>
@@ -150,7 +150,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
                   href={PORTALS.cliente}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 px-4 py-3 text-sm text-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-colors"
+                  className="flex items-center gap-3 px-4 py-3 text-sm text-foreground hover:text-accent-dark hover:bg-accent/5 rounded-lg transition-colors"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -161,7 +161,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
                   href={PORTALS.prestador}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 px-4 py-3 text-sm text-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-colors"
+                  className="flex items-center gap-3 px-4 py-3 text-sm text-foreground hover:text-accent-dark hover:bg-accent/5 rounded-lg transition-colors"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />

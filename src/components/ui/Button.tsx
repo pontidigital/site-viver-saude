@@ -22,8 +22,8 @@ const variantStyles: Record<ButtonVariant, string> = {
   secondary:
     "bg-accent text-white hover:bg-accent-dark shadow-sm hover:shadow-md",
   outline:
-    "border-2 border-primary text-primary hover:bg-primary hover:text-white",
-  ghost: "text-primary hover:bg-primary/10",
+    "border-2 border-accent-dark text-accent-dark hover:bg-accent-dark hover:text-white",
+  ghost: "text-accent-dark hover:bg-accent/10",
   accent:
     "bg-accent text-white hover:bg-accent-dark shadow-sm hover:shadow-md",
 };

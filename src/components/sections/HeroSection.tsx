@@ -18,7 +18,7 @@ export function HeroSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-white to-accent/5 min-h-[600px] lg:min-h-[700px] flex items-center"
+      className="relative overflow-hidden bg-gradient-to-br from-accent/5 via-white to-primary-light min-h-[600px] lg:min-h-[700px] flex items-center"
     >
       {/* Background video - subtle, behind all content */}
       <video
@@ -51,7 +51,7 @@ export function HeroSection() {
       </motion.div>
 
       {/* Decorative shapes */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-accent/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-accent/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl" />
 
       <div className="max-w-7xl mx-auto px-4 lg:px-6 py-16 lg:py-24 relative z-10">

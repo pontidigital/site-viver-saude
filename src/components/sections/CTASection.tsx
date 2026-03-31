@@ -6,7 +6,7 @@ import { WHATSAPP_URL } from "@/lib/constants/site";
 
 export function CTASection() {
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-br from-primary to-primary-dark relative overflow-hidden">
+    <section className="py-20 lg:py-28 bg-gradient-to-br from-[#1e3a5f] to-[#0f2a45] relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 right-0 w-80 h-80 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2" />
@@ -23,7 +23,7 @@ export function CTASection() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/quero-ser-cliente"
-              className="inline-flex items-center justify-center font-semibold rounded-lg px-8 py-4 text-lg bg-white text-[#2563eb] hover:bg-gray-100 shadow-md hover:shadow-lg transition-all duration-300"
+              className="inline-flex items-center justify-center font-semibold rounded-lg px-8 py-4 text-lg bg-white text-[#1e3a5f] hover:bg-gray-100 shadow-md hover:shadow-lg transition-all duration-300"
             >
               Simule seu plano
             </a>
@@ -31,7 +31,7 @@ export function CTASection() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center font-semibold rounded-lg px-8 py-4 text-lg border-2 border-white text-white hover:bg-white hover:text-[#2563eb] transition-all duration-300"
+              className="inline-flex items-center justify-center font-semibold rounded-lg px-8 py-4 text-lg border-2 border-white text-white hover:bg-white hover:text-[#1e3a5f] transition-all duration-300"
             >
               Fale com a Viver
             </a>
