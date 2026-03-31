@@ -21,6 +21,12 @@ export const metadata: Metadata = {
   description:
     "Um plano de saúde para cuidar de você de um jeito mais próximo, acolhedor e descomplicado. Conheça os planos Viver Saúde em Natal/RN.",
   metadataBase: new URL("https://planoviversaude.com.br"),
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/favicon.svg",
+  },
   openGraph: {
     type: "website",
     locale: "pt_BR",

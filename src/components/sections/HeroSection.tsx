@@ -75,7 +75,7 @@ export function HeroSection() {
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6"
             >
               A vida é feita de escolhas.{" "}
-              <span className="hero-gradient-text">A melhor e viver.</span>
+              <span className="hero-gradient-text">A melhor é viver.</span>
             </motion.h1>
 
             <motion.p

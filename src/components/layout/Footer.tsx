@@ -217,6 +217,14 @@ export function Footer() {
             <Link href="/contato" className="hover:text-accent transition-colors">
               Contato
             </Link>
+            <a
+              href="https://www.gov.br/ans/pt-br/assuntos/consumidor/prazos-maximos-de-atendimento"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-accent transition-colors"
+            >
+              Prazos máximos de atendimento – ANS
+            </a>
           </div>
         </div>
       </div>

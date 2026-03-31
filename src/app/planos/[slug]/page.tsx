@@ -5,6 +5,11 @@ import { ScrollAnimationWrapper } from "@/components/shared/ScrollAnimationWrapp
 import { WHATSAPP_URL } from "@/lib/constants/site";
 import type { Metadata } from "next";
 
+interface PlanDocument {
+  label: string;
+  file: string;
+}
+
 interface PlanData {
   name: string;
   slug: string;
@@ -13,6 +18,7 @@ interface PlanData {
   description: string;
   highlights: string[];
   targetAudience: string;
+  condicoesGerais?: PlanDocument[];
 }
 
 const plansData: Record<string, PlanData> = {
@@ -32,6 +38,9 @@ const plansData: Record<string, PlanData> = {
     ],
     targetAudience:
       "Ideal para quem busca um plano com foco em prevenção e acompanhamento regular, com custo acessível.",
+    condicoesGerais: [
+      { label: "Topázio CE (Ambulatorial)", file: "/docs/condicoes-gerais/topazio-ce-ambulatorial.pdf" },
+    ],
   },
   rubi: {
     name: "Rubi",
@@ -49,6 +58,10 @@ const plansData: Record<string, PlanData> = {
     ],
     targetAudience:
       "Perfeito para famílias que buscam cobertura completa e segurança em todas as situações de saúde.",
+    condicoesGerais: [
+      { label: "Rubi CA QC", file: "/docs/condicoes-gerais/rubi-ca-qc.pdf" },
+      { label: "Rubi CE QC", file: "/docs/condicoes-gerais/rubi-ce-qc.pdf" },
+    ],
   },
   esmeralda: {
     name: "Esmeralda",
@@ -83,6 +96,10 @@ const plansData: Record<string, PlanData> = {
     ],
     targetAudience:
       "Ideal para quem busca alta qualidade no atendimento com agilidade e conforto.",
+    condicoesGerais: [
+      { label: "Safira CA QC", file: "/docs/condicoes-gerais/safira-ca-qc.pdf" },
+      { label: "Safira PF QC", file: "/docs/condicoes-gerais/safira-pf-qc.pdf" },
+    ],
   },
   turmalina: {
     name: "Turmalina",
@@ -100,6 +117,10 @@ const plansData: Record<string, PlanData> = {
     ],
     targetAudience:
       "Indicado para quem busca proteção essencial focada em internações e situações de urgência.",
+    condicoesGerais: [
+      { label: "Turmalina CA QC", file: "/docs/condicoes-gerais/turmalina-ca-qc.pdf" },
+      { label: "Turmalina CE QC", file: "/docs/condicoes-gerais/turmalina-ce-qc.pdf" },
+    ],
   },
   quartzo: {
     name: "Quartzo",
@@ -117,6 +138,10 @@ const plansData: Record<string, PlanData> = {
     ],
     targetAudience:
       "Perfeito para quem busca um plano acessível que cubra as necessidades essenciais de saúde.",
+    condicoesGerais: [
+      { label: "Quartzo CA QC", file: "/docs/condicoes-gerais/quartzo-ca-qc.pdf" },
+      { label: "Quartzo CE QC", file: "/docs/condicoes-gerais/quartzo-ce-qc.pdf" },
+    ],
   },
 };
 
@@ -239,6 +264,45 @@ export default async function PlanPage(props: {
           </ScrollAnimationWrapper>
         </div>
       </section>
+
+      {/* Condições Gerais Download */}
+      {plan.condicoesGerais && plan.condicoesGerais.length > 0 && (
+        <section className="py-16 lg:py-24">
+          <div className="container mx-auto px-4">
+            <ScrollAnimationWrapper>
+              <div className="max-w-2xl mx-auto text-center">
+                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-7 h-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                </div>
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
+                  Condições Gerais
+                </h2>
+                <p className="text-muted mb-8">
+                  Consulte os documentos com as condições gerais do plano {plan.name}.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                  {plan.condicoesGerais.map((doc) => (
+                    <a
+                      key={doc.file}
+                      href={doc.file}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-5 py-3 bg-card border border-border rounded-xl text-foreground hover:border-primary hover:text-primary transition-colors text-sm font-medium"
+                    >
+                      <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                      </svg>
+                      {doc.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </ScrollAnimationWrapper>
+          </div>
+        </section>
+      )}
 
       {/* CTA Bar */}
       <section className="py-16 lg:py-20 bg-gradient-to-br from-primary to-primary-dark text-white">

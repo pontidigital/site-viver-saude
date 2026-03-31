@@ -32,12 +32,12 @@ export function QuickAccessSection() {
               }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
-              <div className="h-48 relative overflow-hidden">
+              <div className="h-56 relative overflow-hidden">
                 <Image
                   src="/images/general/cliente.png"
                   alt="Área do Cliente Viver Saúde"
                   fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                  className="object-cover object-top group-hover:scale-110 transition-transform duration-700 ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-primary/20" />
                 <div className="absolute bottom-4 left-6">
@@ -65,12 +65,12 @@ export function QuickAccessSection() {
               }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
-              <div className="h-48 relative overflow-hidden">
+              <div className="h-56 relative overflow-hidden">
                 <Image
                   src="/images/general/prestador.png"
                   alt="Área do Prestador Viver Saúde"
                   fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                  className="object-cover object-top group-hover:scale-110 transition-transform duration-700 ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-accent-dark/80 to-accent/20" />
                 <div className="absolute bottom-4 left-6">
