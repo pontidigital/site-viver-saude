@@ -1,55 +1,91 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/Button";
 import { ScrollAnimationWrapper } from "@/components/shared/ScrollAnimationWrapper";
 import { WHATSAPP_URL } from "@/lib/constants/site";
 
-interface Provider {
+interface Hospital {
+  id: string;
   name: string;
-  category: string;
-  address?: string;
-  featured?: boolean;
+  city: string;
+  state: string;
+  neighborhood: string | null;
+  address: string | null;
+  phone: string | null;
+  has_emergency: boolean | null;
 }
 
-const featuredProviders: Provider[] = [
-  { name: "Hospital Rio Grande", category: "Hospitais", address: "Natal/RN", featured: true },
-  { name: "Maternidade Delfin Gonzalez", category: "Hospitais", address: "Natal/RN", featured: true },
-  { name: "Villa Vic", category: "Hospitais", address: "Natal/RN", featured: true },
-  { name: "Viver Clínica Lagoa Nova", category: "Clínicas", address: "Lagoa Nova, Natal/RN", featured: true },
-  { name: "Viver Clínica Zona Norte", category: "Clínicas", address: "Zona Norte, Natal/RN", featured: true },
-  { name: "O CASA", category: "Clínicas", address: "Natal/RN", featured: true },
-];
+interface Doctor {
+  id: string;
+  name: string;
+  crm: string | null;
+  city: string;
+  state: string;
+  phone: string | null;
+  whatsapp: string | null;
+  specialties?: string[];
+}
 
-const allProviders: Provider[] = [
-  ...featuredProviders,
-  { name: "Laboratório Potiguar", category: "Laboratórios", address: "Natal/RN" },
-  { name: "CDF Diagnosticos", category: "Laboratórios", address: "Natal/RN" },
-  { name: "Clínica Oftalmológica Natal", category: "Clínicas", address: "Natal/RN" },
-  { name: "Clínica Ortopédica Potiguar", category: "Clínicas", address: "Natal/RN" },
-  { name: "Centro de Imagem Natal", category: "Diagnóstico por Imagem", address: "Natal/RN" },
-  { name: "Fisio Center", category: "Fisioterapia", address: "Natal/RN" },
-  { name: "Pronto Socorro Zona Sul", category: "Pronto Socorro", address: "Natal/RN" },
-];
+interface Specialty {
+  id: string;
+  name: string;
+  slug: string;
+}
 
-const categories = [
-  "Todos",
-  "Hospitais",
-  "Clínicas",
-  "Laboratórios",
-  "Diagnóstico por Imagem",
-  "Fisioterapia",
-  "Pronto Socorro",
-];
+type TabType = "hospitais" | "medicos";
 
 export default function RedeCredenciadaPage() {
-  const [activeTab, setActiveTab] = useState<"principais" | "completa">("principais");
-  const [selectedCategory, setSelectedCategory] = useState("Todos");
+  const [activeTab, setActiveTab] = useState<TabType>("hospitais");
+  const [busca, setBusca] = useState("");
+  const [especialidadeId, setEspecialidadeId] = useState("");
+  const [hospitals, setHospitals] = useState<Hospital[]>([]);
+  const [doctors, setDoctors] = useState<Doctor[]>([]);
+  const [specialties, setSpecialties] = useState<Specialty[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  const filteredProviders =
-    selectedCategory === "Todos"
-      ? allProviders
-      : allProviders.filter((p) => p.category === selectedCategory);
+  // Load specialties once
+  useEffect(() => {
+    fetch("/api/rede-credenciada?tipo=especialidades")
+      .then((r) => r.json())
+      .then((res) => setSpecialties(res.data ?? []))
+      .catch(() => {});
+  }, []);
+
+  const fetchData = useCallback(async () => {
+    setLoading(true);
+    try {
+      const params = new URLSearchParams({ tipo: activeTab });
+      if (busca.trim()) params.set("busca", busca.trim());
+      if (activeTab === "medicos" && especialidadeId) {
+        params.set("especialidade", especialidadeId);
+      }
+
+      const res = await fetch(`/api/rede-credenciada?${params}`);
+      const json = await res.json();
+
+      if (activeTab === "hospitais") {
+        setHospitals(json.data ?? []);
+      } else {
+        setDoctors(json.data ?? []);
+      }
+    } catch {
+      // silent
+    } finally {
+      setLoading(false);
+    }
+  }, [activeTab, busca, especialidadeId]);
+
+  useEffect(() => {
+    const timer = setTimeout(fetchData, 300);
+    return () => clearTimeout(timer);
+  }, [fetchData]);
+
+  const handleTabChange = (tab: TabType) => {
+    setActiveTab(tab);
+    setBusca("");
+    setEspecialidadeId("");
+  };
 
   return (
     <>
@@ -67,116 +103,257 @@ export default function RedeCredenciadaPage() {
         </div>
       </section>
 
-      {/* Tabs */}
+      {/* Content */}
       <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4">
-          {/* Tab Buttons */}
-          <div className="flex justify-center mb-12">
+          {/* Tabs */}
+          <div className="flex justify-center mb-10">
             <div className="inline-flex bg-card rounded-xl p-1.5 border border-border">
               <button
-                onClick={() => setActiveTab("principais")}
+                onClick={() => handleTabChange("hospitais")}
                 className={`px-6 py-3 rounded-lg font-semibold text-sm transition-all cursor-pointer ${
-                  activeTab === "principais"
+                  activeTab === "hospitais"
                     ? "bg-primary text-white shadow-sm"
                     : "text-muted hover:text-foreground"
                 }`}
               >
-                Principais da Rede
+                Hospitais e Clínicas
               </button>
               <button
-                onClick={() => setActiveTab("completa")}
+                onClick={() => handleTabChange("medicos")}
                 className={`px-6 py-3 rounded-lg font-semibold text-sm transition-all cursor-pointer ${
-                  activeTab === "completa"
+                  activeTab === "medicos"
                     ? "bg-primary text-white shadow-sm"
                     : "text-muted hover:text-foreground"
                 }`}
               >
-                Rede Completa
+                Médicos
               </button>
             </div>
           </div>
 
-          {/* Tab 1: Principais */}
-          {activeTab === "principais" && (
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              {featuredProviders.map((provider) => (
+          {/* Filters */}
+          <div className="max-w-3xl mx-auto mb-10">
+            <div className="flex flex-col sm:flex-row gap-3">
+              <div className="flex-1 relative">
+                <svg
+                  className="absolute left-3.5 top-1/2 -translate-y-1/2 w-5 h-5 text-muted pointer-events-none"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  />
+                </svg>
+                <input
+                  type="text"
+                  placeholder={
+                    activeTab === "hospitais"
+                      ? "Buscar hospital ou clínica..."
+                      : "Buscar médico por nome..."
+                  }
+                  value={busca}
+                  onChange={(e) => setBusca(e.target.value)}
+                  className="w-full pl-11 pr-4 py-3 rounded-lg border border-border bg-white text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
+                />
+              </div>
+              {activeTab === "medicos" && specialties.length > 0 && (
+                <select
+                  value={especialidadeId}
+                  onChange={(e) => setEspecialidadeId(e.target.value)}
+                  className="px-4 py-3 rounded-lg border border-border bg-white text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors appearance-none cursor-pointer sm:w-64"
+                >
+                  <option value="">Todas especialidades</option>
+                  {specialties.map((s) => (
+                    <option key={s.id} value={s.id}>
+                      {s.name}
+                    </option>
+                  ))}
+                </select>
+              )}
+            </div>
+          </div>
+
+          {/* Loading */}
+          {loading && (
+            <div className="flex justify-center py-16">
+              <div className="w-8 h-8 border-3 border-primary/30 border-t-primary rounded-full animate-spin" />
+            </div>
+          )}
+
+          {/* Hospitals List */}
+          {!loading && activeTab === "hospitais" && (
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
+              {hospitals.map((h) => (
                 <div
-                  key={provider.name}
+                  key={h.id}
                   className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow border border-border"
                 >
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                    </svg>
-                  </div>
-                  <h3 className="text-lg font-bold text-foreground mb-1">
-                    {provider.name}
-                  </h3>
-                  <p className="text-sm text-muted mb-2">{provider.category}</p>
-                  {provider.address && (
-                    <p className="text-sm text-muted flex items-center gap-1">
-                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="w-11 h-11 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
+                      <svg
+                        className="w-5 h-5 text-primary"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                        />
                       </svg>
-                      {provider.address}
+                    </div>
+                    {h.has_emergency && (
+                      <span className="bg-red-50 text-red-600 text-xs font-semibold px-2.5 py-1 rounded-full">
+                        Urgência
+                      </span>
+                    )}
+                  </div>
+                  <h3 className="text-lg font-bold text-foreground mb-1.5">
+                    {h.name}
+                  </h3>
+                  {(h.address || h.neighborhood) && (
+                    <p className="text-sm text-muted flex items-start gap-1.5 mb-1">
+                      <svg
+                        className="w-4 h-4 mt-0.5 shrink-0"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                        />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                        />
+                      </svg>
+                      <span>
+                        {h.address}
+                        {h.neighborhood && ` — ${h.neighborhood}`}
+                        {`, ${h.city}/${h.state}`}
+                      </span>
+                    </p>
+                  )}
+                  {h.phone && (
+                    <p className="text-sm text-muted flex items-center gap-1.5">
+                      <svg
+                        className="w-4 h-4 shrink-0"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                        />
+                      </svg>
+                      {h.phone}
                     </p>
                   )}
                 </div>
               ))}
+              {hospitals.length === 0 && (
+                <p className="col-span-full text-center text-muted py-8">
+                  Nenhum hospital ou clínica encontrado.
+                </p>
+              )}
             </div>
           )}
 
-          {/* Tab 2: Completa */}
-          {activeTab === "completa" && (
-            <>
-              {/* Category Filters */}
-              <div className="flex flex-wrap justify-center gap-3 mb-10">
-                {categories.map((cat) => (
-                  <button
-                    key={cat}
-                    onClick={() => setSelectedCategory(cat)}
-                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all cursor-pointer ${
-                      selectedCategory === cat
-                        ? "bg-primary text-white"
-                        : "bg-card text-muted hover:text-foreground border border-border"
-                    }`}
-                  >
-                    {cat}
-                  </button>
-                ))}
-              </div>
-
-              {/* Provider List */}
-              <div className="max-w-3xl mx-auto space-y-3">
-                {filteredProviders.map((provider) => (
-                  <div
-                    key={provider.name}
-                    className="bg-white rounded-xl p-5 shadow-sm border border-border flex items-center justify-between"
-                  >
-                    <div>
-                      <h3 className="font-semibold text-foreground">
-                        {provider.name}
+          {/* Doctors List */}
+          {!loading && activeTab === "medicos" && (
+            <div className="max-w-3xl mx-auto space-y-3">
+              {doctors.map((d) => (
+                <div
+                  key={d.id}
+                  className="bg-white rounded-xl p-5 shadow-sm border border-border hover:shadow-md transition-shadow"
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="min-w-0">
+                      <h3 className="font-bold text-foreground">
+                        {d.name}
                       </h3>
-                      <p className="text-sm text-muted">
-                        {provider.category}
-                        {provider.address && ` - ${provider.address}`}
+                      {d.crm && (
+                        <p className="text-xs text-muted mt-0.5">
+                          CRM {d.crm}
+                        </p>
+                      )}
+                      {d.specialties && d.specialties.length > 0 && (
+                        <div className="flex flex-wrap gap-1.5 mt-2">
+                          {d.specialties.map((spec) => (
+                            <span
+                              key={spec}
+                              className="bg-primary-light text-primary text-xs font-medium px-2.5 py-0.5 rounded-full"
+                            >
+                              {spec}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                      <p className="text-sm text-muted mt-2">
+                        {d.city}/{d.state}
                       </p>
                     </div>
-                    {provider.featured && (
-                      <span className="bg-accent/10 text-accent text-xs font-semibold px-3 py-1 rounded-full">
-                        Destaque
-                      </span>
+                    {(d.phone || d.whatsapp) && (
+                      <div className="flex gap-2 shrink-0">
+                        {d.whatsapp && (
+                          <a
+                            href={`https://wa.me/55${d.whatsapp.replace(/\D/g, "")}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-9 h-9 bg-green-50 text-green-600 rounded-lg flex items-center justify-center hover:bg-green-100 transition-colors"
+                            aria-label="WhatsApp"
+                          >
+                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                            </svg>
+                          </a>
+                        )}
+                        {d.phone && (
+                          <a
+                            href={`tel:${d.phone.replace(/\D/g, "")}`}
+                            className="w-9 h-9 bg-primary/10 text-primary rounded-lg flex items-center justify-center hover:bg-primary/20 transition-colors"
+                            aria-label="Ligar"
+                          >
+                            <svg
+                              className="w-4 h-4"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                              strokeWidth={2}
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                              />
+                            </svg>
+                          </a>
+                        )}
+                      </div>
                     )}
                   </div>
-                ))}
-                {filteredProviders.length === 0 && (
-                  <p className="text-center text-muted py-8">
-                    Nenhum prestador encontrado nesta categoria.
-                  </p>
-                )}
-              </div>
-            </>
+                </div>
+              ))}
+              {doctors.length === 0 && (
+                <p className="text-center text-muted py-8">
+                  Nenhum médico encontrado.
+                </p>
+              )}
+            </div>
           )}
         </div>
       </section>
