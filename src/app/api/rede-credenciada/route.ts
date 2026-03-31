@@ -77,7 +77,7 @@ export async function GET(request: NextRequest) {
     // Default: hospitais
     let query = supabase
       .from("hospitals")
-      .select("id, name, city, state, neighborhood, address, phone, has_emergency")
+      .select("id, name, city, state, neighborhood, address, phone, has_emergency, lat, lng")
       .eq("active", true)
       .order("name");
 
