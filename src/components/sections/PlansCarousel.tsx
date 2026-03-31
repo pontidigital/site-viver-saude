@@ -34,7 +34,7 @@ const plans = [
     slug: "safira",
     tagline: "Alta qualidade para quem busca agilidade e desempenho.",
     image: "/images/plans/safira.png",
-    color: "from-blue-400 to-blue-600",
+    color: "from-sky-400 to-sky-600",
   },
   {
     name: "Turmalina",

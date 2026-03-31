@@ -21,7 +21,7 @@ export function Header() {
   return (
     <>
       {/* Top utility bar */}
-      <div className="bg-[#1e3a5f] text-white text-sm hidden lg:block">
+      <div className="bg-primary text-white text-sm hidden lg:block">
         <div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
           <div className="flex items-center gap-6">
             <a href={`tel:${SITE.phone}`} className="flex items-center gap-2 hover:text-accent transition-colors">

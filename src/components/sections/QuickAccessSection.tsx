@@ -39,7 +39,7 @@ export function QuickAccessSection() {
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1e3a5f]/80 to-[#1e3a5f]/20" />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-primary/20" />
                 <div className="absolute bottom-4 left-6">
                   <h3 className="text-white text-xl font-bold">Área do Cliente</h3>
                 </div>

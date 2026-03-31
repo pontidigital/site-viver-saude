@@ -9,7 +9,7 @@ export const metadata = {
 const categories = [
   { label: "Comunicados", color: "bg-primary/10 text-primary" },
   { label: "Rede", color: "bg-accent/10 text-accent-dark" },
-  { label: "Benefícios", color: "bg-blue-50 text-blue-600" },
+  { label: "Benefícios", color: "bg-primary/10 text-primary" },
   { label: "Orientações", color: "bg-emerald-50 text-emerald-600" },
 ];
 
