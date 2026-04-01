@@ -76,7 +76,7 @@ export default function QuemSomosPage() {
             <ScrollAnimationWrapper direction="left">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
                 <Image
-                  src="/images/general/img-quem-somos.jpg"
+                  src="/images/general/img-quem-somos.png"
                   alt="Equipe Viver Saúde"
                   fill
                   className="object-cover"

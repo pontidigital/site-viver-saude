@@ -32,7 +32,7 @@ export const MEDIA = {
 
   quemSomos: {
     team: {
-      src: "/images/general/img-quem-somos.jpg",
+      src: "/images/general/img-quem-somos.png",
       alt: "Equipe de profissionais da Viver Saúde comprometida com o seu cuidado",
     },
     valores: {
