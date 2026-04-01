@@ -56,7 +56,7 @@ export function HeroSection() {
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-accent/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl" />
 
       <div className="max-w-7xl mx-auto px-4 lg:px-6 py-16 lg:py-24 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-end">
           {/* Text content */}
           <div>
             <motion.div
@@ -111,7 +111,7 @@ export function HeroSection() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="hidden lg:block"
+            className="hidden lg:flex items-end self-end"
           >
             <div className="relative">
               <Image
@@ -119,7 +119,7 @@ export function HeroSection() {
                 alt="Família sorrindo com plano Viver Saúde"
                 width={600}
                 height={500}
-                className="rounded-2xl"
+                className="rounded-2xl object-contain object-bottom"
                 priority
               />
               {/* Floating card with float animation */}
