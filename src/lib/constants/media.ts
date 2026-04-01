@@ -42,6 +42,10 @@ export const MEDIA = {
   },
 
   nossaCasa: {
+    casa: {
+      src: "/images/nossa-casa/casa.avif",
+      alt: "Sede da Viver Saúde em Natal RN",
+    },
     fachada: {
       src: "/images/nossa-casa/fachada.jpg",
       alt: "Fachada moderna da sede Viver Saúde em Natal RN",
