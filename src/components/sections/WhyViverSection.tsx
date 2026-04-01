@@ -19,7 +19,7 @@ const benefits = [
       </svg>
     ),
     title: "Rede preparada para cuidar de você",
-    description: "Atendimento de qualidade para você e sua família, com rede credenciada ampla e organizada em Natal/RN.",
+    description: "Atendimento de qualidade para você e sua família, com profissionais preparados em Natal/RN.",
   },
   {
     icon: (
