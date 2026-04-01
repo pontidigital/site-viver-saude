@@ -4,10 +4,11 @@ import Image from "next/image";
 import { ScrollAnimationWrapper } from "@/components/shared/ScrollAnimationWrapper";
 import { MEDIA } from "@/lib/constants/media";
 
-const supportingImages = [
+const galleryImages = [
   MEDIA.nossaCasa.fachada,
   MEDIA.nossaCasa.recepcao,
   MEDIA.nossaCasa.salaAtendimento,
+  MEDIA.nossaCasa.espacoInterno,
 ];
 
 export function SpaceGallery() {
@@ -20,23 +21,9 @@ export function SpaceGallery() {
           </h2>
         </ScrollAnimationWrapper>
 
-        <div className="max-w-5xl mx-auto space-y-6">
-          {/* Featured image */}
-          <ScrollAnimationWrapper>
-            <div className="relative aspect-[16/9] rounded-2xl overflow-hidden shadow-xl">
-              <Image
-                src={MEDIA.nossaCasa.casa.src}
-                alt={MEDIA.nossaCasa.casa.alt}
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 1024px"
-              />
-            </div>
-          </ScrollAnimationWrapper>
-
-          {/* Supporting grid */}
-          <div className="grid sm:grid-cols-3 gap-4 lg:gap-6">
-            {supportingImages.map((img, idx) => (
+        <div className="max-w-5xl mx-auto">
+          <div className="grid sm:grid-cols-2 gap-4 lg:gap-6">
+            {galleryImages.map((img, idx) => (
               <ScrollAnimationWrapper key={idx} delay={idx * 0.12}>
                 <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-md group">
                   <Image
@@ -44,7 +31,7 @@ export function SpaceGallery() {
                     alt={img.alt}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
               </ScrollAnimationWrapper>
