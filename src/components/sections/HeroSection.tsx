@@ -18,7 +18,7 @@ export function HeroSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden bg-gradient-to-br from-accent/5 via-white to-primary-light min-h-[600px] lg:min-h-[700px] flex items-center"
+      className="relative overflow-hidden bg-gradient-to-br from-accent/5 via-white to-primary-light min-h-[500px] lg:min-h-[auto] flex items-center"
     >
       {/* Background video - subtle, behind all content */}
       <video
@@ -55,7 +55,7 @@ export function HeroSection() {
       <div className="absolute top-0 right-0 w-96 h-96 bg-accent/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-accent/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl" />
 
-      <div className="max-w-7xl mx-auto px-4 lg:px-6 pt-16 lg:pt-24 pb-16 lg:pb-0 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 lg:px-6 pt-10 lg:pt-12 pb-16 lg:pb-0 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-end">
           {/* Text content */}
           <div>
