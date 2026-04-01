@@ -35,7 +35,6 @@ export const NAV_ITEMS = [
     children: [
       { label: "Topázio", href: "/planos/topazio" },
       { label: "Rubi", href: "/planos/rubi" },
-      { label: "Esmeralda", href: "/planos/esmeralda" },
       { label: "Safira", href: "/planos/safira" },
       { label: "Turmalina", href: "/planos/turmalina" },
       { label: "Quartzo", href: "/planos/quartzo" },

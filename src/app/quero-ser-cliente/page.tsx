@@ -24,7 +24,6 @@ type FormData = z.infer<typeof formSchema>;
 const planOptions = [
   { value: "topazio", label: "Topázio" },
   { value: "rubi", label: "Rubi" },
-  { value: "esmeralda", label: "Esmeralda" },
   { value: "safira", label: "Safira" },
   { value: "turmalina", label: "Turmalina" },
   { value: "quartzo", label: "Quartzo" },

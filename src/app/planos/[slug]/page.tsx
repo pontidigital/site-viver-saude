@@ -25,10 +25,10 @@ const plansData: Record<string, PlanData> = {
   topazio: {
     name: "Topázio",
     slug: "topazio",
-    tagline: "Acompanhamento contínuo e foco em prevenção",
+    tagline: "Plano ambulatorial empresarial com foco em consultas e prevenção",
     image: "/images/plans/topázio.png",
     description:
-      "O plano Topázio foi desenvolvido para quem valoriza o acompanhamento preventivo e o cuidado contínuo. Com foco em consultas regulares e orientação médica, ele garante que você esteja sempre um passo à frente quando o assunto é saúde.",
+      "O plano Topázio é ambulatorial e voltado para empresas que buscam cuidado preventivo para seus colaboradores. Com foco em consultas regulares, exames e orientação médica, ele garante acompanhamento contínuo sem necessidade de cobertura hospitalar.",
     highlights: [
       "Consultas com clínico geral e especialistas",
       "Exames preventivos e de rotina",
@@ -63,30 +63,13 @@ const plansData: Record<string, PlanData> = {
       { label: "Rubi CE QC", file: "/docs/condicoes-gerais/rubi-ce-qc.pdf" },
     ],
   },
-  esmeralda: {
-    name: "Esmeralda",
-    slug: "esmeralda",
-    tagline: "Estabilidade e cuidado contínuo",
-    image: "/images/plans/esmeralda.png",
-    description:
-      "O plano Esmeralda combina estabilidade com cuidado contínuo. Pensado para quem deseja manter a saúde em dia com tranquilidade e previsibilidade, oferecendo uma experiência consistente e confiável.",
-    highlights: [
-      "Acompanhamento médico regular",
-      "Exames periódicos e preventivos",
-      "Consultas com especialistas",
-      "Estabilidade no atendimento",
-      "Suporte contínuo ao beneficiário",
-    ],
-    targetAudience:
-      "Indicado para quem valoriza estabilidade e quer manter o cuidado com a saúde de forma contínua e organizada.",
-  },
   safira: {
     name: "Safira",
     slug: "safira",
-    tagline: "Alta qualidade e agilidade no atendimento",
+    tagline: "Plano individual e por adesão, com foco em longevidade e prevenção",
     image: "/images/plans/safira.png",
     description:
-      "O plano Safira é para quem não abre mão de qualidade e agilidade. Com acesso facilitado a uma rede de excelência e atendimento rápido, ele proporciona a melhor experiência em cuidados de saúde.",
+      "O plano Safira é para quem busca cuidado individual de qualidade. Disponível para contratação por pessoa física e por adesão, oferece acesso a uma rede de atenção primária com foco em prevenção e longevidade.",
     highlights: [
       "Atendimento ágil e sem burocracia",
       "Acesso a profissionais de alta qualidade",
@@ -141,6 +124,67 @@ const plansData: Record<string, PlanData> = {
     condicoesGerais: [
       { label: "Quartzo CA QC", file: "/docs/condicoes-gerais/quartzo-ca-qc.pdf" },
       { label: "Quartzo CE QC", file: "/docs/condicoes-gerais/quartzo-ce-qc.pdf" },
+    ],
+  },
+  ametista: {
+    name: "Ametista",
+    slug: "ametista",
+    tagline: "Voltado ao público sênior, com acompanhamento próximo e segurança",
+    image: "/images/plans/ametista.avif",
+    description:
+      "O plano Ametista foi pensado para o público sênior que busca tranquilidade e cuidado dedicado. Com cobertura empresarial e foco em acompanhamento próximo, oferece segurança e atenção especializada para quem precisa de cuidados contínuos.",
+    highlights: [
+      "Acompanhamento dedicado ao público sênior",
+      "Cobertura hospitalar com quarto coletivo",
+      "Consultas com especialistas em geriatria",
+      "Exames preventivos e de rotina",
+      "Atendimento humanizado e próximo",
+    ],
+    targetAudience:
+      "Voltado para empresas que desejam oferecer cobertura de saúde dedicada a colaboradores e dependentes sêniores.",
+    condicoesGerais: [
+      { label: "Ametista CE QC", file: "/docs/condicoes-gerais/ametista-ce-qc.pdf" },
+    ],
+  },
+  diamante: {
+    name: "Diamante",
+    slug: "diamante",
+    tagline: "Plano empresarial com opção de quarto privativo e cobertura completa",
+    image: "/images/plans/diamante.avif",
+    description:
+      "O plano Diamante é o plano empresarial com o mais alto nível de conforto. Com opção de quarto privativo e cobertura completa, oferece cuidado eficiente e estrutura hospitalar e ambulatorial para quem valoriza privacidade e qualidade.",
+    highlights: [
+      "Opção de quarto privativo (exclusivo Diamante)",
+      "Cobertura hospitalar e ambulatorial completa",
+      "Atendimento de urgência e emergência",
+      "Rede credenciada ampla e qualificada",
+      "Conforto e privacidade no atendimento",
+    ],
+    targetAudience:
+      "Para empresas que buscam o mais alto padrão de cobertura, com opção de quarto privativo para seus colaboradores.",
+    condicoesGerais: [
+      { label: "Diamante CE QC", file: "/docs/condicoes-gerais/diamante-ce-qc.pdf" },
+      { label: "Diamante CE QP (Quarto Privativo)", file: "/docs/condicoes-gerais/diamante-ce-qp.pdf" },
+    ],
+  },
+  turquesa: {
+    name: "Turquesa",
+    slug: "turquesa",
+    tagline: "Plano empresarial com cobertura hospitalar de alto padrão",
+    image: "/images/plans/turquesa.avif",
+    description:
+      "O plano Turquesa oferece cobertura hospitalar de alto padrão para empresas que valorizam qualidade no atendimento. Com acesso a uma rede credenciada diferenciada, garante cuidado completo e seguro para seus beneficiários.",
+    highlights: [
+      "Cobertura hospitalar de alto padrão",
+      "Atendimento de urgência e emergência",
+      "Rede credenciada diferenciada",
+      "Internações e procedimentos cirúrgicos",
+      "Suporte dedicado ao beneficiário",
+    ],
+    targetAudience:
+      "Para empresas que buscam cobertura hospitalar de qualidade com atendimento diferenciado.",
+    condicoesGerais: [
+      { label: "Turquesa CE QC", file: "/docs/condicoes-gerais/turquesa-ce-qc.pdf" },
     ],
   },
 };

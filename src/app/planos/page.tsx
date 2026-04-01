@@ -6,32 +6,26 @@ import { WHATSAPP_URL } from "@/lib/constants/site";
 export const metadata = {
   title: "Planos",
   description:
-    "Encontre o plano de saúde ideal para você e sua família. Conheça os planos Topázio, Rubi, Esmeralda, Safira, Turmalina, Quartzo, Ametista, Diamante e Turquesa da Viver Saúde.",
+    "Encontre o plano de saúde ideal para você e sua família. Conheça os planos Topázio, Rubi, Safira, Turmalina, Quartzo, Ametista, Diamante e Turquesa da Viver Saúde.",
 };
 
 const plans = [
   {
     name: "Topázio",
     slug: "topazio",
-    tagline: "Estabilidade e cuidado contínuo, para quem valoriza equilíbrio e confiança",
+    tagline: "Plano ambulatorial empresarial com foco em consultas e prevenção",
     image: "/images/plans/topázio.png",
   },
   {
     name: "Rubi",
     slug: "rubi",
-    tagline: "Qualidade e cuidado completo em todas as fases da vida",
+    tagline: "Cobertura completa para empresas e adesão, com rede ampla",
     image: "/images/plans/rubi.png",
-  },
-  {
-    name: "Esmeralda",
-    slug: "esmeralda",
-    tagline: "Cobertura premium com atendimento exclusivo",
-    image: "/images/plans/esmeralda.png",
   },
   {
     name: "Safira",
     slug: "safira",
-    tagline: "Atenção primária ideal para longevidade, prevenção e qualidade de vida",
+    tagline: "Plano individual e por adesão, com foco em longevidade e prevenção",
     image: "/images/plans/safira.png",
   },
   {
@@ -49,19 +43,19 @@ const plans = [
   {
     name: "Ametista",
     slug: "ametista",
-    tagline: "Voltado ao público sênior, com tranquilidade, segurança e acompanhamento próximo",
+    tagline: "Voltado ao público sênior, com acompanhamento próximo e segurança",
     image: "/images/plans/ametista.avif",
   },
   {
     name: "Diamante",
     slug: "diamante",
-    tagline: "Plano essencial com eficiência, estrutura hospitalar e ambulatorial",
+    tagline: "Plano empresarial com opção de quarto privativo e cobertura completa",
     image: "/images/plans/diamante.avif",
   },
   {
     name: "Turquesa",
     slug: "turquesa",
-    tagline: "Atendimento diferenciado com cobertura de alto padrão",
+    tagline: "Plano empresarial com cobertura hospitalar de alto padrão",
     image: "/images/plans/turquesa.avif",
   },
 ];
