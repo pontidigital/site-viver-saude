@@ -55,6 +55,7 @@ export default function RedeCredenciadaPage() {
   const [tab, setTab] = useState<TabType>("hospitais");
   const [busca, setBusca] = useState("");
   const [especialidadeId, setEspecialidadeId] = useState("");
+  const [somenteUrgencia, setSomenteUrgencia] = useState(false);
   const [especialidades, setEspecialidades] = useState<Specialty[]>([]);
   const [hospitals, setHospitals] = useState<Hospital[]>([]);
   const [doctors, setDoctors] = useState<Doctor[]>([]);
@@ -76,7 +77,8 @@ export default function RedeCredenciadaPage() {
     try {
       const params = new URLSearchParams({ tipo: tab });
       if (busca.trim()) params.set("busca", busca.trim());
-      if (especialidadeId) params.set("especialidade", especialidadeId);
+      if (tab === "medicos" && especialidadeId) params.set("especialidade", especialidadeId);
+      if (tab === "hospitais" && somenteUrgencia) params.set("urgencia", "true");
 
       const res = await fetch(`/api/rede-credenciada?${params}`);
       const json = await res.json();
@@ -91,7 +93,7 @@ export default function RedeCredenciadaPage() {
     } finally {
       setLoading(false);
     }
-  }, [tab, busca, especialidadeId]);
+  }, [tab, busca, especialidadeId, somenteUrgencia]);
 
   useEffect(() => {
     const timer = setTimeout(fetchData, 300);
@@ -104,6 +106,7 @@ export default function RedeCredenciadaPage() {
     setTab(next);
     setBusca("");
     setEspecialidadeId("");
+    setSomenteUrgencia(false);
     setSortByDistance(false);
   };
 
@@ -237,19 +240,38 @@ export default function RedeCredenciadaPage() {
                   />
                 </div>
 
-                {/* Specialty filter */}
-                <select
-                  value={especialidadeId}
-                  onChange={(e) => setEspecialidadeId(e.target.value)}
-                  className="px-4 py-3 rounded-lg border border-border bg-white text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors shrink-0"
-                >
-                  <option value="">Todas as especialidades</option>
-                  {especialidades.map((e) => (
-                    <option key={e.id} value={e.id}>
-                      {e.name}
-                    </option>
-                  ))}
-                </select>
+                {/* Urgência filter - hospitals only */}
+                {tab === "hospitais" && (
+                  <button
+                    onClick={() => setSomenteUrgencia(!somenteUrgencia)}
+                    className={`inline-flex items-center gap-2 px-5 py-3 rounded-lg text-sm font-semibold transition-all cursor-pointer shrink-0 ${
+                      somenteUrgencia
+                        ? "bg-red-600 text-white shadow-sm"
+                        : "bg-white border border-border text-foreground hover:border-red-400 hover:text-red-600"
+                    }`}
+                  >
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+                    </svg>
+                    {somenteUrgencia ? "Urgência (ativo)" : "Urgência"}
+                  </button>
+                )}
+
+                {/* Specialty filter - doctors only */}
+                {tab === "medicos" && (
+                  <select
+                    value={especialidadeId}
+                    onChange={(e) => setEspecialidadeId(e.target.value)}
+                    className="px-4 py-3 rounded-lg border border-border bg-white text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors shrink-0"
+                  >
+                    <option value="">Todas as especialidades</option>
+                    {especialidades.map((e) => (
+                      <option key={e.id} value={e.id}>
+                        {e.name}
+                      </option>
+                    ))}
+                  </select>
+                )}
 
                 {/* Nearest button - only for hospitals */}
                 {tab === "hospitais" && (

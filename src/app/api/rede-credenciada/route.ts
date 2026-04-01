@@ -8,6 +8,7 @@ export async function GET(request: NextRequest) {
   const tipo = searchParams.get("tipo"); // "hospitais" | "medicos" | "especialidades"
   const especialidade = searchParams.get("especialidade");
   const busca = searchParams.get("busca");
+  const urgencia = searchParams.get("urgencia");
 
   try {
     const supabase = createGuiaMedicoClient();
@@ -83,6 +84,10 @@ export async function GET(request: NextRequest) {
 
     if (busca) {
       query = query.ilike("name", `%${busca}%`);
+    }
+
+    if (urgencia === "true") {
+      query = query.eq("has_emergency", true);
     }
 
     const { data: hospitals, error } = await query;
