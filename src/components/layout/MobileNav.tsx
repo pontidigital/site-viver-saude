@@ -26,6 +26,14 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
     };
   }, [isOpen]);
 
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    if (isOpen) document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
+  }, [isOpen, onClose]);
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -45,6 +53,9 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", damping: 30, stiffness: 300 }}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Menu de navegação"
             className="fixed top-0 right-0 bottom-0 w-[85%] max-w-sm bg-white z-50 shadow-2xl overflow-y-auto"
           >
             <div className="p-6">
@@ -59,7 +70,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
                 />
                 <button
                   onClick={onClose}
-                  className="p-2 text-muted hover:text-foreground transition-colors"
+                  className="p-2.5 text-muted hover:text-foreground transition-colors"
                   aria-label="Fechar menu"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -69,7 +80,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
               </div>
 
               {/* Nav items */}
-              <nav className="space-y-1">
+              <nav aria-label="Navegação principal" className="space-y-1">
                 {NAV_ITEMS.map((item) => (
                   <div key={item.href}>
                     {"children" in item ? (

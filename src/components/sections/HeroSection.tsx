@@ -26,6 +26,7 @@ export function HeroSection() {
         muted
         loop
         playsInline
+        aria-hidden="true"
         poster={MEDIA.hero.video.poster}
         className="absolute inset-0 w-full h-full object-cover opacity-15 z-0"
       >
@@ -94,7 +95,7 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 0.45 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <div className="animate-pulse-glow rounded-xl">
+              <div className="animate-pulse-glow rounded-lg">
                 <Button href="/quero-ser-cliente" size="lg">
                   Quero contratar
                 </Button>

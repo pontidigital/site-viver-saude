@@ -37,6 +37,7 @@ export function QuickAccessSection() {
                   src="/images/general/cliente.png"
                   alt="Área do Cliente Viver Saúde"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover object-top group-hover:scale-110 transition-transform duration-700 ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-primary/20" />
@@ -70,6 +71,7 @@ export function QuickAccessSection() {
                   src="/images/general/prestador.png"
                   alt="Área do Prestador Viver Saúde"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover object-top group-hover:scale-110 transition-transform duration-700 ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-accent-dark/80 to-accent/20" />

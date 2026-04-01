@@ -6,45 +6,63 @@ import { WHATSAPP_URL } from "@/lib/constants/site";
 export const metadata = {
   title: "Planos",
   description:
-    "Encontre o plano de saúde ideal para você e sua família. Conheça os planos Topázio, Rubi, Esmeralda, Safira, Turmalina e Quartzo da Viver Saúde.",
+    "Encontre o plano de saúde ideal para você e sua família. Conheça os planos Topázio, Rubi, Esmeralda, Safira, Turmalina, Quartzo, Ametista, Diamante e Turquesa da Viver Saúde.",
 };
 
 const plans = [
   {
     name: "Topázio",
     slug: "topazio",
-    tagline: "Acompanhamento contínuo e foco em prevenção",
+    tagline: "Estabilidade e cuidado contínuo, para quem valoriza equilíbrio e confiança",
     image: "/images/plans/topázio.png",
   },
   {
     name: "Rubi",
     slug: "rubi",
-    tagline: "Cobertura completa para todas as fases da vida",
+    tagline: "Qualidade e cuidado completo em todas as fases da vida",
     image: "/images/plans/rubi.png",
   },
   {
     name: "Esmeralda",
     slug: "esmeralda",
-    tagline: "Estabilidade e cuidado contínuo",
+    tagline: "Cobertura premium com atendimento exclusivo",
     image: "/images/plans/esmeralda.png",
   },
   {
     name: "Safira",
     slug: "safira",
-    tagline: "Alta qualidade e agilidade no atendimento",
+    tagline: "Atenção primária ideal para longevidade, prevenção e qualidade de vida",
     image: "/images/plans/safira.png",
   },
   {
     name: "Turmalina",
     slug: "turmalina",
-    tagline: "Cobertura essencial para internações",
+    tagline: "Cuidado integral com acompanhamento contínuo da saúde",
     image: "/images/plans/turmalina.png",
   },
   {
     name: "Quartzo",
     slug: "quartzo",
-    tagline: "Proteção acessível para necessidades essenciais",
+    tagline: "Completo e prático, com atendimento ambulatorial e hospitalar",
     image: "/images/plans/quarzo.png",
+  },
+  {
+    name: "Ametista",
+    slug: "ametista",
+    tagline: "Voltado ao público sênior, com tranquilidade, segurança e acompanhamento próximo",
+    image: "/images/plans/ametista.avif",
+  },
+  {
+    name: "Diamante",
+    slug: "diamante",
+    tagline: "Plano essencial com eficiência, estrutura hospitalar e ambulatorial",
+    image: "/images/plans/diamante.avif",
+  },
+  {
+    name: "Turquesa",
+    slug: "turquesa",
+    tagline: "Atendimento diferenciado com cobertura de alto padrão",
+    image: "/images/plans/turquesa.avif",
   },
 ];
 
@@ -110,7 +128,7 @@ export default function PlanosPage() {
               Precisa de ajuda para escolher?
             </h2>
             <p className="text-muted text-lg mb-8 max-w-xl mx-auto">
-              Nossa equipe está pronta para ajudar você a encontrar o plano ideal.
+              Nossa equipe ajuda você a encontrar o plano certo.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button href="/quero-ser-cliente" variant="primary" size="lg">

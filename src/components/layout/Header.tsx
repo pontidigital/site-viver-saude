@@ -72,7 +72,7 @@ export function Header() {
             </Link>
 
             {/* Desktop nav */}
-            <nav className="hidden lg:flex items-center">
+            <nav aria-label="Navegação principal" className="hidden lg:flex items-center">
               {NAV_ITEMS.map((item) => (
                 <div
                   key={item.href}
@@ -81,6 +81,14 @@ export function Header() {
                     "children" in item ? setOpenDropdown(item.href) : null
                   }
                   onMouseLeave={() => setOpenDropdown(null)}
+                  onFocus={() =>
+                    "children" in item ? setOpenDropdown(item.href) : null
+                  }
+                  onBlur={(e) => {
+                    if (!e.currentTarget.contains(e.relatedTarget)) {
+                      setOpenDropdown(null);
+                    }
+                  }}
                 >
                   <Link
                     href={item.href}
@@ -135,7 +143,7 @@ export function Header() {
 
               <button
                 onClick={() => setIsMobileOpen(true)}
-                className="lg:hidden p-2 text-foreground hover:text-primary transition-colors rounded-lg hover:bg-gray-50"
+                className="lg:hidden p-2.5 text-foreground hover:text-primary transition-colors rounded-lg hover:bg-gray-50"
                 aria-label="Abrir menu"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

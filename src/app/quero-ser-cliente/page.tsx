@@ -28,6 +28,9 @@ const planOptions = [
   { value: "safira", label: "Safira" },
   { value: "turmalina", label: "Turmalina" },
   { value: "quartzo", label: "Quartzo" },
+  { value: "ametista", label: "Ametista" },
+  { value: "diamante", label: "Diamante" },
+  { value: "turquesa", label: "Turquesa" },
 ];
 
 export default function QueroSerClientePage() {
@@ -115,7 +118,7 @@ export default function QueroSerClientePage() {
                 Mensagem enviada!
               </h1>
               <p className="text-lg text-white/90 max-w-xl mx-auto mb-8">
-                Recebemos seus dados com sucesso. Nossa equipe entrará em contato em breve para ajudar você a escolher o melhor plano.
+                Tudo certo! Recebemos seus dados. Em breve, nossa equipe vai falar com você sobre o plano ideal.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button href="/" variant="accent" size="lg">
@@ -147,7 +150,7 @@ export default function QueroSerClientePage() {
               Quero Ser Cliente
             </h1>
             <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
-              Preencha o formulário abaixo e nossa equipe entrará em contato com você.
+              Preencha seus dados e falaremos com você em breve.
             </p>
           </ScrollAnimationWrapper>
         </div>

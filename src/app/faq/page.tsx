@@ -20,7 +20,7 @@ const faqItems: FaqItem[] = [
   },
   {
     question: "Como falar com a Viver Saúde?",
-    answer: `Você pode entrar em contato conosco pelo telefone ${SITE.phone}, pelo WhatsApp ou pelo e-mail ${SITE.email}. Nosso horário de atendimento é de segunda a sexta, das 8h às 17h. Estamos sempre prontos para ajudar!`,
+    answer: `Você pode entrar em contato conosco pelo telefone ${SITE.phone}, pelo WhatsApp ou pelo e-mail ${SITE.email}. Nosso horário de atendimento é de segunda a sexta, das 8h às 17h. Estamos aqui para ajudar você.`,
   },
   {
     question: "Consigo comparar planos no site?",
@@ -102,7 +102,7 @@ export default function FaqPage() {
                   </button>
                   <div
                     className={`overflow-hidden transition-all duration-300 ${
-                      openIndex === idx ? "max-h-96" : "max-h-0"
+                      openIndex === idx ? "max-h-[600px]" : "max-h-0"
                     }`}
                   >
                     <div className="px-6 pb-6 text-muted leading-relaxed">
@@ -124,7 +124,7 @@ export default function FaqPage() {
               Ainda tem dúvidas?
             </h2>
             <p className="text-muted mb-6 max-w-lg mx-auto">
-              Nossa equipe está pronta para ajudar. Entre em contato pelo WhatsApp ou visite nossa página de contato.
+              Fale com a gente pelo WhatsApp ou pela página de contato. Estamos aqui para ajudar.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

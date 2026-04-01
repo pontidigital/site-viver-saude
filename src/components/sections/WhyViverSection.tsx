@@ -47,7 +47,7 @@ export function WhyViverSection() {
           </div>
         </ScrollAnimationWrapper>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {benefits.map((benefit, index) => (
             <ScrollAnimationWrapper key={index} delay={index * 0.15}>
               <div className="group text-center p-8 rounded-2xl hover:bg-accent/5 transition-all duration-300">

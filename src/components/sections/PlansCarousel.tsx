@@ -11,44 +11,65 @@ const plans = [
   {
     name: "Topázio",
     slug: "topazio",
-    tagline: "Acompanhamento contínuo e foco em prevenção e cuidado integral.",
+    tagline: "Estabilidade e cuidado contínuo, para quem valoriza equilíbrio e confiança.",
     image: "/images/plans/topázio.png",
     color: "from-amber-400 to-amber-600",
   },
   {
     name: "Rubi",
     slug: "rubi",
-    tagline: "Cobertura completa para todas as fases da vida.",
+    tagline: "Qualidade e cuidado completo em todas as fases da vida.",
     image: "/images/plans/rubi.png",
     color: "from-red-400 to-red-600",
   },
   {
     name: "Esmeralda",
     slug: "esmeralda",
-    tagline: "Estabilidade e cuidado contínuo para quem prioriza confiança.",
+    tagline: "Cobertura premium com atendimento exclusivo.",
     image: "/images/plans/esmeralda.png",
     color: "from-emerald-400 to-emerald-600",
   },
   {
     name: "Safira",
     slug: "safira",
-    tagline: "Alta qualidade para quem busca agilidade e desempenho.",
+    tagline: "Atenção primária ideal para quem busca longevidade, prevenção e qualidade de vida.",
     image: "/images/plans/safira.png",
     color: "from-sky-400 to-sky-600",
   },
   {
     name: "Turmalina",
     slug: "turmalina",
-    tagline: "Cobertura essencial para internações e atendimentos hospitalares.",
+    tagline: "Cuidado integral com acompanhamento contínuo da saúde.",
     image: "/images/plans/turmalina.png",
     color: "from-pink-400 to-pink-600",
   },
   {
     name: "Quartzo",
     slug: "quartzo",
-    tagline: "Proteção acessível com cobertura para necessidades essenciais.",
+    tagline: "Completo e prático, com atendimento ambulatorial e hospitalar.",
     image: "/images/plans/quarzo.png",
     color: "from-gray-400 to-gray-600",
+  },
+  {
+    name: "Ametista",
+    slug: "ametista",
+    tagline: "Voltado ao público sênior. Tranquilidade, segurança e acompanhamento próximo.",
+    image: "/images/plans/ametista.avif",
+    color: "from-purple-400 to-purple-600",
+  },
+  {
+    name: "Diamante",
+    slug: "diamante",
+    tagline: "Plano essencial com eficiência e cuidado completo. Estrutura hospitalar e ambulatorial.",
+    image: "/images/plans/diamante.avif",
+    color: "from-cyan-300 to-cyan-500",
+  },
+  {
+    name: "Turquesa",
+    slug: "turquesa",
+    tagline: "Atendimento diferenciado com cobertura de alto padrão.",
+    image: "/images/plans/turquesa.avif",
+    color: "from-teal-400 to-teal-600",
   },
 ];
 
@@ -76,16 +97,16 @@ export function PlansCarousel() {
                 Nossos Planos
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-3">
-                Encontre a proteção ideal
+                Planos feitos para cuidar bem da <span className="text-accent-dark">sua saúde</span>
               </h2>
               <p className="text-muted mt-3 max-w-lg">
-                Compare opções com clareza. Nossa equipe ajuda você a escolher a melhor alternativa.
+                Planos descomplicados, com opções para diferentes perfis e fases da vida.
               </p>
             </div>
             <div className="hidden md:flex gap-2">
               <button
                 onClick={scrollPrev}
-                className="w-10 h-10 rounded-full border border-border hover:bg-accent hover:text-white hover:border-accent flex items-center justify-center transition-all"
+                className="w-11 h-11 rounded-full border border-border hover:bg-accent hover:text-white hover:border-accent flex items-center justify-center transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2"
                 aria-label="Plano anterior"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -94,7 +115,7 @@ export function PlansCarousel() {
               </button>
               <button
                 onClick={scrollNext}
-                className="w-10 h-10 rounded-full border border-border hover:bg-accent hover:text-white hover:border-accent flex items-center justify-center transition-all"
+                className="w-11 h-11 rounded-full border border-border hover:bg-accent hover:text-white hover:border-accent flex items-center justify-center transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2"
                 aria-label="Próximo plano"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

@@ -238,7 +238,7 @@ export default function RedeCredenciadaPage() {
                       </svg>
                       <span>
                         {h.address}
-                        {h.neighborhood && ` — ${h.neighborhood}`}
+                        {h.neighborhood && `, ${h.neighborhood}`}
                         {`, ${h.city}/${h.state}`}
                       </span>
                     </p>

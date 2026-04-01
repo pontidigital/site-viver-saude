@@ -10,12 +10,14 @@ export const metadata = {
 };
 
 const amenities = [
-  "Recepção acolhedora e confortável",
-  "Salas de atendimento climatizadas",
+  "Espaço Nutrição",
+  "Café e Lounge",
+  "Salas para Oficinas",
+  "Aulas de Movimento",
+  "Sala de Artes",
+  "Hidroginástica",
+  "Sala de Ballet e Dança",
   "Acessibilidade para todos os públicos",
-  "Ambiente pensado para o bem-estar",
-  "Localização estratégica em Natal/RN",
-  "Estacionamento para visitantes",
 ];
 
 const galleryImages = [
@@ -48,10 +50,13 @@ export default function NossaCasaPage() {
           <div className="max-w-3xl mx-auto text-center">
             <ScrollAnimationWrapper>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Conforto e acolhimento em cada detalhe
+                Mais que uma sede, uma <span className="text-primary">casa viva e acolhedora</span>
               </h2>
-              <p className="text-muted text-lg leading-relaxed mb-8">
-                A sede da Viver Saúde foi planejada para oferecer a melhor experiência aos nossos beneficiários. Desde a recepção até as salas de atendimento, cada espaço reflete nosso compromisso com o bem-estar e a qualidade do cuidado.
+              <p className="text-muted text-lg leading-relaxed mb-4">
+                Pensamos em bons momentos. Nossa casa reúne bem-estar, lazer e cultura em um espaço elegante e acolhedor.
+              </p>
+              <p className="text-foreground font-semibold text-lg mb-8">
+                Seja bem-vindo. A casa é sua.
               </p>
             </ScrollAnimationWrapper>
 

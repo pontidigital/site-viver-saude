@@ -6,7 +6,7 @@ import { WHATSAPP_URL } from "@/lib/constants/site";
 export const metadata = {
   title: "Quem Somos",
   description:
-    "Conheça a Viver Saúde: um plano de saúde em Natal/RN com acolhimento, organização e compromisso com o cuidado da sua família.",
+    "Conheça a Viver Saúde. Um plano de saúde em Natal/RN com acolhimento, organização e compromisso com o cuidado da sua família.",
 };
 
 const valores = [
@@ -34,7 +34,7 @@ const valores = [
   {
     title: "Valores",
     description:
-      "Acolhimento, ética, transparência, inovação e compromisso com a saúde e o bem-estar de cada beneficiário.",
+      "Acolhimento, ética, transparência, melhoria contínua e compromisso com a saúde e o bem-estar de cada beneficiário.",
     icon: (
       <svg className="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -89,10 +89,10 @@ export default function QuemSomosPage() {
                 Nossa História
               </h2>
               <p className="text-muted leading-relaxed mb-4">
-                A Viver Saúde nasceu com o propósito de transformar a experiência de quem busca um plano de saúde em Natal/RN. Acreditamos que saúde vai além de consultas e exames: é sobre cuidar de pessoas com respeito, agilidade e proximidade.
+                A Viver Saúde nasceu com o propósito de oferecer uma experiência diferente para quem busca um plano de saúde em Natal/RN. Acreditamos que saúde vai além de consultas e exames. É sobre cuidar de pessoas com respeito, agilidade e proximidade.
               </p>
               <p className="text-muted leading-relaxed">
-                Com uma rede credenciada organizada e um time comprometido, oferecemos planos que se adaptam às necessidades de cada pessoa, sempre com foco no acolhimento e na qualidade do atendimento.
+                Temos uma rede credenciada organizada e um time comprometido. Nossos planos se adaptam ao que cada pessoa precisa, com acolhimento e qualidade no atendimento.
               </p>
             </ScrollAnimationWrapper>
           </div>
@@ -166,7 +166,7 @@ export default function QuemSomosPage() {
               Venha fazer parte da Viver Saúde
             </h2>
             <p className="text-white/90 text-lg mb-8 max-w-xl mx-auto">
-              Conheça nossos planos e descubra o cuidado que você merece.
+              Conheça nossos planos e veja como podemos cuidar de você.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button href="/planos" variant="accent" size="lg">

@@ -12,7 +12,7 @@ const servicos = [
   {
     title: "Atenção e orientação",
     description:
-      "Equipe pronta para orientar você em todas as etapas do seu cuidado, desde o agendamento até o acompanhamento pós-consulta.",
+      "Nossa equipe orienta você em cada etapa: do agendamento ao acompanhamento após a consulta.",
     icon: (
       <svg className="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
@@ -22,7 +22,7 @@ const servicos = [
   {
     title: "Cuidado contínuo",
     description:
-      "Acompanhamento regular com foco em prevenção e bem-estar. Consultas, exames e orientações para manter sua saúde sempre em dia.",
+      "Acompanhamento regular com foco em prevenção e bem-estar. Consultas, exames e orientações para você cuidar da saúde no dia a dia.",
     icon: (
       <svg className="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -99,7 +99,7 @@ export default function ServicosPage() {
               Quer saber mais sobre nossos serviços?
             </h2>
             <p className="text-white/90 text-lg mb-8 max-w-xl mx-auto">
-              Entre em contato e descubra como a Viver Saúde pode cuidar de você.
+              Fale com a gente. Vamos encontrar o plano certo para você.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button href="/quero-ser-cliente" variant="accent" size="lg">

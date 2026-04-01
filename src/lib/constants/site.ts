@@ -3,6 +3,7 @@ export const SITE = {
   tagline: "Plano de Saúde em Natal/RN",
   phone: "(84) 3114-1100",
   phoneRaw: "558431141100",
+  phoneSac: "(84) 3311-1411",
   email: "contato@planoviversaude.com.br",
   url: "https://planoviversaude.com.br",
   address: "Natal, RN",
@@ -21,8 +22,8 @@ export const PORTALS = {
 } as const;
 
 export const APP_LINKS = {
-  ios: "#",
-  android: "#",
+  ios: "https://apps.apple.com/br/app/viver-sa%C3%BAde/id6755687857",
+  android: "https://play.google.com/store/apps/details?id=br.com.mobilesaude.viversaude",
 } as const;
 
 export const NAV_ITEMS = [
@@ -38,6 +39,9 @@ export const NAV_ITEMS = [
       { label: "Safira", href: "/planos/safira" },
       { label: "Turmalina", href: "/planos/turmalina" },
       { label: "Quartzo", href: "/planos/quartzo" },
+      { label: "Ametista", href: "/planos/ametista" },
+      { label: "Diamante", href: "/planos/diamante" },
+      { label: "Turquesa", href: "/planos/turquesa" },
     ],
   },
   { label: "Serviços", href: "/servicos" },
