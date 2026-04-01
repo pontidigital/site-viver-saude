@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 180" fill="none">
+  <defs>
+    <linearGradient id="turquesa-g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5eead4"/>
+      <stop offset="50%" stop-color="#2dd4bf"/>
+      <stop offset="100%" stop-color="#0d9488"/>
+    </linearGradient>
+    <linearGradient id="turquesa-g2" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#99f6e4"/>
+      <stop offset="50%" stop-color="#14b8a6"/>
+      <stop offset="100%" stop-color="#0f766e"/>
+    </linearGradient>
+    <linearGradient id="turquesa-shine" x1="0" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <!-- Left arm of V -->
+  <polygon points="20,10 100,170 70,170 5,40" fill="url(#turquesa-g1)"/>
+  <polygon points="20,10 55,10 100,130 100,170" fill="url(#turquesa-g2)"/>
+  <!-- Right arm of V -->
+  <polygon points="180,10 100,170 130,170 195,40" fill="url(#turquesa-g2)"/>
+  <polygon points="180,10 145,10 100,130 100,170" fill="url(#turquesa-g1)"/>
+  <!-- Facet highlights -->
+  <polygon points="20,10 55,10 38,40" fill="url(#turquesa-shine)"/>
+  <polygon points="180,10 145,10 162,40" fill="url(#turquesa-shine)"/>
+  <polygon points="55,10 100,130 38,40" fill="#0d9488" opacity="0.3"/>
+  <polygon points="145,10 100,130 162,40" fill="#14b8a6" opacity="0.2"/>
+</svg>

@@ -44,7 +44,7 @@ export const NAV_ITEMS = [
     ],
   },
   { label: "Serviços", href: "/servicos" },
-  { label: "Rede Credenciada", href: "/rede-credenciada" },
+  { label: "Programas de Qualidade de Vida", href: "/programas" },
   { label: "Nossa Casa", href: "/nossa-casa" },
   { label: "Notícias", href: "/noticias" },
   { label: "FAQ", href: "/faq" },

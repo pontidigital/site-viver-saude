@@ -1,6 +1,5 @@
 import { HeroSection } from "@/components/sections/HeroSection";
 import { WhyViverSection } from "@/components/sections/WhyViverSection";
-import { NetworkHighlights } from "@/components/sections/NetworkHighlights";
 import { PlansCarousel } from "@/components/sections/PlansCarousel";
 import { BenefitsGrid } from "@/components/sections/BenefitsGrid";
 import { QuickAccessSection } from "@/components/sections/QuickAccessSection";
@@ -11,7 +10,6 @@ export default function Home() {
     <>
       <HeroSection />
       <WhyViverSection />
-      <NetworkHighlights />
       <PlansCarousel />
       <BenefitsGrid />
       <QuickAccessSection />

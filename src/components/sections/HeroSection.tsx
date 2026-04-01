@@ -55,7 +55,7 @@ export function HeroSection() {
       <div className="absolute top-0 right-0 w-96 h-96 bg-accent/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-accent/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl" />
 
-      <div className="max-w-7xl mx-auto px-4 lg:px-6 pt-10 lg:pt-12 pb-16 lg:pb-0 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 lg:px-6 pt-10 lg:pt-12 pb-16 lg:pb-12 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-end">
           {/* Text content */}
           <div>
@@ -93,7 +93,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.45 }}
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-row gap-3 sm:gap-4"
             >
               <div className="animate-pulse-glow rounded-lg">
                 <Button href="/quero-ser-cliente" size="lg">
