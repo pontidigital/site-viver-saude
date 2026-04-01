@@ -72,18 +72,49 @@ export default function RedeCredenciadaPage() {
       return;
     }
 
+    if (!("geolocation" in navigator)) {
+      alert("Seu navegador não suporta geolocalização.");
+      return;
+    }
+
     setGeoLoading(true);
+
+    // Check permission state first (if supported)
+    if ("permissions" in navigator) {
+      navigator.permissions.query({ name: "geolocation" }).then((result) => {
+        if (result.state === "denied") {
+          alert("A localização está bloqueada. Acesse as configurações do navegador para permitir.");
+          setGeoLoading(false);
+          return;
+        }
+        requestPosition();
+      }).catch(() => {
+        // permissions API not fully supported, try directly
+        requestPosition();
+      });
+    } else {
+      requestPosition();
+    }
+  };
+
+  const requestPosition = () => {
     navigator.geolocation.getCurrentPosition(
       (pos) => {
         setUserPos({ lat: pos.coords.latitude, lng: pos.coords.longitude });
         setSortByDistance(true);
         setGeoLoading(false);
       },
-      () => {
-        alert("Não foi possível acessar sua localização. Verifique as permissões do navegador.");
+      (err) => {
         setGeoLoading(false);
+        if (err.code === 1) {
+          alert("Permissão de localização negada. Clique no cadeado na barra de endereço para permitir.");
+        } else if (err.code === 2) {
+          alert("Não foi possível determinar sua localização. Tente novamente.");
+        } else {
+          alert("Tempo esgotado ao buscar localização. Tente novamente.");
+        }
       },
-      { enableHighAccuracy: true, timeout: 10000 }
+      { enableHighAccuracy: false, timeout: 15000, maximumAge: 300000 }
     );
   };
 
