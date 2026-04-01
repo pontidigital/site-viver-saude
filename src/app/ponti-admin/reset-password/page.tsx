@@ -21,7 +21,7 @@ export default function ResetPasswordPage() {
       });
 
       if (resetError) {
-        setError("Erro ao enviar email. Verifique o endereco.");
+        setError("Erro ao enviar email. Verifique o endereço.");
         return;
       }
 
@@ -44,7 +44,7 @@ export default function ResetPasswordPage() {
         {sent ? (
           <div className="text-center">
             <div className="bg-green-50 border border-green-200 text-green-700 text-sm rounded-lg p-4 mb-4">
-              Link de recuperacao enviado para <strong>{email}</strong>.
+              Link de recuperação enviado para <strong>{email}</strong>.
             </div>
             <a href="/ponti-admin/login" className="text-sm text-primary hover:underline">
               Voltar ao login
@@ -75,7 +75,7 @@ export default function ResetPasswordPage() {
               disabled={loading}
               className="w-full bg-primary hover:bg-primary-dark text-white font-medium py-2.5 px-4 rounded-lg text-sm transition-colors disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
             >
-              {loading ? "Enviando..." : "Enviar link de recuperacao"}
+              {loading ? "Enviando..." : "Enviar link de recuperação"}
             </button>
             <div className="text-center">
               <a href="/ponti-admin/login" className="text-sm text-primary hover:underline">

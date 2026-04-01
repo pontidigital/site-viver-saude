@@ -39,25 +39,25 @@ export default function PagesListPage() {
 
   return (
     <div>
-      <h1 className="mb-6 text-2xl font-bold text-gray-900">Paginas</h1>
+      <h1 className="mb-6 text-2xl font-bold text-gray-900">Páginas</h1>
 
       <div className="overflow-hidden rounded-xl bg-white shadow-sm">
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
               <tr className="border-b border-gray-100 text-left text-xs font-medium uppercase tracking-wider text-gray-500">
-                <th className="px-6 py-3">Titulo</th>
+                <th className="px-6 py-3">Título</th>
                 <th className="px-6 py-3">Slug</th>
                 <th className="px-6 py-3">Status</th>
                 <th className="px-6 py-3">Atualizado</th>
-                <th className="px-6 py-3">Acoes</th>
+                <th className="px-6 py-3">Ações</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-50">
               {pages.length === 0 ? (
                 <tr>
                   <td colSpan={5} className="px-6 py-8 text-center text-sm text-gray-400">
-                    Nenhuma pagina encontrada.
+                    Nenhuma página encontrada.
                   </td>
                 </tr>
               ) : (

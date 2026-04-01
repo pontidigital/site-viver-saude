@@ -52,7 +52,7 @@ export default function SubmissionsPage() {
   return (
     <div>
       <h1 className="mb-6 text-2xl font-bold text-gray-900">
-        Submissions de Formulario
+        Submissões de Formulário
       </h1>
 
       <div className="overflow-hidden rounded-xl bg-white shadow-sm">
@@ -64,7 +64,7 @@ export default function SubmissionsPage() {
                 <th className="px-6 py-3">Tipo</th>
                 <th className="px-6 py-3">Nome</th>
                 <th className="px-6 py-3">Email</th>
-                <th className="px-6 py-3">Pagina</th>
+                <th className="px-6 py-3">Página</th>
                 <th className="px-6 py-3">Spam</th>
                 <th className="px-6 py-3">Data</th>
               </tr>
@@ -76,7 +76,7 @@ export default function SubmissionsPage() {
                     colSpan={7}
                     className="px-6 py-8 text-center text-sm text-gray-400"
                   >
-                    Nenhuma submission encontrada.
+                    Nenhuma submissão encontrada.
                   </td>
                 </tr>
               ) : (
@@ -153,7 +153,7 @@ export default function SubmissionsPage() {
                               {/* Form data */}
                               <div>
                                 <h4 className="mb-2 text-xs font-semibold uppercase tracking-wider text-gray-500">
-                                  Dados do Formulario
+                                  Dados do Formulário
                                 </h4>
                                 <div className="space-y-1">
                                   {Object.entries(sub.data ?? {}).map(

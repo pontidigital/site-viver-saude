@@ -41,7 +41,7 @@ export default function UsersPage() {
     const json = await res.json();
 
     if (!res.ok) {
-      setError(json.error ?? "Erro ao criar usuario.");
+      setError(json.error ?? "Erro ao criar usuário.");
       setSaving(false);
       return;
     }
@@ -86,20 +86,20 @@ export default function UsersPage() {
   return (
     <div>
       <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <h1 className="text-2xl font-bold text-gray-900">Usuarios</h1>
+        <h1 className="text-2xl font-bold text-gray-900">Usuários</h1>
         <button
           onClick={() => setShowForm(!showForm)}
           className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-dark"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14" /><path d="M12 5v14" /></svg>
-          Novo Usuario
+          Novo Usuário
         </button>
       </div>
 
       {/* Create form */}
       {showForm && (
         <div className="mb-6 rounded-xl bg-white p-6 shadow-sm">
-          <h2 className="mb-4 text-lg font-semibold text-gray-900">Cadastrar Usuario</h2>
+          <h2 className="mb-4 text-lg font-semibold text-gray-900">Cadastrar Usuário</h2>
           <form onSubmit={handleCreate} className="space-y-4">
             {error && (
               <div className="rounded-lg bg-red-50 px-4 py-3 text-sm text-red-700">{error}</div>
@@ -153,7 +153,7 @@ export default function UsersPage() {
                 Cancelar
               </button>
               <button type="submit" disabled={saving} className="rounded-lg bg-primary px-6 py-2 text-sm font-medium text-white hover:bg-primary-dark disabled:opacity-50">
-                {saving ? "Criando..." : "Criar Usuario"}
+                {saving ? "Criando..." : "Criar Usuário"}
               </button>
             </div>
           </form>
@@ -170,14 +170,14 @@ export default function UsersPage() {
                 <th className="px-6 py-3">Email</th>
                 <th className="px-6 py-3">Role</th>
                 <th className="px-6 py-3">Criado em</th>
-                <th className="px-6 py-3">Acoes</th>
+                <th className="px-6 py-3">Ações</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-50">
               {users.length === 0 ? (
                 <tr>
                   <td colSpan={5} className="px-6 py-8 text-center text-sm text-gray-400">
-                    Nenhum usuario encontrado.
+                    Nenhum usuário encontrado.
                   </td>
                 </tr>
               ) : (

@@ -77,7 +77,7 @@ export default function NewPostPage() {
     setError(null);
 
     if (!title.trim()) {
-      setError("O titulo e obrigatorio.");
+      setError("O título é obrigatório.");
       return;
     }
 
@@ -158,7 +158,7 @@ export default function NewPostPage() {
               type="text"
               value={title}
               onChange={(e) => handleTitleChange(e.target.value)}
-              placeholder="Digite o titulo do post"
+              placeholder="Digite o título do post"
               className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
             />
           </div>
@@ -312,12 +312,12 @@ export default function NewPostPage() {
           <h2 className="text-lg font-semibold text-gray-900">SEO</h2>
           <div>
             <label className="mb-1.5 block text-sm font-medium text-gray-700">Meta Title</label>
-            <input type="text" value={metaTitle} onChange={(e) => setMetaTitle(e.target.value)} placeholder="Titulo para mecanismos de busca" className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-gray-900 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" />
+            <input type="text" value={metaTitle} onChange={(e) => setMetaTitle(e.target.value)} placeholder="Título para mecanismos de busca" className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-gray-900 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" />
             <p className="mt-1 text-xs text-gray-400">{metaTitle.length}/60 caracteres</p>
           </div>
           <div>
             <label className="mb-1.5 block text-sm font-medium text-gray-700">Meta Description</label>
-            <textarea value={metaDescription} onChange={(e) => setMetaDescription(e.target.value)} rows={2} placeholder="Descricao para mecanismos de busca" className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-gray-900 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" />
+            <textarea value={metaDescription} onChange={(e) => setMetaDescription(e.target.value)} rows={2} placeholder="Descrição para mecanismos de busca" className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-gray-900 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" />
             <p className="mt-1 text-xs text-gray-400">{metaDescription.length}/160 caracteres</p>
           </div>
           <div>

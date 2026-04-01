@@ -55,7 +55,7 @@ export default function EditPostPage() {
         .single();
 
       if (fetchError || !data) {
-        setError("Post nao encontrado.");
+        setError("Post não encontrado.");
         setLoading(false);
         return;
       }
@@ -114,7 +114,7 @@ export default function EditPostPage() {
     setError(null);
 
     if (!title.trim()) {
-      setError("O titulo e obrigatorio.");
+      setError("O título é obrigatório.");
       return;
     }
 
@@ -368,7 +368,7 @@ export default function EditPostPage() {
               type="text"
               value={metaTitle}
               onChange={(e) => setMetaTitle(e.target.value)}
-              placeholder="Titulo para mecanismos de busca"
+              placeholder="Título para mecanismos de busca"
               className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-gray-900 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
             />
             <p className="mt-1 text-xs text-gray-400">{metaTitle.length}/60 caracteres</p>
@@ -382,7 +382,7 @@ export default function EditPostPage() {
               value={metaDescription}
               onChange={(e) => setMetaDescription(e.target.value)}
               rows={2}
-              placeholder="Descricao para mecanismos de busca"
+              placeholder="Descrição para mecanismos de busca"
               className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-gray-900 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
             />
             <p className="mt-1 text-xs text-gray-400">{metaDescription.length}/160 caracteres</p>
@@ -416,7 +416,7 @@ export default function EditPostPage() {
             disabled={saving}
             className="rounded-lg bg-primary px-6 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-dark disabled:opacity-50"
           >
-            {saving ? "Salvando..." : "Salvar Alteracoes"}
+            {saving ? "Salvando..." : "Salvar Alterações"}
           </button>
         </div>
       </form>

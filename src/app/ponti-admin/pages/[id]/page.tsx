@@ -30,7 +30,7 @@ export default function EditPagePage() {
         .single();
 
       if (fetchError || !data) {
-        setError("Pagina nao encontrada.");
+        setError("Página não encontrada.");
         setLoading(false);
         return;
       }
@@ -94,7 +94,7 @@ export default function EditPagePage() {
 
   return (
     <div className="mx-auto max-w-3xl">
-      <h1 className="mb-6 text-2xl font-bold text-gray-900">Editar Pagina</h1>
+      <h1 className="mb-6 text-2xl font-bold text-gray-900">Editar Página</h1>
 
       <form onSubmit={handleSubmit} className="space-y-6">
         {error && (
@@ -103,7 +103,7 @@ export default function EditPagePage() {
 
         <div className="rounded-xl bg-white p-6 shadow-sm space-y-5">
           <div>
-            <label className="mb-1.5 block text-sm font-medium text-gray-700">Titulo</label>
+            <label className="mb-1.5 block text-sm font-medium text-gray-700">Título</label>
             <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-gray-900 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" />
           </div>
 
@@ -154,7 +154,7 @@ export default function EditPagePage() {
             Cancelar
           </button>
           <button type="submit" disabled={saving} className="rounded-lg bg-primary px-6 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-dark disabled:opacity-50">
-            {saving ? "Salvando..." : "Salvar Pagina"}
+            {saving ? "Salvando..." : "Salvar Página"}
           </button>
         </div>
       </form>

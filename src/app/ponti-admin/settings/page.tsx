@@ -93,11 +93,11 @@ export default function SettingsPage() {
 
   const fieldGroups = [
     {
-      title: "Informacoes de Contato",
+      title: "Informações de Contato",
       fields: [
         { key: "contact_phone" as const, label: "Telefone", type: "text" },
         { key: "contact_email" as const, label: "Email", type: "email" },
-        { key: "contact_address" as const, label: "Endereco", type: "text" },
+        { key: "contact_address" as const, label: "Endereço", type: "text" },
         {
           key: "whatsapp_number" as const,
           label: "WhatsApp",
@@ -118,7 +118,7 @@ export default function SettingsPage() {
 
   return (
     <div className="mx-auto max-w-2xl">
-      <h1 className="mb-6 text-2xl font-bold text-gray-900">Configuracoes</h1>
+      <h1 className="mb-6 text-2xl font-bold text-gray-900">Configurações</h1>
 
       <form onSubmit={handleSave} className="space-y-6">
         {error && (
@@ -128,7 +128,7 @@ export default function SettingsPage() {
         )}
         {success && (
           <div className="rounded-lg bg-green-50 px-4 py-3 text-sm text-green-700">
-            Configuracoes salvas com sucesso!
+            Configurações salvas com sucesso!
           </div>
         )}
 
@@ -161,7 +161,7 @@ export default function SettingsPage() {
             disabled={saving}
             className="rounded-lg bg-primary px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary-dark disabled:opacity-50"
           >
-            {saving ? "Salvando..." : "Salvar Configuracoes"}
+            {saving ? "Salvando..." : "Salvar Configurações"}
           </button>
         </div>
       </form>

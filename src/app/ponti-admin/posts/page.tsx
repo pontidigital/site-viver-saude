@@ -68,7 +68,7 @@ export default function PostsPage() {
       <div className="mb-6 flex flex-col gap-3 sm:flex-row">
         <input
           type="text"
-          placeholder="Buscar por titulo..."
+          placeholder="Buscar por título..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           className="rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm text-gray-900 placeholder:text-gray-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
@@ -90,11 +90,11 @@ export default function PostsPage() {
           <table className="w-full">
             <thead>
               <tr className="border-b border-gray-100 text-left text-xs font-medium uppercase tracking-wider text-gray-500">
-                <th className="px-6 py-3">Titulo</th>
+                <th className="px-6 py-3">Título</th>
                 <th className="px-6 py-3">Categoria</th>
                 <th className="px-6 py-3">Status</th>
                 <th className="px-6 py-3">Data</th>
-                <th className="px-6 py-3">Acoes</th>
+                <th className="px-6 py-3">Ações</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-50">

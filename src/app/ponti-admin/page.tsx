@@ -85,7 +85,7 @@ export default function DashboardPage() {
       ),
     },
     {
-      label: "Submissions Hoje",
+      label: "Submissões Hoje",
       value: stats.submissionsToday,
       color: "bg-amber-500",
       icon: (
@@ -93,7 +93,7 @@ export default function DashboardPage() {
       ),
     },
     {
-      label: "Midia",
+      label: "Mídia",
       value: stats.totalMedia,
       color: "bg-violet-500",
       icon: (
@@ -148,7 +148,7 @@ export default function DashboardPage() {
           className="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="17 8 12 3 7 8" /><line x1="12" x2="12" y1="3" y2="15" /></svg>
-          Upload Midia
+          Upload Mídia
         </Link>
         <Link
           href="/ponti-admin/submissions"
@@ -163,7 +163,7 @@ export default function DashboardPage() {
       <div className="rounded-xl bg-white shadow-sm">
         <div className="border-b border-gray-100 px-6 py-4">
           <h2 className="text-lg font-semibold text-gray-900">
-            Submissions Recentes
+            Submissões Recentes
           </h2>
         </div>
         <div className="overflow-x-auto">
@@ -172,7 +172,7 @@ export default function DashboardPage() {
               <tr className="border-b border-gray-100 text-left text-xs font-medium uppercase tracking-wider text-gray-500">
                 <th className="px-6 py-3">Tipo</th>
                 <th className="px-6 py-3">Nome</th>
-                <th className="px-6 py-3">Pagina</th>
+                <th className="px-6 py-3">Página</th>
                 <th className="px-6 py-3">Data</th>
               </tr>
             </thead>
@@ -183,7 +183,7 @@ export default function DashboardPage() {
                     colSpan={4}
                     className="px-6 py-8 text-center text-sm text-gray-400"
                   >
-                    Nenhuma submission encontrada.
+                    Nenhuma submissão encontrada.
                   </td>
                 </tr>
               ) : (

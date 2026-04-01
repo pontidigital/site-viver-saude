@@ -150,7 +150,7 @@ export default function AnalyticsPage() {
       {/* Daily Submissions Chart */}
       <div className="mb-8 rounded-xl bg-white p-6 shadow-sm">
         <h2 className="mb-4 text-lg font-semibold text-gray-900">
-          Submissions - Ultimos 30 dias
+          Submissions - Últimos 30 dias
         </h2>
         <div className="flex items-end gap-1 h-40">
           {dailySubmissions.map((d) => (
@@ -202,9 +202,9 @@ export default function AnalyticsPage() {
 
         {/* Form Types */}
         <div className="rounded-xl bg-white p-6 shadow-sm">
-          <h2 className="mb-4 text-lg font-semibold text-gray-900">Por Tipo de Formulario</h2>
+          <h2 className="mb-4 text-lg font-semibold text-gray-900">Por Tipo de Formulário</h2>
           {topFormTypes.length === 0 ? (
-            <p className="text-sm text-gray-400">Nenhum formulario registrado.</p>
+            <p className="text-sm text-gray-400">Nenhum formulário registrado.</p>
           ) : (
             <div className="space-y-3">
               {topFormTypes.map((s) => (

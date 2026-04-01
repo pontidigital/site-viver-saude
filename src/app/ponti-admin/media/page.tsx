@@ -104,7 +104,7 @@ export default function MediaPage() {
   return (
     <div>
       <h1 className="mb-6 text-2xl font-bold text-gray-900">
-        Biblioteca de Midia
+        Biblioteca de Mídia
       </h1>
 
       {/* Upload area */}
@@ -126,7 +126,7 @@ export default function MediaPage() {
           Arraste arquivos aqui ou clique para selecionar
         </p>
         <p className="mb-4 text-xs text-gray-400">
-          PNG, JPG, GIF, SVG, WEBP - ate 10MB
+          PNG, JPG, GIF, SVG, WEBP - até 10MB
         </p>
         <label className="cursor-pointer rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-dark">
           <input
@@ -147,7 +147,7 @@ export default function MediaPage() {
         </div>
       ) : media.length === 0 ? (
         <p className="py-12 text-center text-sm text-gray-400">
-          Nenhuma midia encontrada.
+          Nenhuma mídia encontrada.
         </p>
       ) : (
         <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
