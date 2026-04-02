@@ -9,8 +9,8 @@ import { CTASection } from "@/components/sections/CTASection";
 export default function Home() {
   return (
     <>
-      <HeroSection />
       <BannerCarousel />
+      <HeroSection />
       <WhyViverSection />
       <PlansCarousel />
       <BenefitsGrid />

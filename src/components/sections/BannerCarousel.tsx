@@ -68,7 +68,7 @@ export function BannerCarousel() {
         <div className="flex">
           {banners.map((banner) => {
             const content = (
-              <div className="relative w-full aspect-[21/9] md:aspect-[21/7] flex-none min-w-0 basis-full">
+              <div className="relative w-full aspect-[21/6] md:aspect-[21/5] flex-none min-w-0 basis-full">
                 {/* Desktop image */}
                 <Image
                   src={banner.image_url}

@@ -41,29 +41,6 @@ export const MEDIA = {
     },
   },
 
-  nossaCasa: {
-    casa: {
-      src: "/images/nossa-casa/casa.avif",
-      alt: "Sede da Viver Saúde em Natal RN",
-    },
-    fachada: {
-      src: "/images/nossa-casa/fachada.jpg",
-      alt: "Fachada moderna da sede Viver Saúde em Natal RN",
-    },
-    recepcao: {
-      src: "/images/nossa-casa/recepcao.jpg",
-      alt: "Recepção acolhedora da Viver Saúde",
-    },
-    salaAtendimento: {
-      src: "/images/nossa-casa/sala-atendimento.jpg",
-      alt: "Sala de atendimento moderna e confortável",
-    },
-    espacoInterno: {
-      src: "/images/nossa-casa/espaco-interno.jpg",
-      alt: "Espaço interno climatizado da Viver Saúde",
-    },
-  },
-
   servicos: {
     consulta: {
       src: "/images/servicos/consulta.jpg",
