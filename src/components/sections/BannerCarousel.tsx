@@ -63,18 +63,19 @@ export function BannerCarousel() {
   if (banners.length === 0) return null;
 
   return (
-    <section className="relative w-full bg-gray-100">
+    <section className="relative w-full">
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex">
           {banners.map((banner) => {
-            const content = (
-              <div className="relative w-full aspect-[21/6] md:aspect-[21/5] flex-none min-w-0 basis-full">
+            const slide = (
+              <div className="relative w-full flex-none min-w-0 basis-full">
                 {/* Desktop image */}
                 <Image
                   src={banner.image_url}
                   alt={banner.alt_text || banner.title}
-                  fill
-                  className="object-cover hidden md:block"
+                  width={1920}
+                  height={600}
+                  className="w-full h-auto hidden md:block"
                   sizes="100vw"
                   priority
                 />
@@ -82,8 +83,9 @@ export function BannerCarousel() {
                 <Image
                   src={banner.image_mobile_url || banner.image_url}
                   alt={banner.alt_text || banner.title}
-                  fill
-                  className="object-cover md:hidden"
+                  width={600}
+                  height={600}
+                  className="w-full h-auto md:hidden"
                   sizes="100vw"
                   priority
                 />
@@ -96,16 +98,17 @@ export function BannerCarousel() {
                   key={banner.id}
                   href={banner.link_url}
                   target={banner.link_target || "_self"}
-                  className="flex-none min-w-0 basis-full"
+                  rel={banner.link_target === "_blank" ? "noopener noreferrer" : undefined}
+                  className="flex-none min-w-0 basis-full cursor-pointer"
                 >
-                  {content}
+                  {slide}
                 </Link>
               );
             }
 
             return (
               <div key={banner.id} className="flex-none min-w-0 basis-full">
-                {content}
+                {slide}
               </div>
             );
           })}
@@ -117,33 +120,33 @@ export function BannerCarousel() {
         <>
           <button
             onClick={scrollPrev}
-            className="absolute left-3 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/80 backdrop-blur-sm shadow-md flex items-center justify-center hover:bg-white transition-colors"
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-black/20 backdrop-blur-sm flex items-center justify-center hover:bg-black/40 transition-colors"
             aria-label="Banner anterior"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
           </button>
           <button
             onClick={scrollNext}
-            className="absolute right-3 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/80 backdrop-blur-sm shadow-md flex items-center justify-center hover:bg-white transition-colors"
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-black/20 backdrop-blur-sm flex items-center justify-center hover:bg-black/40 transition-colors"
             aria-label="Próximo banner"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
             </svg>
           </button>
 
           {/* Dots */}
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex gap-2">
+          <div className="absolute bottom-5 left-1/2 -translate-x-1/2 z-10 flex gap-2.5">
             {banners.map((_, i) => (
               <button
                 key={i}
                 onClick={() => emblaApi?.scrollTo(i)}
-                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                className={`h-3 rounded-full transition-all duration-300 ${
                   i === current
-                    ? "bg-white w-7"
-                    : "bg-white/50 hover:bg-white/80"
+                    ? "bg-white w-8"
+                    : "bg-white/50 w-3 hover:bg-white/80"
                 }`}
                 aria-label={`Ir para banner ${i + 1}`}
               />
