@@ -43,6 +43,7 @@ export const NAV_ITEMS = [
       { label: "Turquesa", href: "/planos/turquesa" },
     ],
   },
+  { label: "Rede Credenciada", href: "/rede-credenciada" },
   { label: "Serviços", href: "/servicos" },
   { label: "Programas de Qualidade de Vida", href: "/programas" },
   { label: "Notícias", href: "/noticias" },
