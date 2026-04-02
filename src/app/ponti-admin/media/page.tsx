@@ -5,11 +5,13 @@ import { createClient } from "@/lib/supabase/client";
 
 interface MediaItem {
   id: string;
-  name: string;
-  url: string;
+  file_name: string;
+  file_path: string;
+  file_url: string;
+  file_type: string;
+  file_size: number | null;
+  alt_text: string | null;
   created_at: string;
-  size: number;
-  mime_type: string;
 }
 
 export default function MediaPage() {
@@ -56,10 +58,11 @@ export default function MediaPage() {
       } = supabase.storage.from("media").getPublicUrl(filePath);
 
       await supabase.from("media").insert({
-        name: file.name,
-        url: publicUrl,
-        size: file.size,
-        mime_type: file.type,
+        file_name: file.name,
+        file_path: filePath,
+        file_url: publicUrl,
+        file_size: file.size,
+        file_type: file.type,
       });
     }
 
@@ -82,20 +85,19 @@ export default function MediaPage() {
   };
 
   const handleDelete = async (item: MediaItem) => {
-    if (!confirm(`Excluir "${item.name}"?`)) return;
+    if (!confirm(`Excluir "${item.file_name}"?`)) return;
     const supabase = createClient();
 
-    // Try to extract storage path from URL
-    const urlParts = item.url.split("/media/");
-    if (urlParts[1]) {
-      await supabase.storage.from("media").remove([urlParts[1]]);
+    if (item.file_path) {
+      await supabase.storage.from("media").remove([item.file_path]);
     }
 
     await supabase.from("media").delete().eq("id", item.id);
     setMedia((prev) => prev.filter((m) => m.id !== item.id));
   };
 
-  const handleCopyUrl = (url: string, id: string) => {
+  const handleCopyUrl = (url: string | null, id: string) => {
+    if (!url) return;
     navigator.clipboard.writeText(url);
     setCopied(id);
     setTimeout(() => setCopied(null), 2000);
@@ -158,13 +160,13 @@ export default function MediaPage() {
             >
               <div className="relative aspect-square bg-gray-100">
                 <img
-                  src={item.url}
-                  alt={item.name}
+                  src={item.file_url}
+                  alt={item.file_name}
                   className="h-full w-full object-cover"
                 />
                 <div className="absolute inset-0 flex items-center justify-center gap-2 bg-black/50 opacity-0 transition-opacity group-hover:opacity-100">
                   <button
-                    onClick={() => handleCopyUrl(item.url, item.id)}
+                    onClick={() => handleCopyUrl(item.file_url, item.id)}
                     className="rounded-lg bg-white px-3 py-1.5 text-xs font-medium text-gray-700 transition-colors hover:bg-gray-100"
                   >
                     {copied === item.id ? "Copiado!" : "Copiar URL"}
@@ -179,10 +181,10 @@ export default function MediaPage() {
               </div>
               <div className="p-3">
                 <p className="truncate text-sm font-medium text-gray-700">
-                  {item.name}
+                  {item.file_name}
                 </p>
                 <p className="text-xs text-gray-400">
-                  {(item.size / 1024).toFixed(1)} KB
+                  {item.file_size ? (item.file_size / 1024).toFixed(1) + " KB" : "-"}
                 </p>
               </div>
             </div>
