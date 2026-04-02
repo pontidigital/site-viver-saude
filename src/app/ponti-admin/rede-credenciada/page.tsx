@@ -43,9 +43,8 @@ export default function RedeCredenciadaAdminPage() {
   const [busca, setBusca] = useState("");
   const [toggling, setToggling] = useState<string | null>(null);
 
-  const supabase = createClient();
-
   const fetchData = useCallback(async () => {
+    const supabase = createClient();
     setLoading(true);
     if (tab === "hospitais") {
       let query = supabase
@@ -53,7 +52,8 @@ export default function RedeCredenciadaAdminPage() {
         .select("id, name, city, state, neighborhood, phone, has_emergency, active")
         .order("name");
       if (busca) query = query.ilike("name", `%${busca}%`);
-      const { data } = await query;
+      const { data, error } = await query;
+      if (error) console.error("hospitals error:", error);
       setHospitals(data ?? []);
     } else if (tab === "medicos") {
       let query = supabase
@@ -61,7 +61,8 @@ export default function RedeCredenciadaAdminPage() {
         .select("id, name, crm, city, state, phone, active")
         .order("name");
       if (busca) query = query.ilike("name", `%${busca}%`);
-      const { data } = await query;
+      const { data, error } = await query;
+      if (error) console.error("doctors error:", error);
       setDoctors(data ?? []);
     } else {
       let query = supabase
@@ -69,7 +70,8 @@ export default function RedeCredenciadaAdminPage() {
         .select("id, name, slug, active")
         .order("name");
       if (busca) query = query.ilike("name", `%${busca}%`);
-      const { data } = await query;
+      const { data, error } = await query;
+      if (error) console.error("specialties error:", error);
       setSpecialties(data ?? []);
     }
     setLoading(false);
@@ -82,6 +84,7 @@ export default function RedeCredenciadaAdminPage() {
 
   const toggleActive = async (table: string, id: string, current: boolean) => {
     setToggling(id);
+    const supabase = createClient();
     await supabase.from(table).update({ active: !current }).eq("id", id);
     await fetchData();
     setToggling(null);
@@ -89,6 +92,7 @@ export default function RedeCredenciadaAdminPage() {
 
   const handleDelete = async (table: string, id: string, name: string) => {
     if (!confirm(`Tem certeza que deseja excluir "${name}"?`)) return;
+    const supabase = createClient();
     const { error } = await supabase.from(table).delete().eq("id", id);
     if (error) {
       alert("Erro ao excluir: " + error.message);
