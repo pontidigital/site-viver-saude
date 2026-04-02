@@ -53,7 +53,7 @@ export function BannerCarousel() {
   // Auto-play
   useEffect(() => {
     if (!emblaApi || banners.length <= 1) return;
-    const interval = setInterval(() => emblaApi.scrollNext(), 5000);
+    const interval = setInterval(() => emblaApi.scrollNext(), 3000);
     return () => clearInterval(interval);
   }, [emblaApi, banners.length]);
 
