@@ -7,6 +7,7 @@ import { z } from "zod";
 import { Button } from "@/components/ui/Button";
 import { resolveUtm } from "@/lib/utils/utm";
 import { formatPhone } from "@/lib/utils/phone-mask";
+import { sendToHStation } from "@/lib/utils/hstation";
 import { WHATSAPP_URL } from "@/lib/constants/site";
 
 const formSchema = z.object({
@@ -77,6 +78,9 @@ export function ContactForm() {
         const errorData = await response.json();
         throw new Error(errorData.error || "Erro ao enviar formulário.");
       }
+
+      // Send to HStation from client-side (Cloudflare blocks server-side requests)
+      sendToHStation({ name: data.name, email: data.email, phone: data.phone });
 
       setIsSubmitted(true);
     } catch (err) {
