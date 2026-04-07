@@ -94,7 +94,7 @@ export async function POST(request: NextRequest) {
 
     // Send to HStation CRM
     try {
-      await fetch("https://planoviversaude.hstation.com.br/api/", {
+      const hstationResponse = await fetch("https://planoviversaude.hstation.com.br/api/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -102,11 +102,14 @@ export async function POST(request: NextRequest) {
           lead_email: email,
           lead_telefone: phone,
           lead_posto_de_conversao: "Site Viver Saúde",
-          lead_equipe: "equipe-rn",
-          lead_plano_interesse: plan_interest ?? "",
-          lead_mensagem: message ?? "",
+          lead_equipe: "equipe-rj",
         }),
       });
+
+      if (!hstationResponse.ok) {
+        const hstationBody = await hstationResponse.text();
+        console.error("HStation API failed:", hstationResponse.status, hstationBody);
+      }
     } catch (hstationErr) {
       console.error("HStation API error:", hstationErr);
     }
