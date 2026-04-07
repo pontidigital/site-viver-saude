@@ -92,6 +92,28 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Send to HStation CRM (requires Cloudflare whitelist on /api/ path)
+    try {
+      const hstationResponse = await fetch("https://planoviversaude.hstation.com.br/api/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          lead_nome: name,
+          lead_email: email,
+          lead_telefone: phone,
+          lead_posto_de_conversao: "Site Viver Saúde",
+          lead_equipe: "equipe-rj",
+        }),
+      });
+
+      if (!hstationResponse.ok) {
+        const hstationBody = await hstationResponse.text().catch(() => "");
+        console.error("HStation API failed:", hstationResponse.status, hstationBody.slice(0, 200));
+      }
+    } catch (hstationErr) {
+      console.error("HStation API error:", hstationErr);
+    }
+
     return Response.json({ success: true });
   } catch (err) {
     console.error("Contact API error:", err);
