@@ -91,8 +91,20 @@ export default function QuemSomosPage() {
               <p className="text-muted leading-relaxed mb-4">
                 A Viver Saúde nasceu com o propósito de oferecer uma experiência diferente para quem busca um plano de saúde em Natal/RN. Acreditamos que saúde vai além de consultas e exames. É sobre cuidar de pessoas com respeito, agilidade e proximidade.
               </p>
-              <p className="text-muted leading-relaxed">
+              <p className="text-muted leading-relaxed mb-4">
                 Temos uma rede credenciada organizada e um time comprometido. Nossos planos se adaptam ao que cada pessoa precisa, com acolhimento e qualidade no atendimento.
+              </p>
+              <p className="text-muted leading-relaxed mb-4">
+                O Viver Saúde surgiu do desejo de resgatar a essência do cuidado: olhar para as pessoas com atenção, respeito e empatia. Em um cenário onde a saúde muitas vezes se torna automática e distante, sentimos a necessidade de construir algo diferente — mais humano, mais próximo e verdadeiramente comprometido com o bem-estar de cada indivíduo.
+              </p>
+              <p className="text-muted leading-relaxed mb-4">
+                Desde o início, nosso propósito foi claro: colocar as pessoas no centro de tudo. Entendemos que saúde não se resume a consultas e exames, mas envolve acolhimento, escuta ativa e acompanhamento contínuo. Por isso, o Viver Saúde foi pensado para oferecer uma experiência mais sensível, onde cada pessoa é atendida de forma única, com suas necessidades e histórias valorizadas.
+              </p>
+              <p className="text-muted leading-relaxed mb-4">
+                A motivação que nos move é transformar a forma como o cuidado é percebido e vivido. Queremos que cada pessoa se sinta segura, amparada e respeitada em todos os momentos — desde a prevenção até o tratamento. Acreditamos que uma assistência humanizada tem o poder de gerar confiança, fortalecer vínculos e promover uma vida mais equilibrada e saudável.
+              </p>
+              <p className="text-muted leading-relaxed">
+                Assim, o Viver Saúde nasce como mais do que um plano: nasce como um compromisso com o cuidado integral, com a proximidade e com a valorização da vida em sua totalidade. Porque cuidar de pessoas é, acima de tudo, um ato de humanidade.
               </p>
             </ScrollAnimationWrapper>
           </div>
