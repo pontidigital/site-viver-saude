@@ -192,9 +192,7 @@ const plansData: Record<string, PlanData> = {
 const COMING_SOON_SLUGS = ["ametista", "turquesa"];
 
 export async function generateStaticParams() {
-  return Object.keys(plansData)
-    .filter((slug) => !COMING_SOON_SLUGS.includes(slug))
-    .map((slug) => ({ slug }));
+  return Object.keys(plansData).map((slug) => ({ slug }));
 }
 
 export async function generateMetadata(props: {
@@ -207,6 +205,13 @@ export async function generateMetadata(props: {
     return { title: "Plano não encontrado" };
   }
 
+  if (COMING_SOON_SLUGS.includes(slug)) {
+    return {
+      title: `Plano ${plan.name} — em breve`,
+      description: `Plano ${plan.name} da Viver Saúde em Natal/RN. Em breve.`,
+    };
+  }
+
   return {
     title: `Plano ${plan.name}`,
     description: `${plan.tagline}. Conheça o plano ${plan.name} da Viver Saúde em Natal/RN.`,
@@ -217,15 +222,44 @@ export default async function PlanPage(props: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await props.params;
-
-  if (COMING_SOON_SLUGS.includes(slug)) {
-    notFound();
-  }
-
   const plan = plansData[slug];
 
   if (!plan) {
     notFound();
+  }
+
+  if (COMING_SOON_SLUGS.includes(slug)) {
+    return (
+      <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-32 lg:py-40">
+        <div className="container mx-auto px-4 text-center">
+          <ScrollAnimationWrapper>
+            <p className="text-accent font-semibold mb-3 uppercase tracking-wide text-sm">
+              Plano {plan.name}
+            </p>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
+              Em breve
+            </h1>
+            <p className="text-lg md:text-xl text-white/90 max-w-xl mx-auto mb-10">
+              Estamos preparando esta página. Em breve você poderá conhecer o
+              plano {plan.name} aqui mesmo.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button href="/planos" variant="accent" size="lg">
+                Ver outros planos
+              </Button>
+              <Button
+                href={WHATSAPP_URL}
+                variant="outline"
+                size="lg"
+                className="border-white text-white hover:bg-white hover:text-primary"
+              >
+                Falar no WhatsApp
+              </Button>
+            </div>
+          </ScrollAnimationWrapper>
+        </div>
+      </section>
+    );
   }
 
   return (
