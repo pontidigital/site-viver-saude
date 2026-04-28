@@ -189,8 +189,12 @@ const plansData: Record<string, PlanData> = {
   },
 };
 
+const COMING_SOON_SLUGS = ["ametista", "turquesa"];
+
 export async function generateStaticParams() {
-  return Object.keys(plansData).map((slug) => ({ slug }));
+  return Object.keys(plansData)
+    .filter((slug) => !COMING_SOON_SLUGS.includes(slug))
+    .map((slug) => ({ slug }));
 }
 
 export async function generateMetadata(props: {
@@ -213,6 +217,11 @@ export default async function PlanPage(props: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await props.params;
+
+  if (COMING_SOON_SLUGS.includes(slug)) {
+    notFound();
+  }
+
   const plan = plansData[slug];
 
   if (!plan) {

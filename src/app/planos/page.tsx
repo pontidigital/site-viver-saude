@@ -6,7 +6,7 @@ import { WHATSAPP_URL } from "@/lib/constants/site";
 export const metadata = {
   title: "Planos",
   description:
-    "Encontre o plano de saúde ideal para você e sua família. Conheça os planos Topázio, Rubi, Safira, Turmalina, Quartzo, Ametista, Diamante e Turquesa da Viver Saúde.",
+    "Encontre o plano de saúde ideal para você e sua família. Conheça os planos Topázio, Rubi, Safira, Turmalina, Quartzo e Diamante da Viver Saúde.",
 };
 
 const plans = [
@@ -41,22 +41,10 @@ const plans = [
     image: "/images/plans/quartzo.svg",
   },
   {
-    name: "Ametista",
-    slug: "ametista",
-    tagline: "Voltado ao público sênior, com acompanhamento próximo e segurança",
-    image: "/images/plans/ametista.svg",
-  },
-  {
     name: "Diamante",
     slug: "diamante",
     tagline: "Plano empresarial com opção de quarto privativo e cobertura completa",
     image: "/images/plans/diamante.svg",
-  },
-  {
-    name: "Turquesa",
-    slug: "turquesa",
-    tagline: "Plano empresarial com cobertura hospitalar de alto padrão",
-    image: "/images/plans/turquesa.svg",
   },
 ];
 
@@ -142,8 +130,6 @@ export default function PlanosPage() {
                       { name: "Rubi", slug: "rubi" },
                       { name: "Turmalina", slug: "turmalina" },
                       { name: "Safira", slug: "safira" },
-                      { name: "Ametista", slug: "ametista" },
-                      { name: "Turquesa", slug: "turquesa" },
                       { name: "Diamante", slug: "diamante" },
                     ].map((p) => (
                       <th
@@ -161,48 +147,48 @@ export default function PlanosPage() {
                   {[
                     {
                       label: "Consultas e exames ambulatoriais",
-                      values: [true, true, true, true, true, true, true, true],
+                      values: [true, true, true, true, true, true],
                     },
                     {
                       label: "Internação hospitalar",
-                      values: [false, true, true, true, true, true, true, true],
+                      values: [false, true, true, true, true, true],
                     },
                     {
                       label: "Cobertura obstétrica (parto)",
-                      values: [false, true, "partial", true, true, true, true, true],
+                      values: [false, true, "partial", true, true, true],
                       note: "Rubi: disponível apenas na modalidade por adesão",
                     },
                     {
                       label: "Urgência e emergência",
-                      values: [true, true, true, true, true, true, true, true],
+                      values: [true, true, true, true, true, true],
                     },
                     {
                       label: "Cirurgias e procedimentos",
-                      values: [false, true, true, true, true, true, true, true],
+                      values: [false, true, true, true, true, true],
                     },
                     {
                       label: "Quimioterapia e radioterapia",
-                      values: [true, true, true, true, true, true, true, true],
+                      values: [true, true, true, true, true, true],
                     },
                     {
                       label: "Opção de quarto privativo",
-                      values: [false, false, false, false, false, false, false, true],
+                      values: [false, false, false, false, false, true],
                     },
                     {
                       label: "Sem coparticipação",
-                      values: [false, false, false, false, false, false, true, false],
+                      values: [false, false, false, false, false, false],
                     },
                     {
                       label: "Disponível para pessoa física",
-                      values: [false, false, false, false, true, false, false, false],
+                      values: [false, false, false, false, true, false],
                     },
                     {
                       label: "Disponível por adesão",
-                      values: [false, true, true, true, true, false, false, false],
+                      values: [false, true, true, true, true, false],
                     },
                     {
                       label: "Foco no público sênior",
-                      values: [false, false, false, false, false, true, false, false],
+                      values: [false, false, false, false, false, false],
                     },
                   ].map((row, rowIdx) => (
                     <tr

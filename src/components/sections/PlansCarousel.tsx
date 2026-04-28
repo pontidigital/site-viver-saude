@@ -44,25 +44,11 @@ const plans = [
     color: "from-gray-400 to-gray-600",
   },
   {
-    name: "Ametista",
-    slug: "ametista",
-    tagline: "Voltado ao público sênior, com acompanhamento próximo e segurança.",
-    image: "/images/plans/ametista.svg",
-    color: "from-purple-400 to-purple-600",
-  },
-  {
     name: "Diamante",
     slug: "diamante",
     tagline: "Plano empresarial com opção de quarto privativo e cobertura completa.",
     image: "/images/plans/diamante.svg",
     color: "from-cyan-300 to-cyan-500",
-  },
-  {
-    name: "Turquesa",
-    slug: "turquesa",
-    tagline: "Plano empresarial com cobertura hospitalar de alto padrão.",
-    image: "/images/plans/turquesa.svg",
-    color: "from-teal-400 to-teal-600",
   },
 ];
 

@@ -22,14 +22,14 @@ const formSchema = z.object({
 type FormData = z.infer<typeof formSchema>;
 
 const planOptions = [
-  { value: "topazio", label: "Topázio" },
-  { value: "rubi", label: "Rubi" },
-  { value: "safira", label: "Safira" },
-  { value: "turmalina", label: "Turmalina" },
-  { value: "quartzo", label: "Quartzo" },
-  { value: "ametista", label: "Ametista" },
-  { value: "diamante", label: "Diamante" },
-  { value: "turquesa", label: "Turquesa" },
+  { value: "topazio", label: "Topázio", comingSoon: false },
+  { value: "rubi", label: "Rubi", comingSoon: false },
+  { value: "safira", label: "Safira", comingSoon: false },
+  { value: "turmalina", label: "Turmalina", comingSoon: false },
+  { value: "quartzo", label: "Quartzo", comingSoon: false },
+  { value: "diamante", label: "Diamante", comingSoon: false },
+  { value: "ametista", label: "Ametista (em breve)", comingSoon: true },
+  { value: "turquesa", label: "Turquesa (em breve)", comingSoon: true },
 ];
 
 export default function QueroSerClientePage() {
@@ -231,7 +231,7 @@ export default function QueroSerClientePage() {
                       Selecione um plano
                     </option>
                     {planOptions.map((plan) => (
-                      <option key={plan.value} value={plan.value}>
+                      <option key={plan.value} value={plan.value} disabled={plan.comingSoon}>
                         {plan.label}
                       </option>
                     ))}
