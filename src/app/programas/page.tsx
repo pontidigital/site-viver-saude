@@ -429,20 +429,35 @@ export default function ProgramasPage() {
                 </ul>
               </div>
               <div className="grid grid-cols-2 gap-4">
-                {/* TODO: assets não encontrados em MEDIA_REFERENCES.md — fotos da CASA (fachada, consultórios, área verde, rooftop, piscina, cozinha, espaço gourmet) */}
                 {[
-                  "Foto: fachada da CASA",
-                  "Foto: consultórios multidisciplinares",
-                  "Foto: rooftop e área verde",
-                  "Foto: piscina / cozinha / espaço gourmet",
-                ].map((label) => (
+                  {
+                    src: "/images/programas/casa/casa-recepcao.jpg",
+                    alt: "Recepção principal da CASA — Centro de Atenção à Saúde da Viver Saúde",
+                  },
+                  {
+                    src: "/images/programas/casa/casa-consultorio.jpg",
+                    alt: "Consultório multidisciplinar da CASA",
+                  },
+                  {
+                    src: "/images/programas/casa/casa-recepcao-consultorios.jpg",
+                    alt: "Recepção de consultórios e espaço infantil da CASA",
+                  },
+                  {
+                    src: "/images/programas/casa/casa-piscina.jpg",
+                    alt: "Piscina e área verde da CASA",
+                  },
+                ].map((photo) => (
                   <div
-                    key={label}
-                    className="aspect-[4/3] bg-gray-50 border-2 border-dashed border-gray-300 rounded-xl flex items-center justify-center text-center text-xs text-muted font-medium px-3"
-                    role="img"
-                    aria-label={label}
+                    key={photo.src}
+                    className="relative aspect-[4/3] overflow-hidden rounded-xl bg-gray-50"
                   >
-                    [{label}]
+                    <Image
+                      src={photo.src}
+                      alt={photo.alt}
+                      fill
+                      sizes="(min-width: 1024px) 25vw, 50vw"
+                      className="object-cover"
+                    />
                   </div>
                 ))}
               </div>
