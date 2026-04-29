@@ -25,29 +25,6 @@ function comingSoonWhatsapp(programName: string) {
   return `${WHATSAPP_1100}?text=${encodeURIComponent(message)}`;
 }
 
-function LogoPlaceholder({
-  label,
-  size = "md",
-}: {
-  label: string;
-  size?: "sm" | "md" | "lg";
-}) {
-  const sizeClasses = {
-    sm: "h-20 w-20 text-[10px]",
-    md: "h-36 w-36 text-xs",
-    lg: "h-56 w-full max-w-xs text-sm",
-  };
-  return (
-    <div
-      className={`flex items-center justify-center text-center bg-gray-50 border-2 border-dashed border-gray-300 rounded-xl text-muted font-medium px-4 ${sizeClasses[size]}`}
-      role="img"
-      aria-label={label}
-    >
-      <span>[{label}]</span>
-    </div>
-  );
-}
-
 function ProgramLogo({
   src,
   alt,
@@ -57,27 +34,25 @@ function ProgramLogo({
   alt: string;
   size?: "sm" | "md" | "lg";
 }) {
-  if (src) {
-    const dims = { sm: 80, md: 144, lg: 224 };
-    const px = dims[size];
-    const containerClasses = {
-      sm: "h-20 w-20",
-      md: "h-36 w-36",
-      lg: "h-56 w-full max-w-xs",
-    };
-    return (
-      <div className={`relative flex items-center justify-center ${containerClasses[size]}`}>
-        <Image
-          src={src}
-          alt={alt}
-          width={px}
-          height={px}
-          className="object-contain w-full h-full"
-        />
-      </div>
-    );
-  }
-  return <LogoPlaceholder label={alt} size={size} />;
+  if (!src) return null;
+  const dims = { sm: 80, md: 144, lg: 224 };
+  const px = dims[size];
+  const containerClasses = {
+    sm: "h-20 w-20",
+    md: "h-36 w-36",
+    lg: "h-56 w-full max-w-xs",
+  };
+  return (
+    <div className={`relative flex items-center justify-center ${containerClasses[size]}`}>
+      <Image
+        src={src}
+        alt={alt}
+        width={px}
+        height={px}
+        className="object-contain w-full h-full"
+      />
+    </div>
+  );
 }
 
 function SeloEndosso({ size = "sm" }: { size?: "sm" | "md" }) {
