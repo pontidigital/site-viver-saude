@@ -192,6 +192,23 @@ export default function RedeCredenciadaPage() {
       <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
+            {/* Download PDF */}
+            <div className="flex justify-end mb-4">
+              <a
+                href="/docs/rede-credenciada/rede-credenciada.pdf"
+                download
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Baixar a rede credenciada completa em PDF"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-border bg-white text-sm font-semibold text-foreground transition-colors hover:border-primary hover:text-primary"
+              >
+                <svg className="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                Baixar rede credenciada (PDF)
+              </a>
+            </div>
+
             {/* Tabs */}
             <div className="flex justify-center mb-8">
               <div className="inline-flex bg-card rounded-lg p-1 border border-border">
