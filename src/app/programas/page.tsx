@@ -1,145 +1,734 @@
+import Image from "next/image";
+import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { ScrollAnimationWrapper } from "@/components/shared/ScrollAnimationWrapper";
-import { WHATSAPP_URL } from "@/lib/constants/site";
 
 export const metadata = {
-  title: "Programas de Qualidade de Vida",
+  title: "Programas de Qualidade de Vida — Viver Melhor 2.6",
   description:
-    "Conheça os Programas de Qualidade de Vida da Viver Saúde: iniciativas de prevenção, bem-estar e acompanhamento contínuo para beneficiários.",
+    "Viver Melhor 2.6: o programa de qualidade de vida da Viver Saúde. Linhas de cuidado com foco temático próprio, acompanhamento contínuo e equipe multiprofissional na CASA, em Natal/RN.",
 };
 
-const programas = [
+const PHONE_1100_TEL = "tel:+558431141100";
+const PHONE_1122_TEL = "tel:+558431141122";
+const WHATSAPP_1100 = "https://wa.me/558431141100";
+const CASA_ADDRESS = "Rua Maxaranguape, 920 — Tirol, Natal/RN";
+const CASA_ADDRESS_PT = "Rua Maxaranguape, 920, Tirol, Natal/RN";
+
+function programWhatsapp(programName: string) {
+  const message = `Olá! Gostaria de participar do ${programName}.`;
+  return `${WHATSAPP_1100}?text=${encodeURIComponent(message)}`;
+}
+
+function comingSoonWhatsapp(programName: string) {
+  const message = `Olá! Gostaria de saber mais sobre o ${programName}.`;
+  return `${WHATSAPP_1100}?text=${encodeURIComponent(message)}`;
+}
+
+function LogoPlaceholder({
+  label,
+  size = "md",
+}: {
+  label: string;
+  size?: "sm" | "md" | "lg";
+}) {
+  const sizeClasses = {
+    sm: "h-20 w-20 text-[10px]",
+    md: "h-36 w-36 text-xs",
+    lg: "h-56 w-full max-w-xs text-sm",
+  };
+  return (
+    <div
+      className={`flex items-center justify-center text-center bg-gray-50 border-2 border-dashed border-gray-300 rounded-xl text-muted font-medium px-4 ${sizeClasses[size]}`}
+      role="img"
+      aria-label={label}
+    >
+      <span>[{label}]</span>
+    </div>
+  );
+}
+
+function ProgramLogo({
+  src,
+  alt,
+  size = "md",
+}: {
+  src?: string;
+  alt: string;
+  size?: "sm" | "md" | "lg";
+}) {
+  if (src) {
+    const dims = { sm: 80, md: 144, lg: 224 };
+    const px = dims[size];
+    const containerClasses = {
+      sm: "h-20 w-20",
+      md: "h-36 w-36",
+      lg: "h-56 w-full max-w-xs",
+    };
+    return (
+      <div className={`relative flex items-center justify-center ${containerClasses[size]}`}>
+        <Image
+          src={src}
+          alt={alt}
+          width={px}
+          height={px}
+          className="object-contain w-full h-full"
+        />
+      </div>
+    );
+  }
+  return <LogoPlaceholder label={alt} size={size} />;
+}
+
+function SeloEndosso({ size = "sm" }: { size?: "sm" | "md" }) {
+  const sizeClasses =
+    size === "sm"
+      ? "text-[10px] px-2 py-0.5 tracking-wider"
+      : "text-xs px-3 py-1 tracking-wider";
+  return (
+    <span
+      className={`inline-flex items-center rounded-full bg-primary/10 text-primary font-semibold uppercase border border-primary/20 ${sizeClasses}`}
+      aria-label='Selo "Viver Melhor 2.6"'
+    >
+      {/* TODO: asset não encontrado em MEDIA_REFERENCES.md — selo "Viver Melhor 2.6" reduzido (80–100px) em SVG/PNG fundo transparente */}
+      Viver Melhor 2.6
+    </span>
+  );
+}
+
+type AvailableLine = {
+  slug: string;
+  cardNumber: string;
+  lineTitle: string;
+  programName: string;
+  cardName: string;
+  cardSummary: string;
+  status: "available";
+  logoSrc?: string;
+  introduction: string;
+  aboutCondition?: { heading: string; text: string };
+  benefits: string[];
+  howItWorks: string;
+  whoCanParticipate: string;
+  registrationForm: string;
+};
+
+type ComingSoonLine = {
+  slug: string;
+  cardNumber: string;
+  lineTitle: string;
+  programName: string;
+  cardName: string;
+  cardSummary: string;
+  status: "coming-soon";
+  logoSrc?: string;
+};
+
+type LineOfCare = AvailableLine | ComingSoonLine;
+
+const linesOfCare: LineOfCare[] = [
   {
-    title: "Programa de Acompanhamento de Crônicos",
-    description:
-      "Monitoramento contínuo para beneficiários com condições crônicas como diabetes, hipertensão e doenças respiratórias. Acompanhamento regular com equipe multidisciplinar.",
-    icon: (
-      <svg className="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-      </svg>
-    ),
+    slug: "tempo-de-viver",
+    cardNumber: "Linha de Cuidado 01",
+    lineTitle: "Linha de Cuidado à Saúde Integral da Pessoa Idosa",
+    programName: "Programa Tempo de Viver 2.6: A Cultura do Cuidado",
+    cardName: "Tempo de Viver 2.6",
+    cardSummary:
+      "Cuidado integral com a saúde do idoso e envelhecimento ativo.",
+    status: "available",
+    logoSrc: "/images/programas/tempo-de-viver.png",
+    introduction:
+      "Programa de atendimento integrado à saúde dos beneficiários com 60 anos ou mais, com acompanhamento constante por uma equipe multiprofissional e interdisciplinar. Tem como objetivo desenvolver ações que estimulem o autocuidado, com o apoio da família ou de cuidadores, para promoção à saúde, prevenção de riscos e doenças típicas dessa fase da vida ou complicações de doenças pré-existentes. A coordenação do cuidado é realizada por uma equipe de profissionais da saúde, sem custos extras no plano de saúde.",
+    benefits: [
+      "Acompanhamento periódico por equipe multidisciplinar (médico, enfermeiro, nutricionista, psicólogo, educador físico, entre outros)",
+      "Avaliação funcional do idoso pelo questionário IVCF-20",
+      "Elaboração do mapa de saúde pela plataforma Life Up",
+      "Plano de cuidado personalizado elaborado a partir das necessidades do participante",
+      "Pasta da saúde impressa com informações pessoais e médicas do beneficiário",
+      "App Life Up para acompanhamento do programa",
+      "Atividades na CASA: confraternizações, cursos, treinamentos, oficinas de relaxamento, movimento, hidroginástica e artes",
+      "Atividades em parques e ruas (corridas e caminhadas)",
+      "Visita domiciliar com profissionais da equipe multidisciplinar, quando necessária",
+      "Descontos com parceiros (farmácias, lojas, viagens, academias e clubes)",
+      "Isenção de coparticipação em todos os atendimentos com a equipe de referência",
+      "Isenção de coparticipação nos exames laboratoriais definidos no plano de cuidado",
+      "Coleta de exame de sangue domiciliar na Grande Natal, quando solicitado pela equipe médica",
+    ],
+    howItWorks:
+      "Participando do Programa Tempo de Viver 2.6, o cliente terá uma equipe multiprofissional dedicada ao seu cuidado integral. Após a avaliação inicial, será traçado um acompanhamento garantindo a assistência necessária em todos os níveis de atenção: primária, especializada, hospitalar, domiciliar e reabilitação, sem custos adicionais ao plano.",
+    whoCanParticipate:
+      "Clientes da Viver Saúde com idade igual ou acima de 60 anos, em dia com as obrigações do seu plano.",
+    registrationForm:
+      "Preenchendo e enviando o formulário do Programa Tempo de Viver no site da Viver Saúde, na seção Programas de Qualidade de Vida Viver Melhor.",
   },
   {
-    title: "Programa Materno-Infantil",
-    description:
-      "Acompanhamento da gestante e do bebê desde o pré-natal até os primeiros meses de vida, com orientação e suporte especializado.",
-    icon: (
-      <svg className="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
-      </svg>
-    ),
+    slug: "viver-na-medida-certa",
+    cardNumber: "Linha de Cuidado 02",
+    lineTitle: "Linha de Cuidado da Obesidade",
+    programName: "Programa Viver na Medida Certa 2.6",
+    cardName: "Viver na Medida Certa 2.6",
+    cardSummary:
+      "Tratamento da obesidade com equipe multiprofissional e cuidado longitudinal.",
+    status: "available",
+    logoSrc: "/images/programas/viver-na-medida-certa.png",
+    introduction:
+      "Programa de atendimento integrado aos beneficiários da Viver Saúde com obesidade, com acompanhamento por equipe multiprofissional e interdisciplinar. Trata a obesidade como doença crônica, com manejo estruturado e escalonado, visando a redução de peso de forma saudável e sustentável. A coordenação do cuidado é realizada por uma equipe de saúde multidisciplinar, sem custos extras para o beneficiário.",
+    aboutCondition: {
+      heading: "O que é obesidade?",
+      text: "A obesidade é uma doença crônica, recidivante e multifatorial, que decorre do acúmulo excessivo de tecido adiposo no organismo. Está associada ao desenvolvimento de complicações metabólicas que aumentam o risco de doenças cardiovasculares, diabetes mellitus tipo 2, diversos tipos de câncer, cirrose, entre outras — reduzindo a qualidade e a expectativa de vida. Quanto maior a medida da circunferência abdominal, maior o risco de doenças cardiovasculares, diabetes tipo 2 e mortalidade.",
+    },
+    benefits: [
+      "Acompanhamento periódico por equipe multidisciplinar (médico, enfermeiro, nutricionista, psicólogo, educador físico, entre outros)",
+      "Avaliação antropométrica com bioimpedância",
+      "Elaboração do mapa de saúde pela plataforma Life Up",
+      "Plano de acompanhamento personalizado a partir das necessidades do participante",
+      "Pasta da saúde impressa com informações pessoais e médicas do beneficiário",
+      "App Life Up para acompanhamento do programa",
+      "Atividades na CASA: confraternizações, cursos, treinamentos, oficinas de movimento, culinária e hidroginástica",
+      "Atividades em parques e ruas (corridas e caminhadas)",
+      "Descontos com parceiros (farmácias, lojas, viagens, academias e clubes)",
+      "Isenção de coparticipação em todos os atendimentos com a equipe de referência",
+      "Isenção de coparticipação nos exames laboratoriais definidos no plano de cuidado",
+      "Coleta de exame de sangue domiciliar na Grande Natal, quando solicitado pela equipe médica",
+    ],
+    howItWorks:
+      "Participando do Programa Viver na Medida Certa 2.6, o cliente terá uma equipe multiprofissional dedicada ao seu cuidado integral. Após a avaliação inicial, será traçado um acompanhamento garantindo a assistência necessária em todos os níveis de atenção — primária, especializada, hospitalar e reabilitação — sem custos adicionais ao plano.",
+    whoCanParticipate:
+      "Clientes adultos da Operadora Viver Saúde com obesidade, com ou sem comorbidades. Subgrupos prioritários: diabetes, hipertensão, dislipidemia, apneia obstrutiva do sono, doença hepática metabólica, osteoartrose incapacitante e alto risco cardiovascular.",
+    registrationForm:
+      "Preenchendo e enviando o formulário do Programa Viver na Medida Certa no site da Viver Saúde, na seção Programas de Qualidade de Vida Viver Melhor.",
   },
   {
-    title: "Programa de Envelhecimento Ativo",
-    description:
-      "Ações de promoção da saúde voltadas ao público sênior, com foco em autonomia, prevenção de quedas e qualidade de vida.",
-    icon: (
-      <svg className="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
+    slug: "viver-sem-limites",
+    cardNumber: "Linha de Cuidado 03",
+    lineTitle: "Linha de Cuidado da Dor Crônica",
+    programName: "Programa Viver Sem Limites 2.6: Fibromialgia",
+    cardName: "Viver Sem Limites 2.6",
+    cardSummary:
+      "Acompanhamento especializado para fibromialgia e dor crônica.",
+    status: "available",
+    logoSrc: "/images/programas/viver-sem-limites.png",
+    introduction:
+      "Programa de atendimento integrado aos beneficiários da Viver Saúde com diagnóstico de fibromialgia, com acompanhamento por equipe multiprofissional e interdisciplinar. Tem como objetivo melhorar a qualidade de vida dos pacientes, aliviando a dor, melhorando o sono e o humor, com manejo combinado de orientações sobre estilo de vida, abordagens cognitivas, farmacológicas e técnicas de reabilitação quando necessárias, com o foco no cuidado centrado no paciente.",
+    aboutCondition: {
+      heading: "O que é fibromialgia?",
+      text: "A fibromialgia é uma síndrome caracterizada por dor crônica generalizada, geralmente envolvendo regiões de músculos e tendões, com outros sintomas como fadiga, humor negativo, diminuição da qualidade do sono e dificuldade de concentração. A causa não é totalmente conhecida, porém avanços científicos demonstram a participação da predisposição genética e que eventos emocionais traumáticos podem ser gatilhos, trazendo alterações no processamento da dor pelo sistema nervoso central.",
+    },
+    benefits: [
+      "Acompanhamento periódico por equipe multidisciplinar (médico, enfermeiro, nutricionista, psicólogo, educador físico, entre outros)",
+      "Avaliação antropométrica com bioimpedância",
+      "Elaboração do mapa de saúde pela plataforma Life Up",
+      "Plano de acompanhamento personalizado a partir das necessidades do participante",
+      "Pasta da saúde impressa com informações pessoais e médicas do beneficiário",
+      "App Life Up para acompanhamento do programa",
+      "Atividades na CASA: confraternizações, cursos, treinamentos, oficinas de movimento, hidroginástica, gestão de estresse e culinária",
+      "Atividades em parques e ruas (corridas e caminhadas)",
+      "Descontos com parceiros (farmácias, lojas, viagens, academias e clubes)",
+      "Isenção de coparticipação em todos os atendimentos com a equipe de referência",
+      "Isenção de coparticipação nos exames laboratoriais definidos no plano de cuidado",
+      "Coleta de exame de sangue domiciliar na Grande Natal, quando solicitado pela equipe médica",
+    ],
+    howItWorks:
+      "Participando do Programa Viver Sem Limites 2.6, o cliente terá uma equipe multiprofissional dedicada ao seu cuidado integral. Após a avaliação inicial, será traçado um acompanhamento garantindo a assistência necessária em todos os níveis de atenção, de acordo com o plano terapêutico definido pela coordenação do cuidado, sem custos adicionais ao plano.",
+    whoCanParticipate:
+      "Clientes da Operadora Viver Saúde com diagnóstico de fibromialgia.",
+    registrationForm:
+      "Preenchendo e enviando o formulário do Programa Viver Sem Limites no site da Viver Saúde, na seção Programas de Qualidade de Vida Viver Melhor.",
   },
   {
-    title: "Programa de Saúde Mental",
-    description:
-      "Apoio psicológico e psiquiátrico com acompanhamento regular, grupos terapêuticos e orientação para beneficiários e familiares.",
-    icon: (
-      <svg className="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-      </svg>
-    ),
+    slug: "viver-cuidando-de-quem-cuida",
+    cardNumber: "Linha de Cuidado 04",
+    lineTitle: "Linha de Cuidado da Saúde do Trabalhador",
+    programName: "Programa Viver Cuidando de Quem Cuida 2.6",
+    cardName: "Viver Cuidando de Quem Cuida 2.6",
+    cardSummary: "Saúde integral do trabalhador.",
+    status: "coming-soon",
+    logoSrc: "/images/programas/viver-cuidando-de-quem-cuida.png",
   },
   {
-    title: "Programa de Prevenção e Rastreamento",
-    description:
-      "Campanhas e ações regulares de rastreamento para detecção precoce de doenças, com foco em exames preventivos e check-ups.",
-    icon: (
-      <svg className="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-      </svg>
-    ),
+    slug: "viver-renova-mente",
+    cardNumber: "Linha de Cuidado 05",
+    lineTitle: "Linha de Cuidado da Saúde Mental",
+    programName: "Programa Viver Renova Mente 2.6",
+    cardName: "Viver Renova Mente 2.6",
+    cardSummary: "Saúde mental com acolhimento e especialidade.",
+    status: "coming-soon",
+    logoSrc: "/images/programas/viver-renova-mente.png",
   },
   {
-    title: "Programa de Atividade Física",
-    description:
-      "Incentivo à prática de exercícios com orientação profissional, parcerias com academias e atividades em grupo.",
-    icon: (
-      <svg className="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-      </svg>
-    ),
+    slug: "viver-parto-adequado",
+    cardNumber: "Linha de Cuidado 06",
+    lineTitle: "Linha de Cuidado da Saúde Materno-Infantil",
+    programName: "Programa Viver Parto Adequado 2.6",
+    cardName: "Viver Parto Adequado 2.6",
+    cardSummary:
+      "Saúde materno-infantil, da gestação ao primeiro ano de vida.",
+    status: "coming-soon",
+    logoSrc: "/images/programas/viver-parto-adequado.png",
   },
+  {
+    slug: "viver-caminho-integrado",
+    cardNumber: "Linha de Cuidado 07",
+    lineTitle: "Coordenação de Cuidados de Casos Complexos",
+    programName: "Programa Viver Caminho Integrado",
+    cardName: "Viver Caminho Integrado",
+    cardSummary: "Coordenação de cuidados de casos complexos.",
+    status: "coming-soon",
+    logoSrc: "/images/programas/viver-caminho-integrado.png",
+  },
+  {
+    slug: "viver-acolhimento",
+    cardNumber: "Linha de Cuidado 08",
+    lineTitle: "Linha de Cuidado do Transtorno do Espectro Autista (TEA)",
+    programName: "Programa Viver Acolhimento",
+    cardName: "Viver Acolhimento",
+    cardSummary:
+      "Cuidado especializado para pessoas com TEA e suas famílias.",
+    status: "coming-soon",
+    // TODO: logo não disponível — aguardando asset "Viver Acolhimento" (PNG fundo transparente)
+  },
+  {
+    slug: "viver-amigos-da-coluna",
+    cardNumber: "Linha de Cuidado 09",
+    lineTitle: "Linha de Cuidado da Coluna — Dor Lombar",
+    programName: "Programa Viver Amigos da Coluna 2.6",
+    cardName: "Viver Amigos da Coluna 2.6",
+    cardSummary:
+      "Saúde da coluna, prevenção e reabilitação para quem vive com dor lombar.",
+    status: "coming-soon",
+    // TODO: logo não disponível — aguardando asset "Viver Amigos da Coluna 2.6" (PNG fundo transparente)
+  },
+  {
+    slug: "viver-em-movimento",
+    cardNumber: "Linha de Cuidado 10",
+    lineTitle: "Linha de Promoção à Atividade Física",
+    programName: "Programa Viver Em Movimento 2.6",
+    cardName: "Viver Em Movimento 2.6",
+    cardSummary:
+      "Promoção à atividade física para todos os perfis e idades.",
+    status: "coming-soon",
+    // TODO: logo não disponível — aguardando asset "Viver Em Movimento 2.6" (PNG fundo transparente)
+  },
+];
+
+const CASA_ITEMS = [
+  "Consultórios multidisciplinares modernos",
+  "Auditório para capacitações e eventos",
+  "Salas de acolhimento e de artes",
+  "Sala de movimento (ioga, pilates, dança)",
+  "Cozinha para treinamento em alimentação saudável",
+  "Piscina para hidroginástica",
+  "Área verde e rooftop",
+  "Espaço gourmet para eventos e convivência",
 ];
 
 export default function ProgramasPage() {
   return (
     <>
-      {/* Hero */}
+      {/* Bloco 1 — Hero */}
       <section className="bg-gradient-to-br from-primary-light via-white to-accent/5 py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 lg:px-6">
           <ScrollAnimationWrapper>
-            <div className="max-w-3xl">
-              <span className="text-accent-dark font-medium text-sm uppercase tracking-wider">
-                Qualidade de Vida
-              </span>
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground mt-3 mb-6">
-                Programas de Qualidade de Vida
-              </h1>
-              <p className="text-lg text-muted leading-relaxed">
-                A Viver Saúde vai além do plano. Nossos programas promovem prevenção,
-                acompanhamento e bem-estar para que você viva com mais saúde e qualidade.
+            <div className="flex flex-col lg:flex-row lg:items-center gap-10">
+              <div className="lg:w-1/3 flex justify-center lg:justify-start">
+                <ProgramLogo
+                  src="/images/programas/viver-melhor-2-6.png"
+                  alt="Logotipo do Programa Viver Melhor 2.6 — marca-mãe"
+                  size="lg"
+                />
+              </div>
+              <div className="lg:w-2/3 max-w-3xl">
+                <span className="text-accent-dark font-medium text-sm uppercase tracking-wider">
+                  Programas de Qualidade de Vida
+                </span>
+                <h1 className="text-4xl md:text-5xl font-bold text-foreground mt-3 mb-6">
+                  Viver Melhor 2.6
+                </h1>
+                <p className="text-xl text-foreground/80 leading-relaxed mb-5">
+                  Um programa completo de qualidade de vida, organizado em linhas
+                  de cuidado com identidade própria — cada uma focada em um
+                  aspecto essencial da sua saúde e bem-estar.
+                </p>
+                <p className="text-lg text-muted leading-relaxed">
+                  Na Viver Saúde, acreditamos que cuidar vai muito além do plano.
+                  Por isso criamos o Viver Melhor 2.6: um ecossistema de programas
+                  que acompanha você de perto, com especialidade, continuidade e
+                  cuidado personalizado em cada fase da vida.
+                </p>
+              </div>
+            </div>
+          </ScrollAnimationWrapper>
+        </div>
+      </section>
+
+      {/* Bloco 2 — O que é o Viver Melhor 2.6 */}
+      <section className="py-20 lg:py-24 bg-white">
+        <div className="max-w-4xl mx-auto px-4 lg:px-6">
+          <ScrollAnimationWrapper>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              O que é o Viver Melhor 2.6?
+            </h2>
+            <div className="space-y-5 text-lg text-muted leading-relaxed">
+              <p>
+                O Viver Melhor 2.6 é o programa de qualidade de vida da Viver
+                Saúde. Ele reúne linhas de cuidado com foco temático próprio
+                conectadas pelo mesmo propósito: fazer você viver melhor.
+              </p>
+              <p>
+                Cada linha de cuidado é um programa independente, com equipe
+                especializada, acompanhamento contínuo e ações direcionadas.
+                Juntas, cobrem as principais dimensões da saúde e bem-estar dos
+                nossos beneficiários.
               </p>
             </div>
           </ScrollAnimationWrapper>
         </div>
       </section>
 
-      {/* Programs list */}
-      <section className="py-20 lg:py-28 bg-white">
+      {/* Bloco 3 — A CASA */}
+      <section id="a-casa" className="py-20 lg:py-28 bg-primary-light/40">
         <div className="max-w-7xl mx-auto px-4 lg:px-6">
-          <div className="grid md:grid-cols-2 gap-x-12 gap-y-10">
-            {programas.map((programa, index) => (
-              <ScrollAnimationWrapper key={index} delay={index * 0.08}>
-                <div className="group flex items-start gap-5">
-                  <div className="flex-shrink-0 w-14 h-14 bg-primary-light text-primary rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                    {programa.icon}
+          <ScrollAnimationWrapper>
+            <div className="grid lg:grid-cols-2 gap-12 items-start">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                  A CASA: um espaço criado para o seu cuidado
+                </h2>
+                <p className="text-accent-dark font-semibold mb-6">
+                  {CASA_ADDRESS}
+                </p>
+                <p className="text-lg text-muted leading-relaxed mb-8">
+                  Os participantes dos programas Viver Melhor 2.6 têm acesso
+                  exclusivo ao nosso Centro de Atenção à Saúde, a CASA, um espaço
+                  moderno, acolhedor e completamente pensado para o seu cuidado
+                  integral.
+                </p>
+                <h3 className="text-xl font-semibold text-foreground mb-4">
+                  O que você encontra na CASA
+                </h3>
+                <ul className="space-y-3">
+                  {CASA_ITEMS.map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-muted">
+                      <svg
+                        className="flex-shrink-0 w-5 h-5 text-primary mt-0.5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2.5}
+                        aria-hidden="true"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                {/* TODO: assets não encontrados em MEDIA_REFERENCES.md — fotos da CASA (fachada, consultórios, área verde, rooftop, piscina, cozinha, espaço gourmet) */}
+                {[
+                  "Foto: fachada da CASA",
+                  "Foto: consultórios multidisciplinares",
+                  "Foto: rooftop e área verde",
+                  "Foto: piscina / cozinha / espaço gourmet",
+                ].map((label) => (
+                  <div
+                    key={label}
+                    className="aspect-[4/3] bg-gray-50 border-2 border-dashed border-gray-300 rounded-xl flex items-center justify-center text-center text-xs text-muted font-medium px-3"
+                    role="img"
+                    aria-label={label}
+                  >
+                    [{label}]
                   </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-foreground mb-2">
-                      {programa.title}
-                    </h3>
-                    <p className="text-muted leading-relaxed text-sm">
-                      {programa.description}
-                    </p>
+                ))}
+              </div>
+            </div>
+          </ScrollAnimationWrapper>
+        </div>
+      </section>
+
+      {/* Bloco 4 — Grade das linhas de cuidado */}
+      <section id="linhas-de-cuidado" className="py-20 lg:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 lg:px-6">
+          <ScrollAnimationWrapper>
+            <div className="max-w-3xl mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                Nossas linhas de cuidado
+              </h2>
+              <p className="text-lg text-muted leading-relaxed">
+                Cada linha de cuidado foi criada para um propósito específico.
+                Conheça os programas e descubra qual foi feito para você.
+              </p>
+            </div>
+          </ScrollAnimationWrapper>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {linesOfCare.map((line, index) => (
+              <ScrollAnimationWrapper key={line.slug} delay={index * 0.05}>
+                <article className="group h-full flex flex-col bg-white border border-gray-200 rounded-2xl p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                  <div className="flex items-start justify-between gap-3 mb-5">
+                    <ProgramLogo
+                      src={line.logoSrc}
+                      alt={`Logotipo do Programa ${line.cardName}`}
+                      size="sm"
+                    />
+                    <Badge
+                      variant={line.status === "available" ? "success" : "muted"}
+                    >
+                      {line.status === "available" ? "Disponível" : "Em breve"}
+                    </Badge>
                   </div>
-                </div>
+                  <h3 className="text-lg font-semibold text-foreground mb-2">
+                    {line.cardName}
+                  </h3>
+                  <p className="text-sm text-muted leading-relaxed mb-5">
+                    {line.cardSummary}
+                  </p>
+                  <div className="mb-5">
+                    <SeloEndosso size="sm" />
+                  </div>
+                  <div className="mt-auto">
+                    <Button
+                      href={`#${line.slug}`}
+                      variant="outline"
+                      size="sm"
+                      className="w-full"
+                    >
+                      Saiba mais
+                    </Button>
+                  </div>
+                </article>
               </ScrollAnimationWrapper>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-16 bg-primary-light">
+      {/* Bloco 5 — Detalhamento dos programas */}
+      <section className="py-12 lg:py-16 bg-primary-light/30">
+        <div className="max-w-5xl mx-auto px-4 lg:px-6 space-y-10 lg:space-y-14">
+          {linesOfCare.map((line) =>
+            line.status === "available" ? (
+              <AvailableProgramSection key={line.slug} line={line} />
+            ) : (
+              <ComingSoonProgramSection key={line.slug} line={line} />
+            )
+          )}
+        </div>
+      </section>
+
+      {/* Bloco 6 — CTA final */}
+      <section className="py-16 lg:py-20 bg-primary-light">
         <div className="max-w-3xl mx-auto px-4 lg:px-6 text-center">
           <ScrollAnimationWrapper>
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-              Quer saber mais sobre nossos programas?
+            <div className="mb-6 flex justify-center">
+              <SeloEndosso size="md" />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Pronto para começar?
             </h2>
-            <p className="text-muted mb-8">
-              Entre em contato com a nossa equipe para conhecer os programas disponíveis para o seu plano.
+            <p className="text-lg text-muted mb-8 leading-relaxed">
+              Nossos programas são abertos a todos os beneficiários Viver Saúde.
+              Entre em contato e descubra quais linhas de cuidado estão
+              disponíveis para o seu plano.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button href={WHATSAPP_URL} size="lg" target="_blank">
-                Fale com a Viver
+              <Button href={PHONE_1100_TEL} size="lg">
+                Quero participar — (84) 3114-1100
               </Button>
-              <Button href="/contato" variant="outline" size="lg">
-                Entre em contato
+              {/* TODO: rota definitiva para inscrição no site ainda não existe — temporariamente apontando para /contato */}
+              <Button href="/contato" variant="secondary" size="lg">
+                Inscreva-se pelo site
+              </Button>
+              <Button href="#a-casa" variant="outline" size="lg">
+                Visite a CASA
               </Button>
             </div>
+            <p className="text-sm text-muted mt-6">
+              Centro de Atenção à Saúde (CASA) — {CASA_ADDRESS_PT}
+            </p>
           </ScrollAnimationWrapper>
         </div>
       </section>
     </>
+  );
+}
+
+function AvailableProgramSection({ line }: { line: AvailableLine }) {
+  return (
+    <ScrollAnimationWrapper>
+      <article
+        id={line.slug}
+        className="scroll-mt-24 bg-white rounded-2xl border border-gray-200 p-8 md:p-12"
+      >
+        <div className="flex flex-col md:flex-row gap-8 md:items-start mb-8">
+          <div className="flex-shrink-0 flex flex-col items-center md:items-start gap-3">
+            <ProgramLogo
+              src={line.logoSrc}
+              alt={`Logotipo do Programa ${line.cardName}`}
+              size="md"
+            />
+            <SeloEndosso size="sm" />
+          </div>
+          <div className="flex-1">
+            <div className="flex flex-wrap items-center gap-3 mb-3">
+              <span className="text-xs font-semibold uppercase tracking-wider text-accent-dark">
+                {line.cardNumber}
+              </span>
+              <Badge variant="success">Disponível</Badge>
+            </div>
+            <p className="text-sm text-muted mb-2">{line.lineTitle}</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground">
+              {line.programName}
+            </h2>
+          </div>
+        </div>
+
+        <p className="text-muted leading-relaxed mb-8">{line.introduction}</p>
+
+        {line.aboutCondition ? (
+          <div className="mb-8 bg-primary-light/40 rounded-xl p-6">
+            <h3 className="text-xl font-semibold text-foreground mb-3">
+              {line.aboutCondition.heading}
+            </h3>
+            <p className="text-muted leading-relaxed">
+              {line.aboutCondition.text}
+            </p>
+          </div>
+        ) : null}
+
+        <h3 className="text-xl font-semibold text-foreground mb-4">
+          Benefícios do programa
+        </h3>
+        <ul className="grid md:grid-cols-2 gap-3 mb-8">
+          {line.benefits.map((benefit) => (
+            <li key={benefit} className="flex items-start gap-3 text-muted">
+              <svg
+                className="flex-shrink-0 w-5 h-5 text-primary mt-0.5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2.5}
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <span className="text-sm leading-relaxed">{benefit}</span>
+            </li>
+          ))}
+        </ul>
+
+        <h3 className="text-xl font-semibold text-foreground mb-3">
+          Como funciona
+        </h3>
+        <p className="text-muted leading-relaxed mb-8">{line.howItWorks}</p>
+
+        <h3 className="text-xl font-semibold text-foreground mb-3">
+          Quem pode participar
+        </h3>
+        <p className="text-muted leading-relaxed mb-8">
+          {line.whoCanParticipate}
+        </p>
+
+        <h3 className="text-xl font-semibold text-foreground mb-4">
+          Como se inscreve
+        </h3>
+        <ul className="space-y-3 mb-8 text-muted">
+          <li className="flex items-start gap-3">
+            <span className="text-primary font-bold">•</span>
+            <span>
+              Telefone ou WhatsApp:{" "}
+              <a
+                href={PHONE_1122_TEL}
+                className="text-accent-dark underline underline-offset-2 hover:text-primary"
+              >
+                (84) 3114-1122
+              </a>{" "}
+              ou{" "}
+              <a
+                href={PHONE_1100_TEL}
+                className="text-accent-dark underline underline-offset-2 hover:text-primary"
+              >
+                (84) 3114-1100
+              </a>
+            </span>
+          </li>
+          <li className="flex items-start gap-3">
+            <span className="text-primary font-bold">•</span>
+            <span>
+              Presencialmente no Centro de Atenção à Saúde (CASA) —{" "}
+              {CASA_ADDRESS_PT}
+            </span>
+          </li>
+          <li className="flex items-start gap-3">
+            <span className="text-primary font-bold">•</span>
+            <span>{line.registrationForm}</span>
+          </li>
+        </ul>
+
+        <div className="flex flex-col sm:flex-row gap-3">
+          <Button href={programWhatsapp(line.programName)} size="md">
+            Quero participar — fale com a Viver
+          </Button>
+          {/* TODO: rota definitiva para inscrição no site ainda não existe — temporariamente apontando para /contato */}
+          <Button href="/contato" variant="outline" size="md">
+            Inscreva-se pelo site
+          </Button>
+        </div>
+      </article>
+    </ScrollAnimationWrapper>
+  );
+}
+
+function ComingSoonProgramSection({ line }: { line: ComingSoonLine }) {
+  return (
+    <ScrollAnimationWrapper>
+      <article
+        id={line.slug}
+        className="scroll-mt-24 bg-white rounded-2xl border border-gray-200 p-8 md:p-10"
+      >
+        <div className="flex flex-col md:flex-row gap-6 md:items-center">
+          <div className="flex-shrink-0 flex flex-col items-center md:items-start gap-2">
+            <ProgramLogo
+              src={line.logoSrc}
+              alt={`Logotipo do Programa ${line.cardName}`}
+              size="sm"
+            />
+            <SeloEndosso size="sm" />
+          </div>
+          <div className="flex-1">
+            <div className="flex flex-wrap items-center gap-3 mb-2">
+              <span className="text-xs font-semibold uppercase tracking-wider text-accent-dark">
+                {line.cardNumber}
+              </span>
+              <Badge variant="muted">Em breve</Badge>
+            </div>
+            <p className="text-sm text-muted mb-2">{line.lineTitle}</p>
+            <h2 className="text-xl md:text-2xl font-bold text-foreground mb-3">
+              {line.programName}
+            </h2>
+            <p className="text-muted leading-relaxed mb-5">
+              Este programa estará disponível em breve. Fique de olho nas nossas
+              novidades.
+            </p>
+            <Button
+              href={comingSoonWhatsapp(line.programName)}
+              variant="outline"
+              size="sm"
+            >
+              Fale com a Viver para saber mais
+            </Button>
+          </div>
+        </div>
+      </article>
+    </ScrollAnimationWrapper>
   );
 }
